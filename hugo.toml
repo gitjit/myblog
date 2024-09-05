@@ -1,0 +1,54 @@
+baseURL = "https://jithesh.io/"
+languageCode = "en-us"
+defaultContentLanguage = "en-us"
+title = "Jithesh"
+theme = "hugo-blog-awesome"
+publishDir = "docs"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+
+  [markup.goldmark.renderer]
+    unsafe = true
+
+  [markup.tableOfContents]
+    startLevel = 2   # ToC starts from H2
+    endLevel = 4     # ToC ends at H4
+    ordered = false  # Generates <ul> instead of <ol>
+
+[languages]
+  [languages.en-us]
+    languageName = "English"
+
+    [languages.en-us.menu]
+      [[languages.en-us.menu.main]]
+        pageRef = "/"
+        name = "Home"
+        url = "/"
+        weight = 10
+
+      [[languages.en-us.menu.main]]
+        pageRef = "posts"
+        name = "Posts"
+        url = "/posts/"
+        weight = 20
+
+      [[languages.en-us.menu.main]]
+        pageRef = "about"
+        name = "About"
+        url = "/about/"
+        weight = 30
+
+      [[languages.en-us.menu.main]]
+        pageRef = "categories"
+        name = "Categories"
+        url = "/categories/"
+        weight = 40
+
+    [languages.en-us.params]
+      [languages.en-us.params.author]
+        avatar = "avatar.png"  # Ensure this file is placed in the assets folder
+        intro = "Jithesh Chandrasekharan"
+        name = "Jithesh Chandrasekharan"
+        description = "A passionate software engineer sharing insights and experiences across evolving technologies."
