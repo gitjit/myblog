@@ -1,7 +1,7 @@
 {
     "name": "Jithesh",
     "short_name": "Jithesh",
-    "start_url": "http://localhost:1313/",
+    "start_url": "https://jithesh.io/",
     "theme_color": "#434648",
     "background_color": "#ffffff",
     "display": "standalone",
