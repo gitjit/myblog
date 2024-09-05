@@ -3,15 +3,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const button = document.createElement('button');
         button.className = 'copy-code-btn';
         button.type = 'button';
-        button.innerText = 'Copy';
+
+        // Use Font Awesome icon and add "Copy code" text next to it
+        button.innerHTML = '<i class="fas fa-copy"></i> Copy code';
 
         // Add event listener to copy the code
         button.addEventListener('click', () => {
             const code = codeBlock.innerText;
             navigator.clipboard.writeText(code).then(() => {
-                button.innerText = 'Copied!';
+                button.innerHTML = '<i class="fas fa-check"></i> Copied!'; // Change to check icon when copied
                 setTimeout(() => {
-                    button.innerText = 'Copy';
+                    button.innerHTML = '<i class="fas fa-copy"></i> Copy code'; // Revert back to copy icon and text
                 }, 2000);
             }).catch(() => {
                 button.innerText = 'Error';

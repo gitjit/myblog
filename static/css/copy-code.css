@@ -1,51 +1,29 @@
-/* Custom Copy Button Styling */
 .copy-code-btn {
     position: absolute;
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    background-color: #007bff; /* Blue button background */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    cursor: pointer; /* Make it look clickable */
-    border-radius: 5px; /* Rounded corners */
-    z-index: 1000; /* Ensure it's on top of other elements */
-    font-size: 12px; /* Adjust font size */
-    display: inline-block; /* Ensure proper button rendering */
+    background-color: transparent; /* Make the background transparent */
+    color: #fff; /* White color for icon and text (you can adjust as needed) */
+    border: none; /* Remove the border */
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    opacity: 0.7; /* Slight transparency to make it less obtrusive */
+}
+
+.copy-code-btn i {
+    margin-right: 5px; /* Add space between the icon and text */
+    font-size: 14px;
+    color: #fff; /* White color for the icon */
 }
 
 .copy-code-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    opacity: 1; /* Make the button fully visible on hover */
+    text-decoration: underline; /* Optionally add underline on hover for emphasis */
 }
 
-/* Pre and code block adjustments */
 pre {
-    position: relative; /* Required to position button inside */
-    overflow: auto; /* Ensure scrolling for long code */
-}
-
-/* Ensure proper code highlighting in dark mode */
-.highlight, .highlight .w {
-    color: #fbf1c7; /* Syntax highlighting color */
-}
-
-html.dark body {
-    color: #babdc4; /* Light gray text in dark mode */
-    background-color: #131418; /* Dark background */
-}
-
-/* Adjust for dark mode preferences */
-@media (prefers-color-scheme: dark) {
-    html:not(.light) body {
-        color: #babdc4;
-        background-color: #131418;
-    }
-}
-
-/* Basic body styling */
-body {
-    color: #434648;
-    background-color: #fff;
-    font: 16px / 1.85 Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased;
+    position: relative;
 }

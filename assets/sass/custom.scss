@@ -7,11 +7,21 @@
 
 .category-name {
     flex: 1;
-    font-weight: bold;
+    
+    /* Remove color from here */
+}
+
+.category-name a {
+    color:#BABDC4 !important;; /* Apply color directly to the link */
+    text-decoration: none; /* Optional: remove underline from links */
+}
+
+.category-name a:hover {
+    color: rgb(144, 241, 144) !important;; /* Apply color directly to the link */
+    text-decoration: none; /* Optional: remove underline from links */
 }
 
 .category-last-date {
     text-align: right;
     color: #999;
 }
-
