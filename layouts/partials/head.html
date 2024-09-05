@@ -24,7 +24,7 @@
     {{- $code_syntax_highlight_css := resources.Get "code-highlight.css" | minify | fingerprint }}
     <link href="{{ $code_syntax_highlight_css.RelPermalink }}" rel="stylesheet">
     <!-- Add custom SCSS file -->
-    {{- $customStyle := resources.Get "scss/custom.scss" | toCSS | minify | fingerprint }}
+    {{- $customStyle := resources.Get "sass/custom.scss" | toCSS | minify | fingerprint }}
     <link href="{{ $customStyle.RelPermalink }}" rel="stylesheet">
 
     {{/* Favicons */}}

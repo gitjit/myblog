@@ -60,6 +60,7 @@ def extract_images(markdown_file, root_image_folder):
     with open(markdown_file, 'w', encoding='utf-8') as file:
         file.write(markdown_content)
 
+
 ```  
 The script uses regular expressions to find image paths in Markdown files.It copies the images to a new folder and updates the Markdown files to point to the new image paths.  
 
