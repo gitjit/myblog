@@ -1,8 +1,7 @@
 +++
 title = 'Redux Essentials'
 date = 2024-09-04T12:54:03-07:00
-categories = ["React", "FullStack"]
-tags = ["React", "Redux"]
+categories = ["React"]
 +++
 
 ## Why Redux ?  

@@ -1,0 +1,263 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=content-type content="text/html"><meta name=viewport content="width=device-width,initial-scale=1"><title itemprop=name>Python : Object Oriented Programming (Inheritance) | Jithesh</title>
+<meta property="og:title" content="Python : Object Oriented Programming (Inheritance) | Jithesh"><meta name=twitter:title content="Python : Object Oriented Programming (Inheritance) | Jithesh"><meta itemprop=name content="Python : Object Oriented Programming (Inheritance) | Jithesh"><meta name=application-name content="Python : Object Oriented Programming (Inheritance) | Jithesh"><meta property="og:site_name" content><meta name=description content><meta itemprop=description content><meta property="og:description" content><meta name=twitter:description content><meta property="og:locale" content="en-us"><meta name=language content="en-us"><link rel=alternate hreflang=en-us href=https://jithesh.io/posts/archives/python-inheritance/ title=English><meta property="og:type" content="article"><meta property="og:article:published_time" content=2011-04-11T00:00:00Z><meta property="article:published_time" content=2011-04-11T00:00:00Z><meta property="og:url" content="https://jithesh.io/posts/archives/python-inheritance/"><meta property="og:article:author" content="Jithesh Chandrasekharan"><meta property="article:author" content="Jithesh Chandrasekharan"><meta name=author content="Jithesh Chandrasekharan"><script defer type=application/ld+json>{"@context":"http://schema.org","@type":"Article","headline":"Python : Object Oriented Programming (Inheritance)","author":{"@type":"Person","name":""},"datePublished":"2011-04-11","description":"","wordCount":1165,"mainEntityOfPage":"True","dateModified":"2011-04-11","image":{"@type":"imageObject","url":""},"publisher":{"@type":"Organization","name":"Jithesh"}}</script><meta name=generator content="Hugo 0.134.0"><meta property="og:url" content="https://jithesh.io/posts/archives/python-inheritance/"><meta property="og:site_name" content="Jithesh"><meta property="og:title" content="Python : Object Oriented Programming (Inheritance)"><meta property="og:description" content="Let us first understand the basics of Inheritance in python. A syntax refresher. Given below is a basic inheritance syntax in Python.
+class Parent(object): def fun(self): print('Parent fun!') class A (Parent): def fun(self): print('A fun') super().fun() class B(Parent): def fun(self): print ('B fun') super().fun() "><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2011-04-11T00:00:00+00:00"><meta property="article:modified_time" content="2011-04-11T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Python : Object Oriented Programming (Inheritance)"><meta name=twitter:description content="Let us first understand the basics of Inheritance in python. A syntax refresher. Given below is a basic inheritance syntax in Python.
+class Parent(object): def fun(self): print('Parent fun!') class A (Parent): def fun(self): print('A fun') super().fun() class B(Parent): def fun(self): print ('B fun') super().fun() "><link rel=canonical href=https://jithesh.io/posts/archives/python-inheritance/><link href=/style.min.e390ba7da26222f4dc42a349955d76dbbe44e5ce2535a43de5a70633a0a9ec3c.css rel=stylesheet><link href=/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css rel=stylesheet><link href=/scss/custom.min.2529467044a4f8c090358d22b157be0ed200d5fc1c33839d45644d203b919c57.css rel=stylesheet><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/icons/favicon-16x16.png><link rel=mask-icon href=/icons/safari-pinned-tab.svg><link rel="shortcut icon" href=/favicon.ico><link rel=manifest href=https://jithesh.io/site.webmanifest><meta name=msapplication-config content="/browserconfig.xml"><meta name=msapplication-TileColor content="#2d89ef"><meta name=theme-color content="#434648"><link rel=icon type=image/svg+xml href=/icons/favicon.svg></head><body data-theme class=notransition><script src=/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script><div class=navbar role=navigation><nav class=menu aria-label="Main Navigation"><a href=https://jithesh.io/ class=logo><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><title>Home</title><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+</a><input type=checkbox id=menu-trigger class=menu-trigger>
+<label for=menu-trigger><span class=menu-icon><svg width="25" height="25" stroke="currentcolor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7H3.40726"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"/></svg></span></label><div class=trigger><ul class=trigger-container><li><a class=menu-link href=/>Home</a></li><li><a class="menu-link active" href=/posts/>Posts</a></li><li><a class=menu-link href=/categories/>Tags</a></li><li><a class=menu-link href=/pages/about/>About</a></li><li class=menu-separator><span>|</span></li></ul><a id=mode href=#><svg class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg><svg class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a></div></nav></div><div class="wrapper post"><main class=page-content aria-label=Content><article><header class=header><h1 class=header-title>Python : Object Oriented Programming (Inheritance)</h1><div class=post-meta><time datetime=2011-04-11T00:00:00+00:00 itemprop=datePublished>Apr 11, 2011</time></div></header><div class=page-content><p>Let us first understand the basics of Inheritance in python. A syntax refresher. Given below is a basic inheritance
+syntax in Python.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Parent</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>fun</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;Parent fun!&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>A</span> <span class=p>(</span><span class=n>Parent</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>fun</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;A fun&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=n>fun</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>B</span><span class=p>(</span><span class=n>Parent</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>fun</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span> <span class=p>(</span><span class=s1>&#39;B fun&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=n>fun</span><span class=p>()</span>
+</span></span></code></pre></div><p>So here we have a parent class and we are deriving class A and B from the Parent. Then we are using <code>super()</code> to
+call the base class method from sub class.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>p</span> <span class=o>=</span> <span class=n>Parent</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>a</span> <span class=o>=</span> <span class=n>A</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>b</span> <span class=o>=</span> <span class=n>B</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>p</span><span class=o>.</span><span class=n>fun</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>a</span><span class=o>.</span><span class=n>fun</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>b</span><span class=o>.</span><span class=n>fun</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>output</span><span class=o>..</span>
+</span></span><span class=line><span class=cl><span class=n>Parent</span> <span class=n>fun</span><span class=err>!</span>
+</span></span><span class=line><span class=cl><span class=o>------------</span>
+</span></span><span class=line><span class=cl><span class=n>A</span> <span class=n>fun</span>
+</span></span><span class=line><span class=cl><span class=n>Parent</span> <span class=n>fun</span><span class=err>!</span>
+</span></span><span class=line><span class=cl><span class=o>------------</span>
+</span></span><span class=line><span class=cl><span class=n>B</span> <span class=n>fun</span>
+</span></span><span class=line><span class=cl><span class=n>Parent</span> <span class=n>fun</span><span class=err>!</span>
+</span></span></code></pre></div><p>Now let us consider the scenaio of multiple inheritance as shown below. Here we are deriving C from A and B.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>C</span><span class=p>(</span><span class=n>A</span><span class=p>,</span> <span class=n>B</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>fun</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;C fun&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=n>fun</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>c</span> <span class=o>=</span> <span class=n>C</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>c</span><span class=o>.</span><span class=n>fun</span><span class=p>()</span>
+</span></span></code></pre></div><p>outputs..</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>C fun
+</span></span><span class=line><span class=cl>A fun
+</span></span><span class=line><span class=cl>B fun
+</span></span><span class=line><span class=cl>Parent fun!
+</span></span></code></pre></div><p>So here a question arises why <code>A.fun()</code> gets called before than <code>B.fun()</code>. This can be answered with a concept called as MRO
+(Method Resoulution Order) in Python. Every class holds a magic variable called <code>__mro__</code> which stores the inheritance order.
+So a method call get resolved based on this order. Let us print the <strong>mro</strong> for our classes.</p><p><code>print(C.__mro__)</code></p><p>outputs..</p><p><code>(&lt;class '__main__.C'>, &lt;class '__main__.A'>, &lt;class '__main__.B'>, &lt;class '__main__.Parent'>, &lt;class 'object'>)</code></p><p>So it shows that class A get resolved before B and Parent respectively. So now let us switch the inhertiance order
+as shown below and see the results.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>C</span><span class=p>(</span><span class=n>B</span><span class=p>,</span> <span class=n>A</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>fun</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;C fun&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=n>fun</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>C</span><span class=o>.</span><span class=vm>__mro__</span><span class=p>)</span>
+</span></span></code></pre></div><p>outputs..</p><p><code>(&lt;class '__main__.C'>, &lt;class '__main__.B'>, &lt;class '__main__.A'>, &lt;class '__main__.Parent'>, &lt;class 'object'>)</code></p><p>Now as expected the resoultion order is reversed with class B before A and parent.</p><h4 id=example--tableformatter>Example : TableFormatter</h4><p>Now let us write a concrete example to solidify our inheritance understanding. Here we want to create a method <code>print_table</code>
+which prints tabular data of collection passed to it. In this example we will be making the collection
+reading a csv data file as shown below.</p><pre class=line-numbers>
+<code class=language-bash>
+# stocks.csv
+**Name,Date,Shares,Price**
+HPQ,7/11/2007,100,32.2
+IBM,7/12/2007,50,91.9
+GE,7/13/2007,150,83.44
+CAT,7/14/2007,200,51.23
+MSFT,7/15/2007,95,40.37
+HPE,7/16/2007,50,65.1
+AFL,7/17/2007,100,70.44
+</code>
+</pre><p>So as a first step let us create a collection from this data. Let <code>Holding</code> be the class corresponding to one row in
+the data.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Holding</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>     <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span><span class=n>name</span><span class=p>,</span> <span class=n>date</span><span class=p>,</span> <span class=n>shares</span><span class=p>,</span> <span class=n>price</span> <span class=p>):</span>
+</span></span><span class=line><span class=cl>         <span class=bp>self</span><span class=o>.</span><span class=n>name</span> <span class=o>=</span> <span class=n>name</span>
+</span></span><span class=line><span class=cl>         <span class=bp>self</span><span class=o>.</span><span class=n>date</span> <span class=o>=</span> <span class=n>date</span>
+</span></span><span class=line><span class=cl>         <span class=bp>self</span><span class=o>.</span><span class=n>shares</span> <span class=o>=</span> <span class=n>shares</span>
+</span></span><span class=line><span class=cl>         <span class=bp>self</span><span class=o>.</span><span class=n>price</span> <span class=o>=</span> <span class=n>price</span>
+</span></span></code></pre></div><p>Now let us write a function that can display any objects in a text tabular format.The inputs to this function are
+list of objects and column names/attribute names of the objects. We are using <code>getattr</code> to get the attribute
+value to be displayed. (Its important that column name should match attribute.You can improve this by passing a
+tuple which hold display value and attribute value if we need to display diffrent column name than attribute name)</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>print_table</span><span class=p>(</span><span class=n>objects</span><span class=p>,</span> <span class=n>columns</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;&#39;&#39;
+</span></span></span><span class=line><span class=cl><span class=s1>    This method prints a table from objects using getattr
+</span></span></span><span class=line><span class=cl><span class=s1>    :param objects: object list to iterate
+</span></span></span><span class=line><span class=cl><span class=s1>    :param columns: column names matching attributes of object
+</span></span></span><span class=line><span class=cl><span class=s1>    &#39;&#39;&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=c1># print header</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>col</span> <span class=ow>in</span> <span class=n>columns</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;</span><span class=si>{:&gt;10s}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>col</span><span class=p>),</span> <span class=n>end</span><span class=o>=</span><span class=s1>&#39; &#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>obj</span> <span class=ow>in</span> <span class=n>objects</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=n>col</span> <span class=ow>in</span> <span class=n>columns</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;</span><span class=si>{:&gt;10s}</span><span class=s1>&#39;</span><span class=o>.</span>
+</span></span><span class=line><span class=cl>                  <span class=nb>format</span><span class=p>(</span><span class=nb>str</span><span class=p>(</span><span class=nb>getattr</span><span class=p>(</span><span class=n>obj</span><span class=p>,</span> <span class=n>col</span><span class=p>))),</span> <span class=n>end</span><span class=o>=</span><span class=s1>&#39; &#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>()</span>
+</span></span></code></pre></div><p>Now let us use the above method to generate table of &lsquo;stocks.csv&rsquo; First let us load that data into a
+list and then generate the table as shown below.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># program.py</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>csv</span>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>load_portfolio</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=n>holdings</span> <span class=o>=</span> <span class=p>[]</span>
+</span></span><span class=line><span class=cl>    <span class=k>with</span> <span class=nb>open</span><span class=p>(</span><span class=s1>&#39;stocks.csv&#39;</span><span class=p>,</span> <span class=s1>&#39;r&#39;</span><span class=p>)</span> <span class=k>as</span> <span class=n>f</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>rows</span> <span class=o>=</span> <span class=n>csv</span><span class=o>.</span><span class=n>reader</span><span class=p>(</span><span class=n>f</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>head</span> <span class=o>=</span> <span class=nb>next</span><span class=p>(</span><span class=n>rows</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=n>row_no</span><span class=p>,</span> <span class=n>row</span> <span class=ow>in</span> <span class=nb>enumerate</span><span class=p>(</span><span class=n>rows</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                <span class=n>holdings</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>Holding</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=n>row</span><span class=p>[</span><span class=mi>0</span><span class=p>],</span> <span class=n>date</span><span class=o>=</span><span class=n>row</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>                                    <span class=n>shares</span><span class=o>=</span><span class=nb>int</span><span class=p>(</span><span class=n>row</span><span class=p>[</span><span class=mi>2</span><span class=p>]),</span> <span class=n>price</span><span class=o>=</span><span class=nb>float</span><span class=p>(</span><span class=n>row</span><span class=p>[</span><span class=mi>3</span><span class=p>])))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=k>except</span> <span class=ne>ValueError</span> <span class=k>as</span> <span class=n>ve</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;Ignoring row </span><span class=si>{}</span><span class=s1>-</span><span class=si>{}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>row_no</span><span class=p>,</span><span class=n>row</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>holdings</span>
+</span></span><span class=line><span class=cl><span class=c1># print the table</span>
+</span></span><span class=line><span class=cl><span class=n>print_table</span><span class=p>(</span><span class=n>load_portfolio</span><span class=p>(),</span> <span class=p>[</span><span class=s1>&#39;name&#39;</span><span class=p>,</span><span class=s1>&#39;date&#39;</span><span class=p>,</span> <span class=s1>&#39;shares&#39;</span><span class=p>,</span> <span class=s1>&#39;price&#39;</span><span class=p>]</span> <span class=p>):</span>
+</span></span></code></pre></div><p>Now comes interesting part, what if we want to print as CSV, html tables etc.. So its good to define
+a contract for the formatter and derive sub classess from it, the logic of formatting can be
+eliminated from the print_table().</p><img src=2017-04-25-17-36-00.png class=img-responsive><p>So we can rewrite print_table() as follows. As first step let us create a base class &lsquo;<code>Formatter</code>&rsquo;,
+which is like an interface that specifies the contract.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Formatter</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>print_header</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>cols</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>print_records</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>objects</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span></code></pre></div><p>Now let us modify our print_table() as follows.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>print_table</span><span class=p>(</span><span class=n>objects</span><span class=p>,</span><span class=n>columns</span><span class=p>,</span> <span class=n>formatter</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=c1># print header</span>
+</span></span><span class=line><span class=cl>    <span class=n>formatter</span><span class=o>.</span><span class=n>print_header</span><span class=p>(</span><span class=n>columns</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># print rows</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>obj</span> <span class=ow>in</span> <span class=n>objects</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>formatter</span><span class=o>.</span><span class=n>print_records</span><span class=p>([</span><span class=nb>str</span><span class=p>(</span><span class=nb>getattr</span><span class=p>(</span><span class=n>obj</span><span class=p>,</span> <span class=n>col</span><span class=p>))</span> 
+</span></span><span class=line><span class=cl>                                 <span class=k>for</span> <span class=n>col</span> <span class=ow>in</span> <span class=n>columns</span><span class=p>])</span>
+</span></span></code></pre></div><p>Now let us implement our custom formatters.</p><p>TextFormatter..</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>TextFormatter</span><span class=p>(</span><span class=n>Formatter</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>print_header</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>headers</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=n>head</span> <span class=ow>in</span> <span class=n>headers</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;</span><span class=si>{:&gt;10s}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>head</span><span class=p>),</span> <span class=n>end</span><span class=o>=</span><span class=s2>&#34; &#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>print_records</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>rowdata</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=n>item</span> <span class=ow>in</span> <span class=n>rowdata</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;</span><span class=si>{:&gt;10s}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>item</span><span class=p>),</span> <span class=n>end</span><span class=o>=</span><span class=s2>&#34; &#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>()</span>
+</span></span></code></pre></div><p>CSVFormatter..</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>CSVFormatter</span><span class=p>(</span><span class=n>Formatter</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>print_header</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>headers</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;,&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>headers</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>print_records</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>rowdata</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;,&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>rowdata</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>()</span>
+</span></span></code></pre></div><p>HTMLFormatter..</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>HTMLFormatter</span><span class=p>(</span><span class=n>Formatter</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>print_header</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>headers</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;&lt;tr&gt;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=n>head</span> <span class=ow>in</span> <span class=n>headers</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;&lt;th&gt;</span><span class=si>{}</span><span class=s1>&lt;/th&gt;&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>head</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;&lt;/tr&gt;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>print_records</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span><span class=n>rowdata</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;&lt;tr&gt;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=n>item</span> <span class=ow>in</span> <span class=n>rowdata</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;&lt;td&gt;</span><span class=si>{}</span><span class=s1>&lt;/td&gt;&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>item</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;&lt;/tr&gt;&#39;</span><span class=p>)</span>
+</span></span></code></pre></div><p>Now we can use these formatters as shown below..</p><pre tabindex=0><code>print_table(load_portfolio(), 
+            [&#39;name&#39;,&#39;date&#39;, &#39;shares&#39;, &#39;price&#39;], 
+            HTMLFormatter())
+
+print_table(load_portfolio(), 
+            [&#39;name&#39;,&#39;date&#39;, &#39;shares&#39;, &#39;price&#39;], 
+            CSVFormatter())
+
+print_table(load_portfolio(), 
+            [&#39;name&#39;,&#39;date&#39;, &#39;shares&#39;, &#39;price&#39;], 
+            TextFormatter())
+</code></pre><p>output :</p><pre tabindex=0><code>#html
+&lt;tr&gt;
+    &lt;th&gt;name&lt;/th&gt;
+    &lt;th&gt;date&lt;/th&gt;
+    &lt;th&gt;shares&lt;/th&gt;
+    &lt;th&gt;price&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;HPQ&lt;/td&gt;
+    &lt;td&gt;7/11/2007&lt;/td&gt;
+    &lt;td&gt;100&lt;/td&gt;
+    &lt;td&gt;32.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;IBM&lt;/td&gt;
+    &lt;td&gt;7/12/2007&lt;/td&gt;
+    &lt;td&gt;50&lt;/td&gt;
+    &lt;td&gt;91.9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+....
+....
+</code></pre><h4 id=multiple-inheritance>Multiple Inheritance</h4><p>Python supports multiple inheritance. So let us consider that in our scenario above. Let us say that I have to print
+content in quotes. So let us implement a class that does that.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>QuoteFormatter</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>print_records</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>rowdata</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=n>quoted</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;&#34;</span><span class=si>{}</span><span class=s1>&#34;&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>item</span><span class=p>)</span> <span class=k>for</span> <span class=n>item</span> <span class=ow>in</span> <span class=n>rowdata</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>        <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=n>print_records</span><span class=p>(</span><span class=n>quoted</span><span class=p>)</span>
+</span></span></code></pre></div><p>Now let us derive a new class from this and our existing class.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>QuoteTextFormatter</span><span class=p>(</span><span class=n>QuoteFormatter</span><span class=p>,</span> <span class=n>TextFormatter</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>pass</span>
+</span></span></code></pre></div><p>Now let us call this ..</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>print_table</span><span class=p>(</span><span class=n>load_portfolio</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>            <span class=p>[</span><span class=s1>&#39;name&#39;</span><span class=p>,</span><span class=s1>&#39;date&#39;</span><span class=p>,</span> <span class=s1>&#39;shares&#39;</span><span class=p>,</span> <span class=s1>&#39;price&#39;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>            <span class=n>QuoteTextFormatter</span><span class=p>())</span>
+</span></span></code></pre></div><p>output:</p><pre tabindex=0><code>      name       date     shares      price 
+     &#34;HPQ&#34; &#34;7/11/2007&#34;      &#34;100&#34;     &#34;32.2&#34; 
+     &#34;IBM&#34; &#34;7/12/2007&#34;       &#34;50&#34;     &#34;91.9&#34; 
+      &#34;GE&#34; &#34;7/13/2007&#34;      &#34;150&#34;    &#34;83.44&#34; 
+     &#34;CAT&#34; &#34;7/14/2007&#34;      &#34;200&#34;    &#34;51.23&#34; 
+    &#34;MSFT&#34; &#34;7/15/2007&#34;       &#34;95&#34;    &#34;40.37&#34; 
+     &#34;HPE&#34; &#34;7/16/2007&#34;       &#34;50&#34;     &#34;65.1&#34; 
+     &#34;AFL&#34; &#34;7/17/2007&#34;      &#34;100&#34;    &#34;70.44&#34; 
+</code></pre><p>In multiple inheritance we know that both parent classes have an implementation of <code>print_records</code>, which version of that
+will inject into derived class. The answer for that depends on the order of base class. In our case its QuoteFormatter. If you
+put the other way, then you won&rsquo;t see any quotes in output.</p><h3 id=abstract-class>Abstract Class</h3><p>In our implementation above there is a big flaw, our base class is not implementing the two main methods as shown below.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Formatter</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>outfile</span><span class=o>=</span><span class=n>sys</span><span class=o>.</span><span class=n>stdout</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>outfile</span> <span class=o>=</span> <span class=n>outfile</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>print_header</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>cols</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>print_records</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>objects</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span></code></pre></div><p>So if a developer tries to instantiate this class and pass as parameter to our <code>print_table</code> it will break. So in this case
+we have to make this class an abstract class. This will ensure that all derived class have implementation of its methods as
+well as avoid instantiation of this class object. We can make abstract as follows.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>abc</span> <span class=kn>import</span> <span class=n>ABC</span><span class=p>,</span> <span class=n>abstractmethod</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Formatter</span><span class=p>(</span><span class=n>ABC</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>outfile</span><span class=o>=</span><span class=n>sys</span><span class=o>.</span><span class=n>stdout</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>outfile</span> <span class=o>=</span> <span class=n>outfile</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nd>@abstractmethod</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>print_header</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>cols</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nd>@abstractmethod</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>print_records</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>objects</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span></code></pre></div><p>Now if we try following code, it won&rsquo;t compile..
+<code>formatter = Formatter();</code>
+<code>TypeError</code>: Can&rsquo;t instantiate abstract class Formatter with abstract methods print_header, print_records</p><p>Another way of writing defensive coding is to ensure we are getting expected type instance using <code>isinstance</code>()</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>print_table</span><span class=p>(</span><span class=n>objects</span><span class=p>,</span><span class=n>columns</span><span class=p>,</span> <span class=n>formatter</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=ow>not</span> <span class=nb>isinstance</span><span class=p>(</span><span class=n>formatter</span><span class=p>,</span> <span class=n>Formatter</span><span class=p>)</span> <span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;Formatter instance is expected !&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span>
+</span></span><span class=line><span class=cl>    <span class=c1># print header</span>
+</span></span><span class=line><span class=cl>    <span class=n>formatter</span><span class=o>.</span><span class=n>print_header</span><span class=p>(</span><span class=n>columns</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># print rows</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>obj</span> <span class=ow>in</span> <span class=n>objects</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>formatter</span><span class=o>.</span><span class=n>print_records</span><span class=p>([</span><span class=nb>str</span><span class=p>(</span><span class=nb>getattr</span><span class=p>(</span><span class=n>obj</span><span class=p>,</span> <span class=n>col</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>                                 <span class=k>for</span> <span class=n>col</span> <span class=ow>in</span> <span class=n>columns</span><span class=p>])</span>
+</span></span></code></pre></div><p><em>Coding is fun enjoy&mldr;</em></p></div></article></main></div><footer class=footer><span class=footer_item></span>&nbsp;<div class=footer_social-icons><a href=https://github.com/gitjit target=_blank rel="noopener noreferrer me" title=Github><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
+</a><a href=https://twitter.com/jitbytes target=_blank rel="noopener noreferrer me" title=Twitter><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg>
+</a><a href=https://www.linkedin.com/in/jitheshc target=_blank rel="noopener noreferrer me" title=Linkedin><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><small class=footer_copyright>© 2024 Jithesh Chandrasekharan.</small></footer><script src=https://jithesh.io/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script></body></html>

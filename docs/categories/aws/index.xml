@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AWS on Jithesh</title><link>https://jithesh.io/categories/aws/</link><description>Recent content in AWS on Jithesh</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.io/categories/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS Essentials : Elastic Load Balancer (ELB)</title><link>https://jithesh.io/posts/archives/aws-elb/</link><pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.io/posts/archives/aws-elb/</guid><description>&lt;p>In this post, we will discuss about AWS Elastic Load Balancer (ELB), various types of Load Balancers and how to configure them.&lt;/p>
+&lt;p>Let us consider a scenario in which you have an S3 Bucket and your EC2 instance needs to access the S3 Bucket. The quickest and dirtiest way to do this is to store the access keys in EC2 instance and access the buckets.&lt;/p>
+&lt;img src="2020-11-21-11-30-46.png" class="img-responsive"/>
+&lt;p>Given below shows how to store the AWS credentials in EC2 Instance and then access the S3 bucket.&lt;/p></description></item><item><title>AWS Essentials : Scalability and High Availabilty</title><link>https://jithesh.io/posts/archives/aws-scalability-ha/</link><pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.io/posts/archives/aws-scalability-ha/</guid><description>&lt;p>In this post, we will discuss about Scalability and High Availability and how they are linked together.&lt;/p>
+&lt;p>Scalability means that an application/system can handle greater loads by adapting. There are two kinds of scalability :&lt;/p>
+&lt;ol>
+&lt;li>Vertical Scalability&lt;/li>
+&lt;li>Horizontal Scalability&lt;/li>
+&lt;/ol>
+&lt;p>Scalability and High Availability are linked, but they are different.&lt;/p>
+&lt;p>Vertical Scalability:&lt;/p>
+&lt;img src="2020-11-21-11-30-46.png" class="img-responsive"/></description></item><item><title>AWS Essentials : IAM Roles</title><link>https://jithesh.io/posts/archives/aws-iam-role/</link><pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.io/posts/archives/aws-iam-role/</guid><description>&lt;p>In this post, we will discuss about AWS IAM roles and how it secure our AWS resource and how to set it up.&lt;/p>
+&lt;p>Let us consider a scenario in which you have an S3 Bucket and your EC2 instance needs to access the S3 Bucket. The quickest and dirtiest way to do this is to store the access keys in EC2 instance and access the buckets.&lt;/p>
+&lt;img src="2020-11-21-11-30-46.png" class="img-responsive"/>
+&lt;p>Given below shows how to store the AWS credentials in EC2 Instance and then access the S3 bucket.&lt;/p></description></item><item><title>AWS Essentials : Elastic IP</title><link>https://jithesh.io/posts/archives/aws-elastic/</link><pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.io/posts/archives/aws-elastic/</guid><description>&lt;p>In this post, we will discuss about Private, Public and Elastic IP&amp;rsquo;s. We will also see various methods to setup Elastic IP for an EC2 Instance.&lt;/p>
+&lt;h3 id="public-private-and-elastic-ip">Public, Private and Elastic IP&lt;/h3>
+&lt;img src="2020-11-17-12-33-37.png" class="img-responsive"/>
+&lt;p>By default every EC2 Instance comes with a default network interface &amp;ldquo;eth0&amp;rdquo;.Private IP address is known only to the Operating System.Its part of the Network Interface. Its the NAT (Network Address Translator) maps the public IP to the actual private address your Network Interface is mapped to and vice versa for outbound traffic too. Private IP is with in the CIDR block range of your subnet and thats what we see when we do an ifconfig.&lt;/p></description></item><item><title>AWS Essentials :NAT Instance and NAT Gateway</title><link>https://jithesh.io/posts/archives/aws-nat/</link><pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.io/posts/archives/aws-nat/</guid><description>&lt;p>In our previous post, we created a private instance and we set up a Bastion host to connect to the private instance. In this post, we will see how we can securely enable external internet access from this private host using NAT. Let&amp;rsquo;s get started.&lt;/p>
+&lt;p>There are two ways, you can add NAT support in AWS.&lt;/p>
+&lt;img src="2020-11-17-10-30-13.png" class="img-responsive"/>
+&lt;p>As mentioned above, NAT instance is old school and should be used only for smaller use cases.&lt;/p></description></item><item><title>AWS Essentials : Bastion Hosts</title><link>https://jithesh.io/posts/archives/aws-bastion/</link><pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.io/posts/archives/aws-bastion/</guid><description>&lt;p>In our previous post, we created a private instance. In this post we will see how we can connect to the private host by creating a Bastion Host. Lets get started.&lt;/p>
+&lt;p>So in-order to connect to a private instance, we first need a public instance running in our VPC. First we need to connect to this public instance and from this public instance we need to connect to the private instance. Now this public host is called as a Bastion Host or Jumper host.&lt;/p></description></item><item><title>AWS Essentials : Private Subnets</title><link>https://jithesh.io/posts/archives/aws-private-subnets/</link><pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.io/posts/archives/aws-private-subnets/</guid><description>&lt;p>The objective of this post is to get a good understanding on subnetting in VPC and how to create a private subnet in VPC. Let&amp;rsquo;s get started.&lt;/p>
+&lt;p>Let us start with a clean slate. When ever you create an EC2 Instance in a particular region, AWS creates following services in the background for us.&lt;/p>
+&lt;ol>
+&lt;li>A default VPC.&lt;/li>
+&lt;li>Public Subnets. (1 public subnet per AZ in that region)&lt;/li>
+&lt;li>A default route table. (Main route table)&lt;/li>
+&lt;li>An Internet Gateway, with updated entries in the Route table.&lt;/li>
+&lt;/ol>
+&lt;p>By default, the EC2 Instance we create will be in one of this particular public subnet.&lt;/p></description></item><item><title>AWS Essentials : AWS Global Infrastructure</title><link>https://jithesh.io/posts/archives/aws-global-infra/</link><pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.io/posts/archives/aws-global-infra/</guid><description>&lt;p>In this post we are going to discuss some essential topics we need to understand about AWS Global Infrastructure. Following are the major players in AWS Infrastructure.
+&lt;img src="2020-11-13-23-11-07.png" class="img-responsive"/>&lt;/p>
+&lt;p>Current numbers are as shown below.&lt;br>
+&lt;img src="2020-11-13-23-10-38.png" class="img-responsive"/>&lt;/p>
+&lt;img src="2020-11-13-22-58-52.png" class="img-responsive"/>
+&lt;p>Each region comprises of multiple AZ&amp;rsquo;s and each Az&amp;rsquo;s comprises of multiple independent Data Centers connected via low latency network.
+&lt;img src="2020-11-13-23-02-07.png" class="img-responsive"/>&lt;/p>
+&lt;p>All Az&amp;rsquo;s are connected via high bandwidth, redundant global network.&lt;/p></description></item><item><title>AWS Essentials : Identity and Access Management(IAM)</title><link>https://jithesh.io/posts/archives/aws-iam-essentials/</link><pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.io/posts/archives/aws-iam-essentials/</guid><description>&lt;p>In this post we are going to discuss some essential topics we need to understand in AWS IAM.&lt;/p>
+&lt;h2 id="iam-policies">IAM Policies&lt;/h2>
+&lt;p>Policies are documents(JSON) that define permissions that can be applied to users, groups and roles. Given below is a simple policy document that allows to list users in a Cognito User pool.&lt;/p>
+&lt;p>Action: List users&lt;br>
+Resource : ARN of the Cognito user pool.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;Version&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;2012-10-17&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;Statement&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;Sid&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;VisualEditor0&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;Effect&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Allow&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;Action&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cognito-idp:ListUsers&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;Resource&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;arn:aws:cognito-idp:us-west-2:3311415502:userpool/us-west-2_fh4MB3Xg7&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item></channel></rss>
