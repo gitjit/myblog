@@ -21,5 +21,20 @@
       
     </item>
     
+    <item>
+      <title>Hugo Essentials</title>
+      <link>http://localhost:1313/posts/hugo/</link>
+      <pubDate>Mon, 02 Sep 2024 12:54:03 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/hugo/</guid>
+      
+      <description>&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
+&lt;p&gt;To install Hugo in my windows PC, all I did was download the binary image (x64). Create a folder Hugo/bin in the Program Files and paste it there. Then edited the System Environment variable and add that to the path.  Please refer the video.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/hugo/b1a593305292e2ab89d2f74231e99eee.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=8BrADPJgA-4&amp;t=170s&#34;&gt;How to Install Hugo on Windows - YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now with hugo installed let us create a site as shown below.&lt;/p&gt;</description>
+      
+    </item>
+    
   </channel>
 </rss>
