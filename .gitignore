@@ -1,0 +1,33 @@
+# Hugo build lock file
+.hugo_build.lock
+
+# Hugo cache directory
+.hugo_cache/
+
+# Local Hugo server files
+public/
+resources/
+
+# Node modules (if you use npm or yarn)
+node_modules/
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.old
+
+# Ignore the themes directory if you are using a theme as a Git submodule
+themes/
+
+# Ignore the exampleSite directory if it exists
+exampleSite/
