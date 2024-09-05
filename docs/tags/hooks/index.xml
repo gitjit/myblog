@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hooks on Jithesh</title>
-    <link>https://jithesh.io/tags/hooks/</link>
+    <link>https://gitjit.github.io/myblog/tags/hooks/</link>
     <description>Recent content in Hooks on Jithesh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Sep 2024 12:54:03 -0700</lastBuildDate><atom:link href="https://jithesh.io/tags/hooks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Sep 2024 12:54:03 -0700</lastBuildDate><atom:link href="https://gitjit.github.io/myblog/tags/hooks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>React Hooks</title>
-      <link>https://jithesh.io/posts/react/hooks/</link>
+      <link>https://gitjit.github.io/myblog/posts/react/hooks/</link>
       <pubDate>Tue, 03 Sep 2024 12:54:03 -0700</pubDate>
       
-      <guid>https://jithesh.io/posts/react/hooks/</guid>
+      <guid>https://gitjit.github.io/myblog/posts/react/hooks/</guid>
       
       <description>&lt;h2 id=&#34;react-hooks&#34;&gt;React Hooks&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://jithesh.io/posts/react/hooks/2024-09-04-15-10-36.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitjit.github.io/myblog/myblog/posts/react/hooks/2024-09-04-15-10-36.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;As React applications grow, managing state across multiple components can become complex and difficult to maintain. This is where Redux comes in, providing a predictable state management solution that helps developers maintain consistency across their applications. In this post, we’ll explore Redux, specifically using Redux Toolkit, to make our state management simpler and more efficient.&lt;/p&gt;
 &lt;p&gt;In React, Hooks are special functions that let you use React features like state and lifecycle methods in functional components. Before React Hooks were introduced, only class components could manage state and lifecycle events. Hooks enable developers to use functional components with all the capabilities that class components had, such as managing local component state, side effects, context, and more.&lt;/p&gt;</description>
       

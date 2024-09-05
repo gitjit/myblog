@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Jithesh</title>
-    <link>https://jithesh.io/categories/</link>
+    <link>https://gitjit.github.io/myblog/categories/</link>
     <description>Recent content in Categories on Jithesh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Sep 2024 12:54:03 -0700</lastBuildDate><atom:link href="https://jithesh.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Sep 2024 12:54:03 -0700</lastBuildDate><atom:link href="https://gitjit.github.io/myblog/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FullStack</title>
-      <link>https://jithesh.io/categories/fullstack/</link>
+      <link>https://gitjit.github.io/myblog/categories/fullstack/</link>
       <pubDate>Wed, 04 Sep 2024 12:54:03 -0700</pubDate>
       
-      <guid>https://jithesh.io/categories/fullstack/</guid>
+      <guid>https://gitjit.github.io/myblog/categories/fullstack/</guid>
       
       <description></description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>React</title>
-      <link>https://jithesh.io/categories/react/</link>
+      <link>https://gitjit.github.io/myblog/categories/react/</link>
       <pubDate>Wed, 04 Sep 2024 12:54:03 -0700</pubDate>
       
-      <guid>https://jithesh.io/categories/react/</guid>
+      <guid>https://gitjit.github.io/myblog/categories/react/</guid>
       
       <description></description>
       
