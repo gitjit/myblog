@@ -1,0 +1,26 @@
+{{- define "main" -}}
+<div class="wrapper list-page">
+    <header class="header">
+        <h1 class="header-title center">{{ .Title }}</h1>
+    </header>
+    <main class="page-content" aria-label="Content">
+        <!-- Loop through categories and display them -->
+        {{ range .Data.Terms }}
+        <div class="category-item row">
+            <!-- Category Name with Post Count -->
+            <div class="category-name column">
+                <a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a>
+            </div>
+            <!-- Last Post Date -->
+            <div class="category-last-date column">
+                {{ with (index .Pages.ByDate 0) }}
+                    {{ .Date.Format "2 Jan 2006" }}
+                {{ else }}
+                    No posts
+                {{ end }}
+            </div>
+        </div>
+        {{ end }} <!-- end range .Data.Terms -->
+    </main>
+</div>
+{{- end -}}

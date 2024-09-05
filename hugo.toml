@@ -17,6 +17,19 @@ publishDir = "docs"
     endLevel = 4     # ToC ends at H4
     ordered = false  # Generates <ul> instead of <ol>
 
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/gitjit"
+
+[[params.socialIcons]]
+  name = "twitter"
+  url = "https://twitter.com/jitbytes"
+
+[[params.socialIcons]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/jitheshc"
+
+
 [languages]
   [languages.en-us]
     languageName = "English"
@@ -33,18 +46,20 @@ publishDir = "docs"
         name = "Posts"
         url = "/posts/"
         weight = 20
+      
+      [[languages.en-us.menu.main]]
+        pageRef = "categories"
+        name = "Tags"
+        url = "/categories/"
+        weight = 30
 
       [[languages.en-us.menu.main]]
         pageRef = "about"
         name = "About"
         url = "/about/"
-        weight = 30
-
-      [[languages.en-us.menu.main]]
-        pageRef = "categories"
-        name = "Categories"
-        url = "/categories/"
         weight = 40
+
+      
 
     [languages.en-us.params]
       [languages.en-us.params.author]

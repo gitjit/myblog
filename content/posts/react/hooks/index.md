@@ -1,7 +1,7 @@
 +++
 title = 'React Hooks'
 date = 2024-09-03T12:54:03-07:00
-categories = ["React", "FullStack"]
+categories = ["React"]
 tags = ["React", "Hooks"]
 +++
 
