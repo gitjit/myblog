@@ -2,41 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gitjit.github.io/myblog/categories/</loc>
+    <loc>https://jithesh.io/categories/</loc>
     <lastmod>2024-09-04T12:54:03-07:00</lastmod>
   </url><url>
-    <loc>https://gitjit.github.io/myblog/categories/fullstack/</loc>
+    <loc>https://jithesh.io/categories/fullstack/</loc>
     <lastmod>2024-09-04T12:54:03-07:00</lastmod>
   </url><url>
-    <loc>https://gitjit.github.io/myblog/</loc>
+    <loc>https://jithesh.io/</loc>
     <lastmod>2024-09-04T12:54:03-07:00</lastmod>
   </url><url>
-    <loc>https://gitjit.github.io/myblog/posts/</loc>
+    <loc>https://jithesh.io/posts/</loc>
     <lastmod>2024-09-04T12:54:03-07:00</lastmod>
   </url><url>
-    <loc>https://gitjit.github.io/myblog/tags/react/</loc>
+    <loc>https://jithesh.io/tags/react/</loc>
     <lastmod>2024-09-04T12:54:03-07:00</lastmod>
   </url><url>
-    <loc>https://gitjit.github.io/myblog/categories/react/</loc>
+    <loc>https://jithesh.io/categories/react/</loc>
     <lastmod>2024-09-04T12:54:03-07:00</lastmod>
   </url><url>
-    <loc>https://gitjit.github.io/myblog/tags/redux/</loc>
+    <loc>https://jithesh.io/tags/redux/</loc>
     <lastmod>2024-09-04T12:54:03-07:00</lastmod>
   </url><url>
-    <loc>https://gitjit.github.io/myblog/posts/react/redux-essentials/</loc>
+    <loc>https://jithesh.io/posts/react/redux-essentials/</loc>
     <lastmod>2024-09-04T12:54:03-07:00</lastmod>
   </url><url>
-    <loc>https://gitjit.github.io/myblog/tags/</loc>
+    <loc>https://jithesh.io/tags/</loc>
     <lastmod>2024-09-04T12:54:03-07:00</lastmod>
   </url><url>
-    <loc>https://gitjit.github.io/myblog/tags/hooks/</loc>
+    <loc>https://jithesh.io/tags/hooks/</loc>
     <lastmod>2024-09-03T12:54:03-07:00</lastmod>
   </url><url>
-    <loc>https://gitjit.github.io/myblog/posts/react/hooks/</loc>
+    <loc>https://jithesh.io/posts/react/hooks/</loc>
     <lastmod>2024-09-03T12:54:03-07:00</lastmod>
   </url><url>
-    <loc>https://gitjit.github.io/myblog/pages/about/</loc>
+    <loc>https://jithesh.io/pages/about/</loc>
   </url><url>
-    <loc>https://gitjit.github.io/myblog/pages/</loc>
+    <loc>https://jithesh.io/pages/</loc>
   </url>
 </urlset>
