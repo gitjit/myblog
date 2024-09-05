@@ -2,7 +2,6 @@
 title = 'Hugo Essentials'
 date = 2024-09-02T12:54:03-07:00
 categories = ["Hugo"]
-tags = ["React", "Hooks"]
 toc = true
 +++
 
