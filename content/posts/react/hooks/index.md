@@ -32,6 +32,7 @@ Hooks reduce the amount of boilerplate code that comes with class components. Yo
 
 Purpose: To add state to functional components.
 Usage:
+
 ```js
 import React, { useState } from 'react';
 
@@ -49,6 +50,7 @@ function Counter() {
   );
 }
 ```
+
 useState returns an array with two elements: the current state value and a function to update the state.
 Whenever the state changes, the component re-renders.
 

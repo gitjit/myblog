@@ -57,3 +57,7 @@ To ensure that the custom CSS is applied, you copied the head.html file from the
 ```
 ## Adjusting Content Width  
 To adjust the width of your site,I copied the main.scss from the theme and changed width. Then I updated head.html to use this local main.scss than from theme.
+
+## Adding copy button to code block
+I added copy-code.css and copy-code.js in the static folder. Then link the css and script in head.html.
+

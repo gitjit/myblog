@@ -19,6 +19,7 @@ This blog will focus on porting Markdown files, as well as how we used Python to
 Jekyll blog posts often have images embedded in Markdown files using relative paths. When migrating to Hugo, these images need to be extracted and relocated to a consistent directory structure.   
 We wrote a Python script to extract image paths from the Markdown files, copy the images to a new folder, and update the image tags in the Markdown files.
 
+
 ```python 
 
 import os
@@ -60,8 +61,9 @@ def extract_images(markdown_file, root_image_folder):
     with open(markdown_file, 'w', encoding='utf-8') as file:
         file.write(markdown_content)
 
+```
 
-```  
+
 The script uses regular expressions to find image paths in Markdown files.It copies the images to a new folder and updates the Markdown files to point to the new image paths.  
 
 ## Replacing the Front Matter  

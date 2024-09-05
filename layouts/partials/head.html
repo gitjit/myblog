@@ -19,6 +19,10 @@
 
     {{- /* Styles */ -}}
 
+    <link rel="stylesheet" href="{{ "css/copy-code.css" | relURL }}">
+    <script src="{{ "js/copy-code.js" | relURL }}"></script>
+
+
     {{- $style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS (dict "targetPath" "style.css") | minify | fingerprint }}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet">
     {{- $code_syntax_highlight_css := resources.Get "code-highlight.css" | minify | fingerprint }}
