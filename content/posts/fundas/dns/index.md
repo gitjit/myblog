@@ -12,7 +12,7 @@ Have you ever wondered what happens behind the scenes when you type a URL like j
 
 In this post, I’ll walk you through how DNS works, using my own blog (jithesh.blog) as an example. By the end, you’ll understand how DNS translates a domain name into an IP address and connects you to the right server. 
 
-<img src="dns.webp" alt="DNS Image Example" style="width:50%; height:auto;">
+<img src="dns.webp" alt="DNS Image Example" style="width:60%; height:auto;">
 
 ## What is DNS ?  
 DNS stands for Domain Name System, and it’s often referred to as the “phonebook of the internet.” Just like how a phonebook matches names to phone numbers, DNS matches domain names (like jithesh.blog) to IP addresses (like 185.199.108.153), which are the “addresses” of servers on the internet.  
