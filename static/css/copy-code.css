@@ -21,7 +21,6 @@
 
 .copy-code-btn:hover {
     opacity: 1; /* Make the button fully visible on hover */
-    text-decoration: underline; /* Optionally add underline on hover for emphasis */
 }
 
 pre {
