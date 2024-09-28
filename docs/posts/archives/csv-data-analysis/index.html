@@ -1,15 +1,221 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=content-type content="text/html"><meta name=viewport content="width=device-width,initial-scale=1"><title itemprop=name>Python : CSV data analysis | Jithesh</title>
-<meta property="og:title" content="Python : CSV data analysis | Jithesh"><meta name=twitter:title content="Python : CSV data analysis | Jithesh"><meta itemprop=name content="Python : CSV data analysis | Jithesh"><meta name=application-name content="Python : CSV data analysis | Jithesh"><meta property="og:site_name" content><meta name=description content><meta itemprop=description content><meta property="og:description" content><meta name=twitter:description content><meta property="og:locale" content="en-us"><meta name=language content="en-us"><link rel=alternate hreflang=en-us href=https://jithesh.blog/posts/archives/csv-data-analysis/ title=English><meta property="og:type" content="article"><meta property="og:article:published_time" content=2011-04-07T00:00:00Z><meta property="article:published_time" content=2011-04-07T00:00:00Z><meta property="og:url" content="https://jithesh.blog/posts/archives/csv-data-analysis/"><meta property="og:article:author" content="Jithesh Chandrasekharan"><meta property="article:author" content="Jithesh Chandrasekharan"><meta name=author content="Jithesh Chandrasekharan"><script defer type=application/ld+json>{"@context":"http://schema.org","@type":"Article","headline":"Python : CSV data analysis","author":{"@type":"Person","name":""},"datePublished":"2011-04-07","description":"","wordCount":952,"mainEntityOfPage":"True","dateModified":"2011-04-07","image":{"@type":"imageObject","url":""},"publisher":{"@type":"Organization","name":"Jithesh"}}</script><meta name=generator content="Hugo 0.134.0"><meta property="og:url" content="https://jithesh.blog/posts/archives/csv-data-analysis/"><meta property="og:site_name" content="Jithesh"><meta property="og:title" content="Python : CSV data analysis"><meta property="og:description" content="In this post we will be doing some simple data analysis from CSV files using core-python API’s. We will not be using any data libraries. This will give us a chance to excercise some of the core python features like sorting, groupby and comprehensions. This post is an extension to my previous post generating dictionary from CSV.
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Python : CSV data analysis | Jithesh</title>
+<meta property="og:title" content="Python : CSV data analysis | Jithesh" />
+<meta name="twitter:title" content="Python : CSV data analysis | Jithesh" />
+<meta itemprop="name" content="Python : CSV data analysis | Jithesh" />
+<meta name="application-name" content="Python : CSV data analysis | Jithesh" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="">
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/posts/archives/csv-data-analysis/" title="English" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2011-04-07T00:00:00Z />
+    <meta property="article:published_time" content=2011-04-07T00:00:00Z />
+    <meta property="og:url" content="http://localhost:1313/posts/archives/csv-data-analysis/" />
+
+    
+    <meta property="og:article:author" content="Jithesh Chandrasekharan" />
+    <meta property="article:author" content="Jithesh Chandrasekharan" />
+    <meta name="author" content="Jithesh Chandrasekharan" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Python : CSV data analysis",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2011-04-07",
+        "description": "",
+        "wordCount":  952 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2011-04-07",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Jithesh"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.134.0">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/archives/csv-data-analysis/">
+  <meta property="og:site_name" content="Jithesh">
+  <meta property="og:title" content="Python : CSV data analysis">
+  <meta property="og:description" content="In this post we will be doing some simple data analysis from CSV files using core-python API’s. We will not be using any data libraries. This will give us a chance to excercise some of the core python features like sorting, groupby and comprehensions. This post is an extension to my previous post generating dictionary from CSV.
 What is the data we are analysing ?
-Data we are dealing with are bunch of small csv files, which contains some stock portfolios as shown below. It contains name, date of purchase, number of shares purchased and price at the time of purchase. A sample file looks like this."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2011-04-07T00:00:00+00:00"><meta property="article:modified_time" content="2011-04-07T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Python : CSV data analysis"><meta name=twitter:description content="In this post we will be doing some simple data analysis from CSV files using core-python API’s. We will not be using any data libraries. This will give us a chance to excercise some of the core python features like sorting, groupby and comprehensions. This post is an extension to my previous post generating dictionary from CSV.
+Data we are dealing with are bunch of small csv files, which contains some stock portfolios as shown below. It contains name, date of purchase, number of shares purchased and price at the time of purchase. A sample file looks like this.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2011-04-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2011-04-07T00:00:00+00:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Python : CSV data analysis">
+  <meta name="twitter:description" content="In this post we will be doing some simple data analysis from CSV files using core-python API’s. We will not be using any data libraries. This will give us a chance to excercise some of the core python features like sorting, groupby and comprehensions. This post is an extension to my previous post generating dictionary from CSV.
 What is the data we are analysing ?
-Data we are dealing with are bunch of small csv files, which contains some stock portfolios as shown below. It contains name, date of purchase, number of shares purchased and price at the time of purchase. A sample file looks like this."><link rel=canonical href=https://jithesh.blog/posts/archives/csv-data-analysis/><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css><link rel=stylesheet href=/css/copy-code.css><script src=/js/copy-code.js></script><link href=/style.min.da54ed9132d4ba2c4d0207a1ff9b3f2dd73aeec7858814832b1bb2bb3d91ba97.css rel=stylesheet><link href=/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css rel=stylesheet><link href=/sass/custom.min.cf467393bd3e3fc9a644f66d33a0a37039ba0d42650e5bc986be04542577c0a0.css rel=stylesheet><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/icons/favicon-16x16.png><link rel=mask-icon href=/icons/safari-pinned-tab.svg><link rel="shortcut icon" href=/favicon.ico><link rel=manifest href=https://jithesh.blog/site.webmanifest><meta name=msapplication-config content="/browserconfig.xml"><meta name=msapplication-TileColor content="#2d89ef"><meta name=theme-color content="#434648"><link rel=icon type=image/svg+xml href=/icons/favicon.svg></head><body data-theme class=notransition><script src=/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script><div class=navbar role=navigation><nav class=menu aria-label="Main Navigation"><a href=https://jithesh.blog/ class=logo><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><title>Home</title><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-</a><input type=checkbox id=menu-trigger class=menu-trigger>
-<label for=menu-trigger><span class=menu-icon><svg width="25" height="25" stroke="currentcolor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7H3.40726"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"/></svg></span></label><div class=trigger><ul class=trigger-container><li><a class=menu-link href=/>Home</a></li><li><a class="menu-link active" href=/posts/>Posts</a></li><li><a class=menu-link href=/categories/>Tags</a></li><li><a class=menu-link href=/pages/about/>About</a></li><li class=menu-separator><span>|</span></li></ul><a id=mode href=#><svg class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg><svg class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a></div></nav></div><div class="wrapper post"><main class=page-content aria-label=Content><article><header class=header><h1 class=header-title>Python : CSV data analysis</h1><div class=post-meta><time datetime=2011-04-07T00:00:00+00:00 itemprop=datePublished>Apr 7, 2011</time></div></header><div class=page-content><p>In this post we will be doing some simple data analysis from CSV files using core-python API&rsquo;s. We will not be
+Data we are dealing with are bunch of small csv files, which contains some stock portfolios as shown below. It contains name, date of purchase, number of shares purchased and price at the time of purchase. A sample file looks like this.">
+
+
+    
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/archives/csv-data-analysis/"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="/css/copy-code.css">
+    <script src="/js/copy-code.js"></script>
+    <link href="/style.min.da54ed9132d4ba2c4d0207a1ff9b3f2dd73aeec7858814832b1bb2bb3d91ba97.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+    
+    <link href="/sass/custom.min.cf467393bd3e3fc9a644f66d33a0a37039ba0d42650e5bc986be04542577c0a0.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    </head>
+<body data-theme = "" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/categories/">
+                        Tags
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Python : CSV data analysis</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2011-04-07T00:00:00&#43;00:00" itemprop="datePublished"> Apr 7, 2011 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <p>In this post we will be doing some simple data analysis from CSV files using core-python API&rsquo;s. We will not be
 using any data libraries. This will give us a chance to excercise some of the core python features like sorting, groupby and
-comprehensions. This post is an extension to my previous post<a href=http://jmedium.com/csv-reader/> generating dictionary from CSV</a>.</p><p>What is the data we are analysing ?</p><p>Data we are dealing with are bunch of small csv files, which contains some stock portfolios as shown below. It contains
-<code>name, date of purchase, number of shares purchased and price</code> at the time of purchase. A sample file looks like this.</p><pre class=line-numbers>
-<code class=language-bash>
+comprehensions. This post is an extension to my previous post<a href="http://jmedium.com/csv-reader/"> generating dictionary from CSV</a>.</p>
+<p>What is the data we are analysing ?</p>
+<p>Data we are dealing with are bunch of small csv files, which contains some stock portfolios as shown below.  It contains
+<code>name, date of purchase, number of shares purchased and price</code> at the time of purchase. A sample file looks like this.</p>
+<pre class='line-numbers'>
+<code class='language-bash'>
 **Name,Date,Shares,Price**
 HPQ,7/11/2007,100,32.2
 IBM,7/12/2007,50,91.9
@@ -19,10 +225,13 @@ MSFT,7/15/2007,95,40.37
 HPE,7/16/2007,50,65.1
 AFL,7/17/2007,100,70.44
 </code>
-</pre><img src=2017-04-21-10-48-26.png class=img-responsive><p>There will be multiple files residing in a folder (&lsquo;stocks&rsquo;) in the same format as shown above, so we have to read all files and
+</pre>
+<img src='2017-04-21-10-48-26.png' class='img-responsive'>
+<p>There will be multiple files residing in a folder (&lsquo;stocks&rsquo;) in the same format as shown above, so we have to read all files and
 process it. As a first step, let us read all csv files and generate a list of dictionary from it. We will be using the <code>csvreader</code>
-module we created before.</p><pre class=line-numbers>
-<code class=language-python>
+module we created before.</p>
+<pre class='line-numbers'>
+<code class='language-python'>
 def get_portfolio_as_dict(path):
     pattern = '*.csv'
     files = glob.glob(os.path.join(path,pattern))
@@ -34,16 +243,19 @@ def get_portfolio_as_dict(path):
 
 
 </code>
-</pre><p><code>get_portfolio_as_dict(path)</code> expects a folder location where all &lsquo;csv&rsquo; files resides. We are using <code>glob</code> module
+</pre>
+<p><code>get_portfolio_as_dict(path)</code> expects a folder location where all &lsquo;csv&rsquo; files resides. We are using <code>glob</code> module
 which returns a list of files that matches the pattern as shown in <code>line:3</code>. After that we read&rsquo;s each csv
 file and convert each row in that file to a dictionary and appends it to a list and returns the record. A snap shot
-of output looks like this .</p><pre class=line-numbers>
-<code class=language-python>
+of output looks like this .</p>
+<pre class='line-numbers'>
+<code class='language-python'>
 records =  get_portfolio_as_dict('stocks')
 pprint.pprint(records)
 </code>
-</pre><pre class=line-numbers>
-<code class=language-json>
+</pre>
+<pre class='line-numbers'>
+<code class='language-json'>
 
 # output
 
@@ -69,33 +281,47 @@ pprint.pprint(records)
  {'Date': '7/16/2007', 'Name': 'INFY', 'Price': 62.1, 'Shares': 50}]
 
 </code>
-</pre><h5 id=get-holding-names>Get Holding Names</h5><p>Now let us grab all unique holding names from the portfolios. We are using
-<code>set comprehension</code> to collect unique names.</p><pre class=line-numbers>
-<code class=language->
+</pre>
+<h5 id="get-holding-names">Get Holding Names</h5>
+<p>Now let us grab all unique holding names from the portfolios. We are using
+<code>set comprehension</code> to collect unique names.</p>
+<pre class='line-numbers'>
+<code class='language-'>
 port_names = get_portfolio_names('stocks')
 print(port_names)
 </code>
-</pre><pre class=line-numbers>
-<code class=language-python>
+</pre>
+<pre class='line-numbers'>
+<code class='language-python'>
 def get_portfolio_names(path):
     portfolios = get_portfolio_as_dict(path)
     names = { p['Name'] for p in portfolios}
     return names
 </code>
-</pre><p>output..</p><p><code>{'INFY', 'HPE', 'CAT', 'AFL', 'GE', 'TCS', 'GOOGL', 'HPQ', 'IBM', 'MSFT'}</code></p><h4 id=total-value-of-holdings>Total Value of holdings</h4><pre class=line-numbers>
-<code class=language-python>
+</pre>
+<p>output..</p>
+<p><code>{'INFY', 'HPE', 'CAT', 'AFL', 'GE', 'TCS', 'GOOGL', 'HPQ', 'IBM', 'MSFT'}</code></p>
+<h4 id="total-value-of-holdings">Total Value of holdings</h4>
+<pre class='line-numbers'>
+<code class='language-python'>
 def get_total_value(path):
     portfolios = get_portfolio_as_dict(path)
     total = sum([p['Shares'] * p['Price'] for p in portfolios])
     return total
 </code>
-</pre><pre class=line-numbers>
-<code class=language-python>
+</pre>
+<pre class='line-numbers'>
+<code class='language-python'>
 total_value = get_total_value('stocks')
 print('Total value is {}'.format(total_value))
 </code>
-</pre><p>output..</p><p><code>Total value is 131824.44999999998</code></p><h4 id=current-value-of-each-holding>Current value of each holding</h4><p>In this case we are using <code>request</code> module to grab latest values from yahoo url.</p><pre class=line-numbers>
-<code class=language-python>
+</pre>
+<p>output..</p>
+<p><code>Total value is 131824.44999999998</code></p>
+<h4 id="current-value-of-each-holding">Current value of each holding</h4>
+<p>In this case we are using <code>request</code> module to grab latest values from yahoo url.</p>
+<pre class='line-numbers'>
+<code class='language-python'>
 def get_current_value(path):
     names = get_portfolio_names(path)
     yahoo_url = 'http://finance.yahoo.com/d/quotes.csv?s={}&f=l1'.format(names)
@@ -106,8 +332,10 @@ def get_current_value(path):
         print(name,value)
 
 </code>
-</pre><p>output..</p><pre class=line-numbers>
-<code class=language-bash>
+</pre>
+<p>output..</p>
+<pre class='line-numbers'>
+<code class='language-bash'>
 GE 29.565
 CAT 94.46
 HPE 18.10
@@ -119,10 +347,13 @@ AFL 74.23
 TCS 4.15
 IBM 160.81
 </code>
-</pre><h4 id=group-by>Group By</h4><p>Since our data is spread across multiple files let us group by Name. We are using
+</pre>
+<h4 id="group-by">Group By</h4>
+<p>Since our data is spread across multiple files let us group by Name. We are using
 <code>itertools.groupby</code> in which you can specify a key to be used for grouping using
-a <code>lambda</code>.</p><pre class=line-numbers>
-<code class=language-python>
+a <code>lambda</code>.</p>
+<pre class='line-numbers'>
+<code class='language-python'>
 def print_sorted_portfolios(path):
     portfolios = get_portfolio_as_dict(path)
     portfolios.sort(key=lambda x: x['Name'])
@@ -131,8 +362,10 @@ def print_sorted_portfolios(path):
         for item in items:
             print('   ', item)
 </code>
-</pre><p>output..</p><pre class=line-numbers>
- <code class=language-json>
+</pre>
+<p>output..</p>
+ <pre class='line-numbers'>
+ <code class='language-json'>
 AFL
     {'Shares': 100, 'Date': '7/17/2007', 'Price': 70.44, 'Name': 'AFL'}
     {'Shares': 100, 'Date': '7/17/2008', 'Price': 70.44, 'Name': 'AFL'}
@@ -165,8 +398,11 @@ TCS
     {'Shares': 200, 'Date': '7/14/2009', 'Price': 51.23, 'Name': 'TCS'}
 
  </code>
- </pre><h4 id=value-of-each-holding>Value of each holding</h4><p>Now we grouped by name, we can easily calculate total value of each holding.</p><pre class=line-numbers>
- <code class=language-python>
+ </pre>  
+<h4 id="value-of-each-holding">Value of each holding</h4>
+<p>Now we grouped by name, we can easily calculate total value of each holding.</p>
+ <pre class='line-numbers'>
+ <code class='language-python'>
  def get_portfolio_values(path):
     portfolios = get_portfolio_as_dict(path)
     portfolios.sort(key=lambda x: x['Name'])
@@ -178,22 +414,83 @@ TCS
         holding_values[name] = total_value
     return holding_values
  </code>
- </pre><p>output..</p><pre class=line-numbers>
-<code class=language-bash>
+ </pre>
+<p>output..</p>
+<pre class='line-numbers'>
+<code class='language-bash'>
 {'CAT': 20492.0, 'GOOGL': 11040.0, 'IBM': 13785.0, 
 'MSFT': 11790.449999999999, 'INFY': 3105.0, 
 'GE': 37548.0, 'HPQ': 3220.0000000000005, 'AFL': 14088.0, 
 'HPE': 6509.999999999999, 'TCS': 10246.0}
 </code>
-</pre><h4 id=top-valued>Top Valued</h4><p>Now we got a dictionary of each portfolio and its values. Now to calculate the top one we
+</pre>  
+<h4 id="top-valued">Top Valued</h4>
+<p>Now we got a dictionary of each portfolio and its values. Now to calculate the top one we
 have to sort the dictionary. Python don&rsquo;t have a straight forward way to sort a dictionary,
-so we are using <code>sorted</code> method in which we are passing the key to be sorted as the Price.</p><pre class=line-numbers>
-<code class=language-python>
+so we are using <code>sorted</code> method in which we are passing the key to be sorted as the Price.</p>
+<pre class='line-numbers'>
+<code class='language-python'>
 def get_top_portfolio(path):
     portfolio_values = get_portfolio_values(path)
     sorted_by_value = sorted(portfolio_values.items(), key=lambda x:x[1])
     return sorted_by_value[-1]
 </code>
-</pre><p>output..</p><p><code>('GE', 37548.0)</code></p><p><em>Coding is fun enjoy&mldr;</em></p></div></article></main></div><footer class=footer><span class=footer_item></span>&nbsp;<div class=footer_social-icons><a href=https://github.com/gitjit target=_blank rel="noopener noreferrer me" title=Github><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
-</a><a href=https://twitter.com/jitbytes target=_blank rel="noopener noreferrer me" title=Twitter><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg>
-</a><a href=https://www.linkedin.com/in/jitheshc target=_blank rel="noopener noreferrer me" title=Linkedin><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><small class=footer_copyright>© 2024 Jithesh Chandrasekharan.</small></footer><script src=https://jithesh.blog/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script></body></html>
+</pre>
+<p>output..</p>
+<p><code> ('GE', 37548.0)</code></p>
+<p><em>Coding is fun enjoy&hellip;</em></p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/gitjit" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://twitter.com/jitbytes" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/jitheshc" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Jithesh Chandrasekharan.
+    </small>
+</footer>
+
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

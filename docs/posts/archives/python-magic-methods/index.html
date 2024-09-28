@@ -1,36 +1,246 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=content-type content="text/html"><meta name=viewport content="width=device-width,initial-scale=1"><title itemprop=name>Python : Magic Methods | Jithesh</title>
-<meta property="og:title" content="Python : Magic Methods | Jithesh"><meta name=twitter:title content="Python : Magic Methods | Jithesh"><meta itemprop=name content="Python : Magic Methods | Jithesh"><meta name=application-name content="Python : Magic Methods | Jithesh"><meta property="og:site_name" content><meta name=description content><meta itemprop=description content><meta property="og:description" content><meta name=twitter:description content><meta property="og:locale" content="en-us"><meta name=language content="en-us"><link rel=alternate hreflang=en-us href=https://jithesh.blog/posts/archives/python-magic-methods/ title=English><meta property="og:type" content="article"><meta property="og:article:published_time" content=2011-04-12T00:00:00Z><meta property="article:published_time" content=2011-04-12T00:00:00Z><meta property="og:url" content="https://jithesh.blog/posts/archives/python-magic-methods/"><meta property="og:article:author" content="Jithesh Chandrasekharan"><meta property="article:author" content="Jithesh Chandrasekharan"><meta name=author content="Jithesh Chandrasekharan"><script defer type=application/ld+json>{"@context":"http://schema.org","@type":"Article","headline":"Python : Magic Methods","author":{"@type":"Person","name":""},"datePublished":"2011-04-12","description":"","wordCount":878,"mainEntityOfPage":"True","dateModified":"2011-04-12","image":{"@type":"imageObject","url":""},"publisher":{"@type":"Organization","name":"Jithesh"}}</script><meta name=generator content="Hugo 0.134.0"><meta property="og:url" content="https://jithesh.blog/posts/archives/python-magic-methods/"><meta property="og:site_name" content="Jithesh"><meta property="og:title" content="Python : Magic Methods"><meta property="og:description" content="In python everything is an object and we are applying some operations on this objects. But every operation have a dedicated method behind the scene in corresponding type implementation.
->> x = 10 >> x + 10 is equivalent to x.__add__(10) >> x * 2 is equivalent to x.__mul__(2) >>> names = ['A', 'AB', 'ABC'] >>> names[0] is equivalent to names.__getitem__(0) >>> names.__setitem__(0, 'BAB') >>> names is now ['BAB', 'AB', 'ABC'] "><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2011-04-12T00:00:00+00:00"><meta property="article:modified_time" content="2011-04-12T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Python : Magic Methods"><meta name=twitter:description content="In python everything is an object and we are applying some operations on this objects. But every operation have a dedicated method behind the scene in corresponding type implementation.
->> x = 10 >> x + 10 is equivalent to x.__add__(10) >> x * 2 is equivalent to x.__mul__(2) >>> names = ['A', 'AB', 'ABC'] >>> names[0] is equivalent to names.__getitem__(0) >>> names.__setitem__(0, 'BAB') >>> names is now ['BAB', 'AB', 'ABC'] "><link rel=canonical href=https://jithesh.blog/posts/archives/python-magic-methods/><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css><link rel=stylesheet href=/css/copy-code.css><script src=/js/copy-code.js></script><link href=/style.min.da54ed9132d4ba2c4d0207a1ff9b3f2dd73aeec7858814832b1bb2bb3d91ba97.css rel=stylesheet><link href=/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css rel=stylesheet><link href=/sass/custom.min.cf467393bd3e3fc9a644f66d33a0a37039ba0d42650e5bc986be04542577c0a0.css rel=stylesheet><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/icons/favicon-16x16.png><link rel=mask-icon href=/icons/safari-pinned-tab.svg><link rel="shortcut icon" href=/favicon.ico><link rel=manifest href=https://jithesh.blog/site.webmanifest><meta name=msapplication-config content="/browserconfig.xml"><meta name=msapplication-TileColor content="#2d89ef"><meta name=theme-color content="#434648"><link rel=icon type=image/svg+xml href=/icons/favicon.svg></head><body data-theme class=notransition><script src=/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script><div class=navbar role=navigation><nav class=menu aria-label="Main Navigation"><a href=https://jithesh.blog/ class=logo><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><title>Home</title><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-</a><input type=checkbox id=menu-trigger class=menu-trigger>
-<label for=menu-trigger><span class=menu-icon><svg width="25" height="25" stroke="currentcolor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7H3.40726"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"/></svg></span></label><div class=trigger><ul class=trigger-container><li><a class=menu-link href=/>Home</a></li><li><a class="menu-link active" href=/posts/>Posts</a></li><li><a class=menu-link href=/categories/>Tags</a></li><li><a class=menu-link href=/pages/about/>About</a></li><li class=menu-separator><span>|</span></li></ul><a id=mode href=#><svg class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg><svg class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a></div></nav></div><div class="wrapper post"><main class=page-content aria-label=Content><article><header class=header><h1 class=header-title>Python : Magic Methods</h1><div class=post-meta><time datetime=2011-04-12T00:00:00+00:00 itemprop=datePublished>Apr 12, 2011</time></div></header><div class=page-content><p>In python everything is an object and we are applying some operations on this objects. But every operation have a
-dedicated method behind the scene in corresponding type implementation.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>&gt;&gt; <span class=nv>x</span> <span class=o>=</span> <span class=m>10</span>
-</span></span><span class=line><span class=cl>&gt;&gt; x + <span class=m>10</span> is equivalent to x.__add__<span class=o>(</span>10<span class=o>)</span>
-</span></span><span class=line><span class=cl>&gt;&gt; x * <span class=m>2</span> is equivalent to x.__mul__<span class=o>(</span>2<span class=o>)</span> 
-</span></span><span class=line><span class=cl>&gt;&gt;&gt; <span class=nv>names</span> <span class=o>=</span> <span class=o>[</span><span class=s1>&#39;A&#39;</span>, <span class=s1>&#39;AB&#39;</span>, <span class=s1>&#39;ABC&#39;</span><span class=o>]</span>
-</span></span><span class=line><span class=cl>&gt;&gt;&gt; names<span class=o>[</span>0<span class=o>]</span> is equivalent to names.__getitem__<span class=o>(</span>0<span class=o>)</span>
-</span></span><span class=line><span class=cl>&gt;&gt;&gt; names.__setitem__<span class=o>(</span>0, <span class=s1>&#39;BAB&#39;</span><span class=o>)</span>
-</span></span><span class=line><span class=cl>&gt;&gt;&gt; names is now <span class=o>[</span><span class=s1>&#39;BAB&#39;</span>, <span class=s1>&#39;AB&#39;</span>, <span class=s1>&#39;ABC&#39;</span><span class=o>]</span>
-</span></span></code></pre></div><p>Now let us use this in a custom class.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Point</span><span class=p>:</span>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span><span class=n>x</span> <span class=p>,</span><span class=n>y</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>x</span> <span class=o>=</span> <span class=n>x</span>
-</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>y</span> <span class=o>=</span> <span class=n>y</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__add__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span><span class=n>other</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>Point</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>x</span> <span class=o>+</span> <span class=n>other</span><span class=o>.</span><span class=n>x</span><span class=p>,</span><span class=bp>self</span><span class=o>.</span><span class=n>y</span> <span class=o>+</span> <span class=n>other</span><span class=o>.</span><span class=n>y</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__str__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s1>&#39;Point x= </span><span class=si>{}</span><span class=s1> and y = </span><span class=si>{}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>x</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>y</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>p1</span> <span class=o>=</span> <span class=n>Point</span><span class=p>(</span><span class=mi>10</span><span class=p>,</span><span class=mi>20</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=n>p2</span> <span class=o>=</span> <span class=n>Point</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=n>p3</span> <span class=o>=</span> <span class=n>p1</span> <span class=o>+</span> <span class=n>p2</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>p3</span><span class=p>)</span>
-</span></span></code></pre></div><p>outputs :<br><code>Point x= 11 and y = 22</code></p><h4 id=str-vs-repr>str vs repr</h4><p>While debugging if you evaluate our point object , it will be displayed like this.</p><pre tabindex=0><code>&gt;&gt;p1
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Python : Magic Methods | Jithesh</title>
+<meta property="og:title" content="Python : Magic Methods | Jithesh" />
+<meta name="twitter:title" content="Python : Magic Methods | Jithesh" />
+<meta itemprop="name" content="Python : Magic Methods | Jithesh" />
+<meta name="application-name" content="Python : Magic Methods | Jithesh" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="">
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/posts/archives/python-magic-methods/" title="English" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2011-04-12T00:00:00Z />
+    <meta property="article:published_time" content=2011-04-12T00:00:00Z />
+    <meta property="og:url" content="http://localhost:1313/posts/archives/python-magic-methods/" />
+
+    
+    <meta property="og:article:author" content="Jithesh Chandrasekharan" />
+    <meta property="article:author" content="Jithesh Chandrasekharan" />
+    <meta name="author" content="Jithesh Chandrasekharan" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Python : Magic Methods",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2011-04-12",
+        "description": "",
+        "wordCount":  878 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2011-04-12",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Jithesh"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.134.0">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/archives/python-magic-methods/">
+  <meta property="og:site_name" content="Jithesh">
+  <meta property="og:title" content="Python : Magic Methods">
+  <meta property="og:description" content="In python everything is an object and we are applying some operations on this objects. But every operation have a dedicated method behind the scene in corresponding type implementation.
+&gt;&gt; x = 10 &gt;&gt; x &#43; 10 is equivalent to x.__add__(10) &gt;&gt; x * 2 is equivalent to x.__mul__(2) &gt;&gt;&gt; names = [&#39;A&#39;, &#39;AB&#39;, &#39;ABC&#39;] &gt;&gt;&gt; names[0] is equivalent to names.__getitem__(0) &gt;&gt;&gt; names.__setitem__(0, &#39;BAB&#39;) &gt;&gt;&gt; names is now [&#39;BAB&#39;, &#39;AB&#39;, &#39;ABC&#39;] ">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2011-04-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2011-04-12T00:00:00+00:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Python : Magic Methods">
+  <meta name="twitter:description" content="In python everything is an object and we are applying some operations on this objects. But every operation have a dedicated method behind the scene in corresponding type implementation.
+&gt;&gt; x = 10 &gt;&gt; x &#43; 10 is equivalent to x.__add__(10) &gt;&gt; x * 2 is equivalent to x.__mul__(2) &gt;&gt;&gt; names = [&#39;A&#39;, &#39;AB&#39;, &#39;ABC&#39;] &gt;&gt;&gt; names[0] is equivalent to names.__getitem__(0) &gt;&gt;&gt; names.__setitem__(0, &#39;BAB&#39;) &gt;&gt;&gt; names is now [&#39;BAB&#39;, &#39;AB&#39;, &#39;ABC&#39;] ">
+
+
+    
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/archives/python-magic-methods/"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="/css/copy-code.css">
+    <script src="/js/copy-code.js"></script>
+    <link href="/style.min.da54ed9132d4ba2c4d0207a1ff9b3f2dd73aeec7858814832b1bb2bb3d91ba97.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+    
+    <link href="/sass/custom.min.cf467393bd3e3fc9a644f66d33a0a37039ba0d42650e5bc986be04542577c0a0.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    </head>
+<body data-theme = "" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/categories/">
+                        Tags
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Python : Magic Methods</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2011-04-12T00:00:00&#43;00:00" itemprop="datePublished"> Apr 12, 2011 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <p>In python everything is an object and we are applying some operations on this objects. But every operation have a
+dedicated method behind the scene in corresponding type implementation.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">&gt;&gt; <span class="nv">x</span> <span class="o">=</span> <span class="m">10</span>
+</span></span><span class="line"><span class="cl">&gt;&gt; x + <span class="m">10</span> is equivalent to x.__add__<span class="o">(</span>10<span class="o">)</span>
+</span></span><span class="line"><span class="cl">&gt;&gt; x * <span class="m">2</span> is equivalent to x.__mul__<span class="o">(</span>2<span class="o">)</span> 
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt; <span class="nv">names</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;A&#39;</span>, <span class="s1">&#39;AB&#39;</span>, <span class="s1">&#39;ABC&#39;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt; names<span class="o">[</span>0<span class="o">]</span> is equivalent to names.__getitem__<span class="o">(</span>0<span class="o">)</span>
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt; names.__setitem__<span class="o">(</span>0, <span class="s1">&#39;BAB&#39;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt; names is now <span class="o">[</span><span class="s1">&#39;BAB&#39;</span>, <span class="s1">&#39;AB&#39;</span>, <span class="s1">&#39;ABC&#39;</span><span class="o">]</span>
+</span></span></code></pre></div><p>Now let us use this in a custom class.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span> <span class="p">,</span><span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;Point x= </span><span class="si">{}</span><span class="s1"> and y = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p3</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+</span></span></code></pre></div><p>outputs :<br>
+<code>Point x= 11 and y = 22</code></p>
+<h4 id="str-vs-repr">str vs repr</h4>
+<p>While debugging if you evaluate our point object , it will be displayed like this.</p>
+<pre tabindex="0"><code>&gt;&gt;p1
 &gt;&gt;&lt;__main__.Point at 0x24961fbf898&gt;`
 </code></pre><p><code>__repr__</code> is used during debugging a lot, its called representation of the object and used widely for debug only purpose.
-&lsquo;<strong>str</strong>&rsquo; is used for mainly for printing info.</p><pre tabindex=0><code>
+&lsquo;<strong>str</strong>&rsquo; is used for mainly for printing info.</p>
+<pre tabindex="0"><code>
 &gt;&gt;d1 = datetime.date(2012, 12,24)
 &gt;&gt;d1
 outputs:
@@ -38,30 +248,36 @@ datetime.date(2012, 12, 24)
 &gt;&gt;print(d1)
 outputs:
 &gt;&gt;2012-12-24
-</code></pre><p>So now let us add this support to our point class as shown below</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Point</span><span class=p>:</span>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span><span class=n>x</span> <span class=p>,</span><span class=n>y</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>x</span> <span class=o>=</span> <span class=n>x</span>
-</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>y</span> <span class=o>=</span> <span class=n>y</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__add__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span><span class=n>other</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>Point</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>x</span> <span class=o>+</span> <span class=n>other</span><span class=o>.</span><span class=n>x</span><span class=p>,</span><span class=bp>self</span><span class=o>.</span><span class=n>y</span> <span class=o>+</span> <span class=n>other</span><span class=o>.</span><span class=n>y</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__str__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s1>&#39;Point x= </span><span class=si>{}</span><span class=s1> and y = </span><span class=si>{}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>x</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>y</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__repr__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span><span class=p>(</span><span class=s1>&#39;Point(</span><span class=si>{!r}</span><span class=s1>,</span><span class=si>{!r}</span><span class=s1>)&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>x</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>y</span><span class=p>))</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;</span><span class=n>p1</span> <span class=o>=</span> <span class=n>Point</span><span class=p>(</span><span class=mi>10</span><span class=p>,</span><span class=mi>20</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;</span><span class=n>p1</span>
-</span></span><span class=line><span class=cl><span class=n>outputs</span> <span class=p>:</span> <span class=n>Point</span><span class=p>(</span><span class=mi>10</span><span class=p>,</span><span class=mi>20</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;</span><span class=nb>print</span><span class=p>(</span><span class=n>p1</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=n>outputs</span><span class=p>:</span> <span class=n>Point</span> <span class=n>x</span><span class=o>=</span> <span class=mi>10</span> <span class=ow>and</span> <span class=n>y</span> <span class=o>=</span> <span class=mi>20</span>
-</span></span></code></pre></div><p>So when writing your own class ensure to include <code>__str__</code> and <code>__repr__</code> as best practice.</p><h4 id=context-managers>Context Managers</h4><p>The basic resource management pattern we have been following so far is <code>open resource, use it and close it</code>.
-In case of file, we have been doing this safeguarding using <code>with</code> statement.</p><p><code>with open(filename, 'r') as f:</code></p><p>Internally this is implemented using two magic methods <code>__enter__ and __exit__</code>. So let us consider
+</code></pre><p>So now let us add this support to our point class as shown below</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span> <span class="p">,</span><span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;Point x= </span><span class="si">{}</span><span class="s1"> and y = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">(</span><span class="s1">&#39;Point(</span><span class="si">{!r}</span><span class="s1">,</span><span class="si">{!r}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;</span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;</span><span class="n">p1</span>
+</span></span><span class="line"><span class="cl"><span class="n">outputs</span> <span class="p">:</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;</span><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">outputs</span><span class="p">:</span> <span class="n">Point</span> <span class="n">x</span><span class="o">=</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
+</span></span></code></pre></div><p>So when writing your own class ensure to include <code>__str__</code> and <code>__repr__</code> as best practice.</p>
+<h4 id="context-managers">Context Managers</h4>
+<p>The basic resource management pattern we have been following so far is <code>open resource, use it and close it</code>.
+In case of file, we have been doing this safeguarding using <code>with</code> statement.</p>
+<p><code> with open(filename, 'r') as f:</code></p>
+<p>Internally this is implemented using two magic methods <code>__enter__ and __exit__</code>. So let us consider
 our point class is a resource and needs to do some clean up after its usage. Then in that case we
-can add context managers to our class as follows..</p><pre class=line-numbers>
-<code class=language-python>
+can add context managers to our class as follows..</p>
+<pre class='line-numbers'>
+<code class='language-python'>
 class Point(object):
     def __init__(self, x, y):
         self.x = x
@@ -84,22 +300,27 @@ class Point(object):
         print('Exiting')
         print(ty, val, tb)
 </code>
-</pre><p>As shown above (line:17)the return value of entering is enabling us to use <code>as</code> statement along <code>with</code>
-Now we can use this in <code>with</code> context as shown below..</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>p</span> <span class=o>=</span> <span class=n>Point</span><span class=p>(</span><span class=mi>10</span><span class=p>,</span><span class=mi>20</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=k>with</span> <span class=n>p</span> <span class=k>as</span> <span class=n>val</span><span class=p>:</span>
-</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>p</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>val</span><span class=p>)</span>
-</span></span></code></pre></div><p>outputs:</p><pre tabindex=0><code>Entering
+</pre>  
+<p>As shown above (line:17)the return value of entering is enabling us to use <code>as</code> statement along <code>with</code>
+Now we can use this in <code>with</code> context as shown below..</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">p</span> <span class="k">as</span> <span class="n">val</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+</span></span></code></pre></div><p>outputs:</p>
+<pre tabindex="0"><code>Entering
 Point x= 10 and y = 20
 A sample P
 Exiting
 None None None
-</code></pre><p>The paramters in <code>__exit__</code> can be used to capture the exceptions and deal based on that.</p><pre tabindex=0><code>p = Point(10,20)
+</code></pre><p>The paramters in <code>__exit__</code> can be used to capture the exceptions and deal based on that.</p>
+<pre tabindex="0"><code>p = Point(10,20)
 with p as val:
     print(p)
     print(9/0)
     print(val)
-</code></pre><p>outputs:</p><pre tabindex=0><code>Entering
+</code></pre><p>outputs:</p>
+<pre tabindex="0"><code>Entering
 Traceback (most recent call last):
 Point x= 10 and y = 20
   File &#34;D:/Git/py-kitchen/apps/test-routines/oop.py&#34;, line 29, in &lt;module&gt;
@@ -108,8 +329,11 @@ Exiting
 Exception happend  &lt;class &#39;ZeroDivisionError&#39;&gt; division by zero &lt;traceback object at 0x000001F94E5C4C48&gt;
 ZeroDivisionError: division by zero
 </code></pre><p>So in the above case even if there was an exception in main program flow, <code>__exit__</code> in point object gets
-called and its aware of exception happend and handle its clean up irrespective of exception in main flow.</p><h4 id=example>Example</h4><p>As an example let us create a Portfolio holding collection object. So this class loads all holdings
-and provides a collection interface. The holding information is stored in a csv file.</p><pre tabindex=0><code>Name,Date,Shares,Price
+called and its aware of exception happend and handle its clean up irrespective of exception in main flow.</p>
+<h4 id="example">Example</h4>
+<p>As an example let us create a Portfolio holding collection object. So this class loads all holdings
+and provides a collection interface. The holding information is stored in a csv file.</p>
+<pre tabindex="0"><code>Name,Date,Shares,Price
 HPQ,7/11/2007,100,32.2
 IBM,7/12/2007,50,91.9
 GE,7/13/2007,150,83.44
@@ -117,21 +341,23 @@ CAT,7/14/2007,200,51.23
 MSFT,7/15/2007,95,40.37
 HPE,7/16/2007,50,65.1
 AFL,7/17/2007,100,70.44
-</code></pre><p>As a first step, let us create our Holding class.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Holding</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>name</span><span class=p>,</span> <span class=n>date</span><span class=p>,</span> <span class=n>shares</span><span class=p>,</span> <span class=n>price</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>name</span> <span class=o>=</span> <span class=n>name</span>
-</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>date</span> <span class=o>=</span> <span class=n>date</span>
-</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>shares</span> <span class=o>=</span> <span class=n>shares</span>
-</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>price</span> <span class=o>=</span> <span class=n>price</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__str__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s1>&#39;Name = </span><span class=si>{}</span><span class=s1>, Date=</span><span class=si>{}</span><span class=s1>, Shares=</span><span class=si>{}</span><span class=s1>, Price=</span><span class=si>{}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>name</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>                                                                <span class=bp>self</span><span class=o>.</span><span class=n>date</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>                                                                <span class=bp>self</span><span class=o>.</span><span class=n>shares</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>                                                                <span class=bp>self</span><span class=o>.</span><span class=n>price</span><span class=p>)</span> 
+</code></pre><p>As a first step, let us create our Holding class.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Holding</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">shares</span><span class="p">,</span> <span class="n">price</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">date</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">shares</span> <span class="o">=</span> <span class="n">shares</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;Name = </span><span class="si">{}</span><span class="s1">, Date=</span><span class="si">{}</span><span class="s1">, Shares=</span><span class="si">{}</span><span class="s1">, Price=</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                                                <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                                                <span class="bp">self</span><span class="o">.</span><span class="n">shares</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                                                <span class="bp">self</span><span class="o">.</span><span class="n">price</span><span class="p">)</span> 
 </span></span></code></pre></div><p>Now let us create our Portfolio collection object that can hold Holdings and provides
-methods to access that. Here we will exercise our knowledge on some magic methods.</p><pre class=line-numbers>
-<code class=language-python>
+methods to access that. Here we will exercise our knowledge on some magic methods.</p>
+<pre class='line-numbers'>
+<code class='language-python'>
 class Portfolio(object):
     def __init__(self):
         self.holdings = []
@@ -163,27 +389,83 @@ class Portfolio(object):
     def cost(self):
         return sum([(holding.price * holding.shares) for holding in self.holdings])
 </code>
-</pre><p>So first step, we created a factory method (@classmethod) which creates a Portfolio from csv file.(line:5).
+</pre>
+<p>So first step, we created a factory method (@classmethod) which creates a Portfolio from csv file.(line:5).
 Then we added some magic methods that will provide collection like properties to Portfolio. We have
 implemented <code>__len__, __getitem__, __iter__ </code>. In addition we have implemented a <code>cost</code> method that
-computes the value of the portfolio.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># program.py</span>
-</span></span><span class=line><span class=cl><span class=n>portfolio</span> <span class=o>=</span> <span class=n>Portfolio</span><span class=o>.</span><span class=n>load_from_csv</span><span class=p>(</span><span class=s1>&#39;stocks.csv&#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>item</span> <span class=ow>in</span> <span class=n>portfolio</span><span class=p>:</span>
-</span></span><span class=line><span class=cl>    <span class=nb>print</span> <span class=p>(</span><span class=n>item</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s1>&#39;Total number of holdings is </span><span class=si>{}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>portfolio</span><span class=p>)))</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s1>&#39;Total value of portfolio is </span><span class=si>{}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>portfolio</span><span class=o>.</span><span class=n>cost</span><span class=p>()))</span>
-</span></span></code></pre></div><p>outputs..</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nv>Name</span> <span class=o>=</span> HPQ, <span class=nv>Date</span><span class=o>=</span>7/11/2007, <span class=nv>Shares</span><span class=o>=</span>100, <span class=nv>Price</span><span class=o>=</span>32.2
-</span></span><span class=line><span class=cl><span class=nv>Name</span> <span class=o>=</span> IBM, <span class=nv>Date</span><span class=o>=</span>7/12/2007, <span class=nv>Shares</span><span class=o>=</span>50, <span class=nv>Price</span><span class=o>=</span>91.9
-</span></span><span class=line><span class=cl><span class=nv>Name</span> <span class=o>=</span> GE, <span class=nv>Date</span><span class=o>=</span>7/13/2007, <span class=nv>Shares</span><span class=o>=</span>150, <span class=nv>Price</span><span class=o>=</span>83.44
-</span></span><span class=line><span class=cl><span class=nv>Name</span> <span class=o>=</span> CAT, <span class=nv>Date</span><span class=o>=</span>7/14/2007, <span class=nv>Shares</span><span class=o>=</span>200, <span class=nv>Price</span><span class=o>=</span>51.23
-</span></span><span class=line><span class=cl><span class=nv>Name</span> <span class=o>=</span> MSFT, <span class=nv>Date</span><span class=o>=</span>7/15/2007, <span class=nv>Shares</span><span class=o>=</span>95, <span class=nv>Price</span><span class=o>=</span>40.37
-</span></span><span class=line><span class=cl><span class=nv>Name</span> <span class=o>=</span> HPE, <span class=nv>Date</span><span class=o>=</span>7/16/2007, <span class=nv>Shares</span><span class=o>=</span>50, <span class=nv>Price</span><span class=o>=</span>65.1
-</span></span><span class=line><span class=cl><span class=nv>Name</span> <span class=o>=</span> AFL, <span class=nv>Date</span><span class=o>=</span>7/17/2007, <span class=nv>Shares</span><span class=o>=</span>100, <span class=nv>Price</span><span class=o>=</span>70.44  
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>Total number of holdings is <span class=m>7</span>
-</span></span><span class=line><span class=cl>Total value of portfolio is 44711.15
-</span></span></code></pre></div><p><em>Coding is fun enjoy&mldr;</em></p></div></article></main></div><footer class=footer><span class=footer_item></span>&nbsp;<div class=footer_social-icons><a href=https://github.com/gitjit target=_blank rel="noopener noreferrer me" title=Github><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
-</a><a href=https://twitter.com/jitbytes target=_blank rel="noopener noreferrer me" title=Twitter><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg>
-</a><a href=https://www.linkedin.com/in/jitheshc target=_blank rel="noopener noreferrer me" title=Linkedin><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><small class=footer_copyright>© 2024 Jithesh Chandrasekharan.</small></footer><script src=https://jithesh.blog/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script></body></html>
+computes the value of the portfolio.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># program.py</span>
+</span></span><span class="line"><span class="cl"><span class="n">portfolio</span> <span class="o">=</span> <span class="n">Portfolio</span><span class="o">.</span><span class="n">load_from_csv</span><span class="p">(</span><span class="s1">&#39;stocks.csv&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">portfolio</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Total number of holdings is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">portfolio</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total value of portfolio is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">portfolio</span><span class="o">.</span><span class="n">cost</span><span class="p">()))</span>
+</span></span></code></pre></div><p>outputs..</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">Name</span> <span class="o">=</span> HPQ, <span class="nv">Date</span><span class="o">=</span>7/11/2007, <span class="nv">Shares</span><span class="o">=</span>100, <span class="nv">Price</span><span class="o">=</span>32.2
+</span></span><span class="line"><span class="cl"><span class="nv">Name</span> <span class="o">=</span> IBM, <span class="nv">Date</span><span class="o">=</span>7/12/2007, <span class="nv">Shares</span><span class="o">=</span>50, <span class="nv">Price</span><span class="o">=</span>91.9
+</span></span><span class="line"><span class="cl"><span class="nv">Name</span> <span class="o">=</span> GE, <span class="nv">Date</span><span class="o">=</span>7/13/2007, <span class="nv">Shares</span><span class="o">=</span>150, <span class="nv">Price</span><span class="o">=</span>83.44
+</span></span><span class="line"><span class="cl"><span class="nv">Name</span> <span class="o">=</span> CAT, <span class="nv">Date</span><span class="o">=</span>7/14/2007, <span class="nv">Shares</span><span class="o">=</span>200, <span class="nv">Price</span><span class="o">=</span>51.23
+</span></span><span class="line"><span class="cl"><span class="nv">Name</span> <span class="o">=</span> MSFT, <span class="nv">Date</span><span class="o">=</span>7/15/2007, <span class="nv">Shares</span><span class="o">=</span>95, <span class="nv">Price</span><span class="o">=</span>40.37
+</span></span><span class="line"><span class="cl"><span class="nv">Name</span> <span class="o">=</span> HPE, <span class="nv">Date</span><span class="o">=</span>7/16/2007, <span class="nv">Shares</span><span class="o">=</span>50, <span class="nv">Price</span><span class="o">=</span>65.1
+</span></span><span class="line"><span class="cl"><span class="nv">Name</span> <span class="o">=</span> AFL, <span class="nv">Date</span><span class="o">=</span>7/17/2007, <span class="nv">Shares</span><span class="o">=</span>100, <span class="nv">Price</span><span class="o">=</span>70.44  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Total number of holdings is <span class="m">7</span>
+</span></span><span class="line"><span class="cl">Total value of portfolio is 44711.15
+</span></span></code></pre></div><p><em>Coding is fun enjoy&hellip;</em></p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/gitjit" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://twitter.com/jitbytes" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/jitheshc" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Jithesh Chandrasekharan.
+    </small>
+</footer>
+
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

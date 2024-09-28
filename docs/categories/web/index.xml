@@ -1,23 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on Jithesh</title><link>https://jithesh.blog/categories/web/</link><description>Recent content in Web on Jithesh</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 03 Mar 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.blog/categories/web/index.xml" rel="self" type="application/rss+xml"/><item><title>JQuery : Basics</title><link>https://jithesh.blog/posts/archives/jquery/</link><pubDate>Tue, 03 Mar 2015 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/jquery/</guid><description>&lt;p>This post covers some basic JQuery. JQuery is a Javascript library which is actually a large single.js file that
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Jithesh</title>
+    <link>http://localhost:1313/categories/web/</link>
+    <description>Recent content in Web on Jithesh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Mar 2015 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JQuery : Basics</title>
+      <link>http://localhost:1313/posts/archives/jquery/</link>
+      <pubDate>Tue, 03 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/jquery/</guid>
+      
+      <description>&lt;p&gt;This post covers some basic JQuery. JQuery is a Javascript library which is actually a large single.js file that
 has many prebuilt methods and objects that can simplify your workflow, specifically interaction with DOM and making HTTP
-requests (AJAX). We can understand this with a simple example as shown below..&lt;/p>
-&lt;p>Let us make a Javascript and equivalent JQuery call to select all div&amp;rsquo;s in a web page.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Javascript
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">divs&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelectorAll&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;div&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">//JQuery
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">divs&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;div&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Javascript : Objects and Dom</title><link>https://jithesh.blog/posts/archives/javascript-dom/</link><pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/javascript-dom/</guid><description>&lt;p>Before starting our discussion on DOM(Document object model) in Javascript let us revise our understanding on &lt;code>Objects&lt;/code>
-and &lt;code>Object Methods&lt;/code> in Javascript. Objects in JS are similar to dictionaries in python. Object methods enables JS objects
-to have a method embedded in it. Let us create a simple Employee object first.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">emp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">name&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;Jack Robbins&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">age&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="mi">41&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">job&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="s2">&amp;#34;Actor&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Bootstrap : Fundamentals</title><link>https://jithesh.blog/posts/archives/bootstrap/</link><pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/bootstrap/</guid><description>&lt;p>This post discusses some Bootstrap basics that will give a jump start to design beautiful web sites
+requests (AJAX). We can understand this with a simple example as shown below..&lt;/p&gt;
+&lt;p&gt;Let us make a Javascript and equivalent JQuery call to select all div&amp;rsquo;s in a web page.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Javascript
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;divs&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;querySelectorAll&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;div&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//JQuery 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;divs&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;div&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+      
+    </item>
+    
+    <item>
+      <title>Javascript : Objects and  Dom</title>
+      <link>http://localhost:1313/posts/archives/javascript-dom/</link>
+      <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/javascript-dom/</guid>
+      
+      <description>&lt;p&gt;Before starting our discussion on DOM(Document object model) in Javascript let us revise our understanding on &lt;code&gt;Objects&lt;/code&gt;
+and &lt;code&gt;Object Methods&lt;/code&gt; in Javascript. Objects in JS are similar to dictionaries in python. Object methods enables JS objects
+to have a method embedded in it. Let us create a simple Employee object first.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;emp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Jack Robbins&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;41&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;job&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Actor&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+      
+    </item>
+    
+    <item>
+      <title>Bootstrap : Fundamentals</title>
+      <link>http://localhost:1313/posts/archives/bootstrap/</link>
+      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/bootstrap/</guid>
+      
+      <description>&lt;p&gt;This post discusses some Bootstrap basics that will give a jump start to design beautiful web sites
 using Bootstrap.As a part of this we will be creating a simple webpage that will cover topics like Navbar,
 Jumbotrons,Grids, Thumbnails and Forms in Bootstrap.Once you have an understanding of Bootstrap layouts,
 its all about how to reference the documentation and use it. There is no need to remember all bootstrap
-classes.&lt;/p>
-&lt;p>Given below is the screen shot of site we are designing.&lt;/p></description></item></channel></rss>
+classes.&lt;/p&gt;
+&lt;p&gt;Given below is the screen shot of site we are designing.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

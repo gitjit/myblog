@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Math on Jithesh</title>
+    <link>http://localhost:1313/categories/math/</link>
+    <description>Recent content in Math on Jithesh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/math/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rational Numbers</title>
+      <link>http://localhost:1313/posts/math/rational/</link>
+      <pubDate>Sat, 28 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/math/rational/</guid>
+      
+      <description>&lt;h2 id=&#34;what-are-rational-numbers&#34;&gt;What Are Rational Numbers?&lt;/h2&gt;
+&lt;p&gt;A &lt;strong&gt;rational number&lt;/strong&gt; is any number that can be expressed in the form of a fraction $( \frac{m}{n} )$, where $( m )$ and ( n ) are integers and $( n \neq 0 )$. Examples include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$( \frac{1}{2} )$&lt;/li&gt;
+&lt;li&gt;$( -\frac{3}{4} )$&lt;/li&gt;
+&lt;li&gt;5 (which can be written as $( \frac{5}{1} ))$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In rational numbers, both positive and negative fractions exist. If $( n )$ is negative, the rational number is negative.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

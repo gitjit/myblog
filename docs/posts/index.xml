@@ -1,256 +1,725 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Jithesh</title><link>https://jithesh.blog/posts/</link><description>Recent content in Posts on Jithesh</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 05 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.blog/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Porting from Jekyll to Hugo</title><link>https://jithesh.blog/posts/blog/porting/</link><pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/blog/porting/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>Migrating blog posts from one platform to another can be a daunting task, especially when you have years of content. In this post, I will walk through how I ported my existing Jekyll blog posts to Hugo by converting Markdown files, extracting images, updating image tags, and replacing Jekyll&amp;rsquo;s front matter with Hugo-compatible front matter. This process allows for a seamless transition and ensures that all your content is properly formatted in the new environment.&lt;/p></description></item><item><title>Understanding DNS: How It Works with a Real Example</title><link>https://jithesh.blog/posts/fundas/dns/</link><pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/fundas/dns/</guid><description>&lt;p>Have you ever wondered what happens behind the scenes when you type a URL like jithesh.blog into your browser? You simply expect to see the website, but there’s an entire system working in the background to make that happen. This system is called the Domain Name System (DNS).&lt;/p>
-&lt;p>In this post, I’ll walk you through how DNS works, using my own blog (jithesh.blog) as an example. By the end, you’ll understand how DNS translates a domain name into an IP address and connects you to the right server.&lt;/p></description></item><item><title>Redux Essentials</title><link>https://jithesh.blog/posts/react/redux-essentials/</link><pubDate>Wed, 04 Sep 2024 12:54:03 -0700</pubDate><guid>https://jithesh.blog/posts/react/redux-essentials/</guid><description>&lt;h2 id="why-redux-">Why Redux ?&lt;/h2>
-&lt;p>As React applications grow, managing state across multiple components can become complex and difficult to maintain. This is where Redux comes in, providing a predictable state management solution that helps developers maintain consistency across their applications. In this post, we’ll explore Redux, specifically using Redux Toolkit, to make our state management simpler and more efficient.&lt;/p>
-&lt;p>&lt;img alt="alt text" src="https://jithesh.blog/posts/react/redux-essentials/image.png">&lt;/p></description></item><item><title>React Hooks</title><link>https://jithesh.blog/posts/react/hooks/</link><pubDate>Tue, 03 Sep 2024 12:54:03 -0700</pubDate><guid>https://jithesh.blog/posts/react/hooks/</guid><description>&lt;h2 id="react-hooks">React Hooks&lt;/h2>
-&lt;p>&lt;img src="https://jithesh.blog/posts/react/hooks/2024-09-04-15-10-36.png">&lt;/p>
-&lt;p>As React applications grow, managing state across multiple components can become complex and difficult to maintain. This is where Redux comes in, providing a predictable state management solution that helps developers maintain consistency across their applications. In this post, we’ll explore Redux, specifically using Redux Toolkit, to make our state management simpler and more efficient.&lt;/p>
-&lt;p>In React, Hooks are special functions that let you use React features like state and lifecycle methods in functional components. Before React Hooks were introduced, only class components could manage state and lifecycle events. Hooks enable developers to use functional components with all the capabilities that class components had, such as managing local component state, side effects, context, and more.&lt;/p></description></item><item><title>Hugo Essentials</title><link>https://jithesh.blog/posts/blog/hugo/</link><pubDate>Mon, 02 Sep 2024 12:54:03 -0700</pubDate><guid>https://jithesh.blog/posts/blog/hugo/</guid><description>&lt;h2 id="getting-started">Getting Started&lt;/h2>
-&lt;p>To install Hugo in my windows PC, all I did was download the binary image (x64). Create a folder Hugo/bin in the Program Files and paste it there. Then edited the System Environment variable and add that to the path. Please refer the video.&lt;/p>
-&lt;p>&lt;img src="https://jithesh.blog/posts/blog/hugo/b1a593305292e2ab89d2f74231e99eee.png">&lt;/p>
-&lt;p>&lt;a href="https://www.youtube.com/watch?v=8BrADPJgA-4&amp;t=170s">How to Install Hugo on Windows - YouTube&lt;/a>&lt;/p>
-&lt;p>Now with hugo installed let us create a site as shown below.&lt;/p></description></item><item><title>AWS Essentials : Elastic Load Balancer (ELB)</title><link>https://jithesh.blog/posts/archives/aws-elb/</link><pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/aws-elb/</guid><description>&lt;p>In this post, we will discuss about AWS Elastic Load Balancer (ELB), various types of Load Balancers and how to configure them.&lt;/p>
-&lt;p>Let us consider a scenario in which you have an S3 Bucket and your EC2 instance needs to access the S3 Bucket. The quickest and dirtiest way to do this is to store the access keys in EC2 instance and access the buckets.&lt;/p>
-&lt;img src="2020-11-21-11-30-46.png" class="img-responsive"/>
-&lt;p>Given below shows how to store the AWS credentials in EC2 Instance and then access the S3 bucket.&lt;/p></description></item><item><title>AWS Essentials : Scalability and High Availabilty</title><link>https://jithesh.blog/posts/archives/aws-scalability-ha/</link><pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/aws-scalability-ha/</guid><description>&lt;p>In this post, we will discuss about Scalability and High Availability and how they are linked together.&lt;/p>
-&lt;p>Scalability means that an application/system can handle greater loads by adapting. There are two kinds of scalability :&lt;/p>
-&lt;ol>
-&lt;li>Vertical Scalability&lt;/li>
-&lt;li>Horizontal Scalability&lt;/li>
-&lt;/ol>
-&lt;p>Scalability and High Availability are linked, but they are different.&lt;/p>
-&lt;p>Vertical Scalability:&lt;/p>
-&lt;img src="2020-11-21-11-30-46.png" class="img-responsive"/></description></item><item><title>AWS Essentials : IAM Roles</title><link>https://jithesh.blog/posts/archives/aws-iam-role/</link><pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/aws-iam-role/</guid><description>&lt;p>In this post, we will discuss about AWS IAM roles and how it secure our AWS resource and how to set it up.&lt;/p>
-&lt;p>Let us consider a scenario in which you have an S3 Bucket and your EC2 instance needs to access the S3 Bucket. The quickest and dirtiest way to do this is to store the access keys in EC2 instance and access the buckets.&lt;/p>
-&lt;img src="2020-11-21-11-30-46.png" class="img-responsive"/>
-&lt;p>Given below shows how to store the AWS credentials in EC2 Instance and then access the S3 bucket.&lt;/p></description></item><item><title>AWS Essentials : Elastic IP</title><link>https://jithesh.blog/posts/archives/aws-elastic/</link><pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/aws-elastic/</guid><description>&lt;p>In this post, we will discuss about Private, Public and Elastic IP&amp;rsquo;s. We will also see various methods to setup Elastic IP for an EC2 Instance.&lt;/p>
-&lt;h3 id="public-private-and-elastic-ip">Public, Private and Elastic IP&lt;/h3>
-&lt;img src="2020-11-17-12-33-37.png" class="img-responsive"/>
-&lt;p>By default every EC2 Instance comes with a default network interface &amp;ldquo;eth0&amp;rdquo;.Private IP address is known only to the Operating System.Its part of the Network Interface. Its the NAT (Network Address Translator) maps the public IP to the actual private address your Network Interface is mapped to and vice versa for outbound traffic too. Private IP is with in the CIDR block range of your subnet and thats what we see when we do an ifconfig.&lt;/p></description></item><item><title>AWS Essentials :NAT Instance and NAT Gateway</title><link>https://jithesh.blog/posts/archives/aws-nat/</link><pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/aws-nat/</guid><description>&lt;p>In our previous post, we created a private instance and we set up a Bastion host to connect to the private instance. In this post, we will see how we can securely enable external internet access from this private host using NAT. Let&amp;rsquo;s get started.&lt;/p>
-&lt;p>There are two ways, you can add NAT support in AWS.&lt;/p>
-&lt;img src="2020-11-17-10-30-13.png" class="img-responsive"/>
-&lt;p>As mentioned above, NAT instance is old school and should be used only for smaller use cases.&lt;/p></description></item><item><title>AWS Essentials : Bastion Hosts</title><link>https://jithesh.blog/posts/archives/aws-bastion/</link><pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/aws-bastion/</guid><description>&lt;p>In our previous post, we created a private instance. In this post we will see how we can connect to the private host by creating a Bastion Host. Lets get started.&lt;/p>
-&lt;p>So in-order to connect to a private instance, we first need a public instance running in our VPC. First we need to connect to this public instance and from this public instance we need to connect to the private instance. Now this public host is called as a Bastion Host or Jumper host.&lt;/p></description></item><item><title>AWS Essentials : Private Subnets</title><link>https://jithesh.blog/posts/archives/aws-private-subnets/</link><pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/aws-private-subnets/</guid><description>&lt;p>The objective of this post is to get a good understanding on subnetting in VPC and how to create a private subnet in VPC. Let&amp;rsquo;s get started.&lt;/p>
-&lt;p>Let us start with a clean slate. When ever you create an EC2 Instance in a particular region, AWS creates following services in the background for us.&lt;/p>
-&lt;ol>
-&lt;li>A default VPC.&lt;/li>
-&lt;li>Public Subnets. (1 public subnet per AZ in that region)&lt;/li>
-&lt;li>A default route table. (Main route table)&lt;/li>
-&lt;li>An Internet Gateway, with updated entries in the Route table.&lt;/li>
-&lt;/ol>
-&lt;p>By default, the EC2 Instance we create will be in one of this particular public subnet.&lt;/p></description></item><item><title>AWS Essentials : AWS Global Infrastructure</title><link>https://jithesh.blog/posts/archives/aws-global-infra/</link><pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/aws-global-infra/</guid><description>&lt;p>In this post we are going to discuss some essential topics we need to understand about AWS Global Infrastructure. Following are the major players in AWS Infrastructure.
-&lt;img src="2020-11-13-23-11-07.png" class="img-responsive"/>&lt;/p>
-&lt;p>Current numbers are as shown below.&lt;br>
-&lt;img src="2020-11-13-23-10-38.png" class="img-responsive"/>&lt;/p>
-&lt;img src="2020-11-13-22-58-52.png" class="img-responsive"/>
-&lt;p>Each region comprises of multiple AZ&amp;rsquo;s and each Az&amp;rsquo;s comprises of multiple independent Data Centers connected via low latency network.
-&lt;img src="2020-11-13-23-02-07.png" class="img-responsive"/>&lt;/p>
-&lt;p>All Az&amp;rsquo;s are connected via high bandwidth, redundant global network.&lt;/p></description></item><item><title>AWS Essentials : Identity and Access Management(IAM)</title><link>https://jithesh.blog/posts/archives/aws-iam-essentials/</link><pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/aws-iam-essentials/</guid><description>&lt;p>In this post we are going to discuss some essential topics we need to understand in AWS IAM.&lt;/p>
-&lt;h2 id="iam-policies">IAM Policies&lt;/h2>
-&lt;p>Policies are documents(JSON) that define permissions that can be applied to users, groups and roles. Given below is a simple policy document that allows to list users in a Cognito User pool.&lt;/p>
-&lt;p>Action: List users&lt;br>
-Resource : ARN of the Cognito user pool.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;Version&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;2012-10-17&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;Statement&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;Sid&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;VisualEditor0&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;Effect&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Allow&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;Action&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;cognito-idp:ListUsers&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;Resource&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;arn:aws:cognito-idp:us-west-2:3311415502:userpool/us-west-2_fh4MB3Xg7&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>MSSql Linux Container</title><link>https://jithesh.blog/posts/archives/mssqlcontainer/</link><pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/mssqlcontainer/</guid><description>&lt;p>Recently I was trying to follow a tutorial on EFCore that actively uses MSSql. I was using a Mac and hence decided to use Container.&lt;/p>
-&lt;p>Following are the steps I followed.&lt;/p>
-&lt;p>Ensure you have installed docker for mac. you can download it from &lt;a href="https://docs.docker.com/v17.12/docker-for-mac/install/">here&lt;/a>.&lt;/p>
-&lt;p>I am using the image : mssql-server-linux:2017-latest.&lt;/p>
-&lt;p>Now run the following docker command.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> docker run --name sql_server_demo -e &lt;span class="s1">&amp;#39;ACCEPT_EULA=Y&amp;#39;&lt;/span> -e &lt;span class="s1">&amp;#39;SA_PASSWORD=1Secure*Password1&amp;#39;&lt;/span> -e &lt;span class="s1">&amp;#39;MSSQL_PID=Enterprise&amp;#39;&lt;/span> -p 1433:1433 -d microsoft/mssql-server-linux:2017-latest
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Pyspark and Jupyter notebook setup in Mac</title><link>https://jithesh.blog/posts/archives/pyspark-in-mac/</link><pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/pyspark-in-mac/</guid><description>&lt;p>Step 1:&lt;/p>
-&lt;p>Install latest Python3 in Mac OS (If you already have Python3 that should work perfectly fine too). I prefer Anaconda distribution since it comes with lot of packages which we need in further development. You can install Anaconda distribution from &lt;a href="https://www.continuum.io/downloads#macos">here&lt;/a>.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">jmac:~ jit$ python
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Python 3.6.1 &lt;span class="p">|&lt;/span>Anaconda 4.4.0 &lt;span class="o">(&lt;/span>x86_64&lt;span class="o">)&lt;/span>&lt;span class="p">|&lt;/span> &lt;span class="o">(&lt;/span>default, May &lt;span class="m">11&lt;/span> 2017, 13:04:09&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>GCC 4.2.1 Compatible Apple LLVM 6.0 &lt;span class="o">(&lt;/span>clang-600.0.57&lt;span class="o">)]&lt;/span> on darwin
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Type &lt;span class="s2">&amp;#34;help&amp;#34;&lt;/span>, &lt;span class="s2">&amp;#34;copyright&amp;#34;&lt;/span>, &lt;span class="s2">&amp;#34;credits&amp;#34;&lt;/span> or &lt;span class="s2">&amp;#34;license&amp;#34;&lt;/span> &lt;span class="k">for&lt;/span> more information.
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Pyspark and Jupyter notebook setup in Ubuntu</title><link>https://jithesh.blog/posts/archives/pyspark-in-python/</link><pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/pyspark-in-python/</guid><description>&lt;p>As a first step ensure that Python3 is installed in Ubuntu. By default latest version of Ubuntu comes with Python2 and Python3 versions.&lt;/p>
-&lt;p>Step 1 : Install PIP3&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">jit@ubuntu:~$ sudo apt install python3-pip
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Step 2 : Install Jupyter Notebook&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">jit@ubuntu:~$ pip3 install jupyter
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Step 3 : Install Java / update java runtime.&lt;/p></description></item><item><title>JQuery : Basics</title><link>https://jithesh.blog/posts/archives/jquery/</link><pubDate>Tue, 03 Mar 2015 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/jquery/</guid><description>&lt;p>This post covers some basic JQuery. JQuery is a Javascript library which is actually a large single.js file that
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Jithesh</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Jithesh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rational Numbers</title>
+      <link>http://localhost:1313/posts/math/rational/</link>
+      <pubDate>Sat, 28 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/math/rational/</guid>
+      
+      <description>&lt;h2 id=&#34;what-are-rational-numbers&#34;&gt;What Are Rational Numbers?&lt;/h2&gt;
+&lt;p&gt;A &lt;strong&gt;rational number&lt;/strong&gt; is any number that can be expressed in the form of a fraction $( \frac{m}{n} )$, where $( m )$ and ( n ) are integers and $( n \neq 0 )$. Examples include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$( \frac{1}{2} )$&lt;/li&gt;
+&lt;li&gt;$( -\frac{3}{4} )$&lt;/li&gt;
+&lt;li&gt;5 (which can be written as $( \frac{5}{1} ))$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In rational numbers, both positive and negative fractions exist. If $( n )$ is negative, the rational number is negative.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Porting from Jekyll to Hugo</title>
+      <link>http://localhost:1313/posts/blog/porting/</link>
+      <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/blog/porting/</guid>
+      
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Migrating blog posts from one platform to another can be a daunting task, especially when you have years of content. In this post, I will walk through how I ported my existing Jekyll blog posts to Hugo by converting Markdown files, extracting images, updating image tags, and replacing Jekyll&amp;rsquo;s front matter with Hugo-compatible front matter. This process allows for a seamless transition and ensures that all your content is properly formatted in the new environment.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Understanding DNS: How It Works with a Real Example</title>
+      <link>http://localhost:1313/posts/fundas/dns/</link>
+      <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/fundas/dns/</guid>
+      
+      <description>&lt;p&gt;Have you ever wondered what happens behind the scenes when you type a URL like jithesh.blog into your browser? You simply expect to see the website, but there’s an entire system working in the background to make that happen. This system is called the Domain Name System (DNS).&lt;/p&gt;
+&lt;p&gt;In this post, I’ll walk you through how DNS works, using my own blog (jithesh.blog) as an example. By the end, you’ll understand how DNS translates a domain name into an IP address and connects you to the right server.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Redux Essentials</title>
+      <link>http://localhost:1313/posts/react/redux-essentials/</link>
+      <pubDate>Wed, 04 Sep 2024 12:54:03 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/react/redux-essentials/</guid>
+      
+      <description>&lt;h2 id=&#34;why-redux-&#34;&gt;Why Redux ?&lt;/h2&gt;
+&lt;p&gt;As React applications grow, managing state across multiple components can become complex and difficult to maintain. This is where Redux comes in, providing a predictable state management solution that helps developers maintain consistency across their applications. In this post, we’ll explore Redux, specifically using Redux Toolkit, to make our state management simpler and more efficient.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;alt text&#34; src=&#34;http://localhost:1313/posts/react/redux-essentials/image.png&#34;&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>React Hooks</title>
+      <link>http://localhost:1313/posts/react/hooks/</link>
+      <pubDate>Tue, 03 Sep 2024 12:54:03 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/react/hooks/</guid>
+      
+      <description>&lt;h2 id=&#34;react-hooks&#34;&gt;React Hooks&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/react/hooks/2024-09-04-15-10-36.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As React applications grow, managing state across multiple components can become complex and difficult to maintain. This is where Redux comes in, providing a predictable state management solution that helps developers maintain consistency across their applications. In this post, we’ll explore Redux, specifically using Redux Toolkit, to make our state management simpler and more efficient.&lt;/p&gt;
+&lt;p&gt;In React, Hooks are special functions that let you use React features like state and lifecycle methods in functional components. Before React Hooks were introduced, only class components could manage state and lifecycle events. Hooks enable developers to use functional components with all the capabilities that class components had, such as managing local component state, side effects, context, and more.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Hugo Essentials</title>
+      <link>http://localhost:1313/posts/blog/hugo/</link>
+      <pubDate>Mon, 02 Sep 2024 12:54:03 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/blog/hugo/</guid>
+      
+      <description>&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
+&lt;p&gt;To install Hugo in my windows PC, all I did was download the binary image (x64). Create a folder Hugo/bin in the Program Files and paste it there. Then edited the System Environment variable and add that to the path.  Please refer the video.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/blog/hugo/b1a593305292e2ab89d2f74231e99eee.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=8BrADPJgA-4&amp;t=170s&#34;&gt;How to Install Hugo on Windows - YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now with hugo installed let us create a site as shown below.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>AWS Essentials : Elastic Load Balancer (ELB)</title>
+      <link>http://localhost:1313/posts/archives/aws-elb/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/aws-elb/</guid>
+      
+      <description>&lt;p&gt;In this post, we will discuss about AWS Elastic Load Balancer (ELB), various types of Load Balancers and how to configure them.&lt;/p&gt;
+&lt;p&gt;Let us consider a scenario in which you have an S3 Bucket and your EC2 instance needs to access the S3 Bucket.  The quickest and dirtiest way to do this is to store the access keys in EC2 instance and access the buckets.&lt;/p&gt;
+&lt;img src=&#34;2020-11-21-11-30-46.png&#34; class=&#34;img-responsive&#34;/&gt;
+&lt;p&gt;Given below shows how to store the AWS credentials in EC2 Instance and then access the S3 bucket.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>AWS Essentials : Scalability and High Availabilty</title>
+      <link>http://localhost:1313/posts/archives/aws-scalability-ha/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/aws-scalability-ha/</guid>
+      
+      <description>&lt;p&gt;In this post, we will discuss about Scalability and High Availability and how they are linked together.&lt;/p&gt;
+&lt;p&gt;Scalability means that an application/system  can handle greater loads by adapting. There are two kinds of scalability :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Vertical Scalability&lt;/li&gt;
+&lt;li&gt;Horizontal Scalability&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Scalability and High Availability are linked, but they are different.&lt;/p&gt;
+&lt;p&gt;Vertical Scalability:&lt;/p&gt;
+&lt;img src=&#34;2020-11-21-11-30-46.png&#34; class=&#34;img-responsive&#34;/&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>AWS Essentials : IAM Roles</title>
+      <link>http://localhost:1313/posts/archives/aws-iam-role/</link>
+      <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/aws-iam-role/</guid>
+      
+      <description>&lt;p&gt;In this post, we will discuss about AWS IAM roles and how it secure our AWS resource and how to set it up.&lt;/p&gt;
+&lt;p&gt;Let us consider a scenario in which you have an S3 Bucket and your EC2 instance needs to access the S3 Bucket.  The quickest and dirtiest way to do this is to store the access keys in EC2 instance and access the buckets.&lt;/p&gt;
+&lt;img src=&#34;2020-11-21-11-30-46.png&#34; class=&#34;img-responsive&#34;/&gt;
+&lt;p&gt;Given below shows how to store the AWS credentials in EC2 Instance and then access the S3 bucket.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>AWS Essentials : Elastic IP</title>
+      <link>http://localhost:1313/posts/archives/aws-elastic/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/aws-elastic/</guid>
+      
+      <description>&lt;p&gt;In this post, we will discuss about Private, Public and Elastic IP&amp;rsquo;s. We will also see various methods to setup Elastic IP for an EC2 Instance.&lt;/p&gt;
+&lt;h3 id=&#34;public-private-and-elastic-ip&#34;&gt;Public, Private and Elastic IP&lt;/h3&gt;
+&lt;img src=&#34;2020-11-17-12-33-37.png&#34; class=&#34;img-responsive&#34;/&gt;
+&lt;p&gt;By default every EC2 Instance comes with a default network interface &amp;ldquo;eth0&amp;rdquo;.Private IP address is known only to the Operating System.Its part of the Network Interface. Its the NAT (Network Address Translator) maps the public IP to the actual private address your Network Interface is mapped to and vice versa for outbound traffic too. Private IP is with in the CIDR block range of your subnet and thats what we see when we do an ifconfig.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>AWS Essentials :NAT Instance and NAT Gateway</title>
+      <link>http://localhost:1313/posts/archives/aws-nat/</link>
+      <pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/aws-nat/</guid>
+      
+      <description>&lt;p&gt;In our previous post, we created a private instance and we set up a Bastion host to connect to the private instance. In this post, we will see how we can securely enable external internet access from this private host using NAT. Let&amp;rsquo;s get started.&lt;/p&gt;
+&lt;p&gt;There are two ways, you can add NAT support in AWS.&lt;/p&gt;
+&lt;img src=&#34;2020-11-17-10-30-13.png&#34; class=&#34;img-responsive&#34;/&gt;
+&lt;p&gt;As mentioned above, NAT instance is old school and should be used only for smaller use cases.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>AWS Essentials : Bastion Hosts</title>
+      <link>http://localhost:1313/posts/archives/aws-bastion/</link>
+      <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/aws-bastion/</guid>
+      
+      <description>&lt;p&gt;In our previous post, we created a private instance. In this post we will see how we can connect to the private host by creating a Bastion Host. Lets get started.&lt;/p&gt;
+&lt;p&gt;So in-order to connect to a private instance, we first need a public instance running in our VPC. First we need to connect to this public instance and from this public instance we need to connect to the private instance. Now this public host is called as a Bastion Host or Jumper host.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>AWS Essentials : Private Subnets</title>
+      <link>http://localhost:1313/posts/archives/aws-private-subnets/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/aws-private-subnets/</guid>
+      
+      <description>&lt;p&gt;The objective of this post is to get a good understanding on subnetting in VPC and how to create a private subnet in VPC. Let&amp;rsquo;s get started.&lt;/p&gt;
+&lt;p&gt;Let us start with a clean slate. When ever you create an EC2 Instance in a particular region, AWS creates following services in the background for us.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;A default VPC.&lt;/li&gt;
+&lt;li&gt;Public Subnets. (1 public subnet per AZ in that region)&lt;/li&gt;
+&lt;li&gt;A default route table. (Main route table)&lt;/li&gt;
+&lt;li&gt;An Internet Gateway, with updated entries in the Route table.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;By default, the EC2 Instance we create will be in one of this particular public subnet.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>AWS Essentials : AWS Global Infrastructure</title>
+      <link>http://localhost:1313/posts/archives/aws-global-infra/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/aws-global-infra/</guid>
+      
+      <description>&lt;p&gt;In this post we are going to discuss some essential topics we need to understand about AWS Global Infrastructure. Following are the major players in AWS Infrastructure.
+&lt;img src=&#34;2020-11-13-23-11-07.png&#34; class=&#34;img-responsive&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;Current numbers are as shown below.&lt;br&gt;
+&lt;img src=&#34;2020-11-13-23-10-38.png&#34; class=&#34;img-responsive&#34;/&gt;&lt;/p&gt;
+&lt;img src=&#34;2020-11-13-22-58-52.png&#34; class=&#34;img-responsive&#34;/&gt;
+&lt;p&gt;Each region comprises of multiple AZ&amp;rsquo;s and each Az&amp;rsquo;s comprises of multiple independent Data Centers connected via low latency network.
+&lt;img src=&#34;2020-11-13-23-02-07.png&#34; class=&#34;img-responsive&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;All Az&amp;rsquo;s are connected via high bandwidth, redundant global network.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>AWS Essentials : Identity and Access Management(IAM)</title>
+      <link>http://localhost:1313/posts/archives/aws-iam-essentials/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/aws-iam-essentials/</guid>
+      
+      <description>&lt;p&gt;In this post we are going to discuss some essential topics we need to understand in  AWS IAM.&lt;/p&gt;
+&lt;h2 id=&#34;iam-policies&#34;&gt;IAM Policies&lt;/h2&gt;
+&lt;p&gt;Policies are documents(JSON) that define permissions that can be applied to users, groups and roles. Given below is a simple policy document that allows to list users in a Cognito User pool.&lt;/p&gt;
+&lt;p&gt;Action: List users&lt;br&gt;
+Resource : ARN of the Cognito user pool.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;Version&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;2012-10-17&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;Statement&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;Sid&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;VisualEditor0&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;Effect&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Allow&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;Action&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;cognito-idp:ListUsers&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;Resource&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;arn:aws:cognito-idp:us-west-2:3311415502:userpool/us-west-2_fh4MB3Xg7&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+      
+    </item>
+    
+    <item>
+      <title>MSSql Linux Container</title>
+      <link>http://localhost:1313/posts/archives/mssqlcontainer/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/mssqlcontainer/</guid>
+      
+      <description>&lt;p&gt;Recently I was trying to follow a tutorial on EFCore that actively uses MSSql. I was using a Mac and hence decided to use Container.&lt;/p&gt;
+&lt;p&gt;Following are the steps I followed.&lt;/p&gt;
+&lt;p&gt;Ensure you have installed docker for mac. you can download it from &lt;a href=&#34;https://docs.docker.com/v17.12/docker-for-mac/install/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am using the image : mssql-server-linux:2017-latest.&lt;/p&gt;
+&lt;p&gt;Now run the following docker command.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; docker run --name sql_server_demo -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;ACCEPT_EULA=Y&amp;#39;&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;SA_PASSWORD=1Secure*Password1&amp;#39;&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;MSSQL_PID=Enterprise&amp;#39;&lt;/span&gt; -p 1433:1433 -d microsoft/mssql-server-linux:2017-latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+      
+    </item>
+    
+    <item>
+      <title>Pyspark and Jupyter notebook setup in Mac</title>
+      <link>http://localhost:1313/posts/archives/pyspark-in-mac/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/pyspark-in-mac/</guid>
+      
+      <description>&lt;p&gt;Step 1:&lt;/p&gt;
+&lt;p&gt;Install latest Python3 in Mac OS (If you already have Python3 that should work perfectly fine too). I prefer Anaconda distribution since it comes with lot of packages which we need in further development. You can install Anaconda distribution from &lt;a href=&#34;https://www.continuum.io/downloads#macos&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;jmac:~ jit$ python
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Python 3.6.1 &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;Anaconda 4.4.0 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;x86_64&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;default, May &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; 2017, 13:04:09&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;GCC 4.2.1 Compatible Apple LLVM 6.0 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;clang-600.0.57&lt;span class=&#34;o&#34;&gt;)]&lt;/span&gt; on darwin
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Type &lt;span class=&#34;s2&#34;&gt;&amp;#34;help&amp;#34;&lt;/span&gt;, &lt;span class=&#34;s2&#34;&gt;&amp;#34;copyright&amp;#34;&lt;/span&gt;, &lt;span class=&#34;s2&#34;&gt;&amp;#34;credits&amp;#34;&lt;/span&gt; or &lt;span class=&#34;s2&#34;&gt;&amp;#34;license&amp;#34;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; more information.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+      
+    </item>
+    
+    <item>
+      <title>Pyspark and Jupyter notebook setup in Ubuntu</title>
+      <link>http://localhost:1313/posts/archives/pyspark-in-python/</link>
+      <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/pyspark-in-python/</guid>
+      
+      <description>&lt;p&gt;As a first step ensure that Python3 is installed in Ubuntu. By default latest version of Ubuntu comes with Python2 and Python3 versions.&lt;/p&gt;
+&lt;p&gt;Step 1 : Install PIP3&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;jit@ubuntu:~$ sudo apt install python3-pip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Step 2 : Install Jupyter Notebook&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;jit@ubuntu:~$ pip3 install jupyter
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Step 3 : Install Java / update java runtime.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>JQuery : Basics</title>
+      <link>http://localhost:1313/posts/archives/jquery/</link>
+      <pubDate>Tue, 03 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/jquery/</guid>
+      
+      <description>&lt;p&gt;This post covers some basic JQuery. JQuery is a Javascript library which is actually a large single.js file that
 has many prebuilt methods and objects that can simplify your workflow, specifically interaction with DOM and making HTTP
-requests (AJAX). We can understand this with a simple example as shown below..&lt;/p>
-&lt;p>Let us make a Javascript and equivalent JQuery call to select all div&amp;rsquo;s in a web page.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Javascript
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">divs&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelectorAll&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;div&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">//JQuery
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">divs&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;div&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Javascript : Objects and Dom</title><link>https://jithesh.blog/posts/archives/javascript-dom/</link><pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/javascript-dom/</guid><description>&lt;p>Before starting our discussion on DOM(Document object model) in Javascript let us revise our understanding on &lt;code>Objects&lt;/code>
-and &lt;code>Object Methods&lt;/code> in Javascript. Objects in JS are similar to dictionaries in python. Object methods enables JS objects
-to have a method embedded in it. Let us create a simple Employee object first.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">emp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">name&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;Jack Robbins&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">age&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="mi">41&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">job&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="s2">&amp;#34;Actor&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Bootstrap : Fundamentals</title><link>https://jithesh.blog/posts/archives/bootstrap/</link><pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/bootstrap/</guid><description>&lt;p>This post discusses some Bootstrap basics that will give a jump start to design beautiful web sites
+requests (AJAX). We can understand this with a simple example as shown below..&lt;/p&gt;
+&lt;p&gt;Let us make a Javascript and equivalent JQuery call to select all div&amp;rsquo;s in a web page.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Javascript
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;divs&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;querySelectorAll&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;div&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//JQuery 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;divs&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;div&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+      
+    </item>
+    
+    <item>
+      <title>Javascript : Objects and  Dom</title>
+      <link>http://localhost:1313/posts/archives/javascript-dom/</link>
+      <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/javascript-dom/</guid>
+      
+      <description>&lt;p&gt;Before starting our discussion on DOM(Document object model) in Javascript let us revise our understanding on &lt;code&gt;Objects&lt;/code&gt;
+and &lt;code&gt;Object Methods&lt;/code&gt; in Javascript. Objects in JS are similar to dictionaries in python. Object methods enables JS objects
+to have a method embedded in it. Let us create a simple Employee object first.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;emp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Jack Robbins&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;41&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;job&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Actor&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+      
+    </item>
+    
+    <item>
+      <title>Bootstrap : Fundamentals</title>
+      <link>http://localhost:1313/posts/archives/bootstrap/</link>
+      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/bootstrap/</guid>
+      
+      <description>&lt;p&gt;This post discusses some Bootstrap basics that will give a jump start to design beautiful web sites
 using Bootstrap.As a part of this we will be creating a simple webpage that will cover topics like Navbar,
 Jumbotrons,Grids, Thumbnails and Forms in Bootstrap.Once you have an understanding of Bootstrap layouts,
 its all about how to reference the documentation and use it. There is no need to remember all bootstrap
-classes.&lt;/p>
-&lt;p>Given below is the screen shot of site we are designing.&lt;/p></description></item><item><title>MapReduce and Cosine Similarity : Movie Recommendation</title><link>https://jithesh.blog/posts/archives/movies-recommendation/</link><pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/movies-recommendation/</guid><description>&lt;p>In this post we will be writing a map reduce program to recommend movies based on user ratings.  We will be using movie-lens data to generate recommendation. So goal here is to read the movies lens (u.data) and for each movies give recommended movies or similar movies to watch based on their ratings. (For example Is movie &amp;lsquo;&lt;strong>12 Angry Men&lt;/strong>&amp;rsquo; similar to &amp;lsquo;&lt;strong>Real Genius&lt;/strong>&amp;rsquo; ?) Let&amp;rsquo;s get started.&lt;/p></description></item><item><title>Cosine Similarity : Simple Example</title><link>https://jithesh.blog/posts/archives/cosine-similarity/</link><pubDate>Mon, 25 Nov 2013 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/cosine-similarity/</guid><description>&lt;p>Cosine similarity is widely used in data mining, recommendation systems, information retrieval .Here we will be discussing Cosine similarity as a proximity measure between two vectors. The cosine of 0° is 1, and it is less than 1 for any other angle. It is thus a judgment of orientation and not magnitude: two vectors with the same orientation have a cosine similarity of 1, two vectors at 90° have a similarity of 0, and two vectors diametrically opposed have a similarity of -1, independent of their magnitude. Cosine similarity is particularly used in positive space, where the outcome is neatly bounded in [0,1].&lt;/p></description></item><item><title>MapReduce : Passing additional file</title><link>https://jithesh.blog/posts/archives/mapreduce-additionalfile/</link><pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/mapreduce-additionalfile/</guid><description>&lt;p>In an earlier post, we discussed passing additional parameters to MapReduce Job. But there are cases in which we will have to pass some additional files during MapReduce. But since MapReduce runs in multiple nodes, we need to ensure that this additional file that mapper/reducer refers is in that particular node in which its running.  In this post we will disucss how to handle this. Let us say we need to find most popular movie from movie-lens database. If you download movie-lens data, there are 2 files in which we are interested in .  (u.data and u.item). The format of file is as shown here..&lt;/p></description></item><item><title>MapReduce : Chaining</title><link>https://jithesh.blog/posts/archives/mapreduce-chaining/</link><pubDate>Sun, 20 Oct 2013 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/mapreduce-chaining/</guid><description>&lt;p>In this post I will be explaining how  to add chaining in your map reduce job. That is output of  reducer will be chained as an input to another mapper in same job.  As an example to explain this I will be improving our regular word count program. In word count program we will get the output as a word and how many occurances of that word in input book.  But if we could sort that output based on count, we can easily predict what this books is all about.  So let&amp;rsquo;s get started.&lt;/p></description></item><item><title>Apache Pig - XML Parsing(XPath)</title><link>https://jithesh.blog/posts/archives/pig-xml/</link><pubDate>Tue, 20 Aug 2013 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/pig-xml/</guid><description>&lt;p>&lt;a href="http://pig.apache.org/" target="_blank">Apache Pig&lt;/a> is a tool used to analyze large amounts of data by representing them as data flows. Using the Pig Latin scripting language operations like ETL (Extract, Transform and Load), adhoc data analysis and iterative processing can be easily achieved. Pig is an abstraction over MapReduce. In other words, all Pig scripts internally are converted into Map and Reduce tasks to get the task done. Pig was built to make programming MapReduce applications easier. Before Pig, Java was the only way to process the data stored on HDFS. Pig was first built in Yahoo! and later became a top level Apache project.&lt;/p></description></item><item><title>MapReduce : Matrix Multiplication</title><link>https://jithesh.blog/posts/archives/mapreduce-matrix/</link><pubDate>Sun, 21 Jul 2013 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/mapreduce-matrix/</guid><description>&lt;p>In one of my earlier post,I discussed about matrix multiplcation using SQL. Here I will explain how to do &lt;a href="http://en.wikipedia.org/wiki/Matrix_multiplication" target="_blank">matrix multiplication &lt;/a>using&lt;a href="http://hadoopgeek.com/?p=198" target="_blank"> MapReduce&lt;/a>. This will be efficient when we are dealing with huge matrices with thousands of rows and columns. Here we are expecting the input dataset representing matrix as a relation in database.&lt;/p>
-&lt;p>&lt;strong>&lt;span style="color: #008000;">Matrix in Database&lt;/span>
-&lt;/strong>We can represent a &lt;a href="http://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix &lt;/a>as a relation (table) in RDBMS  where each cell in the matrix can be represented as a record (i,j,value).  As an example let us consider the following matrix and its representation.
-&lt;span style="color: #3366ff;">0 2 -1&lt;/span>
-&lt;span style="color: #3366ff;">1 0 0&lt;/span>
-&lt;span style="color: #3366ff;">0 0 -3&lt;/span>
-&lt;span style="color: #3366ff;">0 0 0&lt;/span>
+classes.&lt;/p&gt;
+&lt;p&gt;Given below is the screen shot of site we are designing.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>MapReduce and Cosine Similarity : Movie Recommendation</title>
+      <link>http://localhost:1313/posts/archives/movies-recommendation/</link>
+      <pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/movies-recommendation/</guid>
+      
+      <description>&lt;p&gt;In this post we will be writing a map reduce program to recommend movies based on user ratings.  We will be using movie-lens data to generate recommendation. So goal here is to read the movies lens (u.data) and for each movies give recommended movies or similar movies to watch based on their ratings. (For example Is movie &amp;lsquo;&lt;strong&gt;12 Angry Men&lt;/strong&gt;&amp;rsquo; similar to &amp;lsquo;&lt;strong&gt;Real Genius&lt;/strong&gt;&amp;rsquo; ?) Let&amp;rsquo;s get started.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Cosine Similarity : Simple Example</title>
+      <link>http://localhost:1313/posts/archives/cosine-similarity/</link>
+      <pubDate>Mon, 25 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/cosine-similarity/</guid>
+      
+      <description>&lt;p&gt;Cosine similarity is widely used in data mining, recommendation systems, information retrieval .Here we will be discussing Cosine similarity as a proximity measure between two vectors. The cosine of 0° is 1, and it is less than 1 for any other angle. It is thus a judgment of orientation and not magnitude: two vectors with the same orientation have a cosine similarity of 1, two vectors at 90° have a similarity of 0, and two vectors diametrically opposed have a similarity of -1, independent of their magnitude. Cosine similarity is particularly used in positive space, where the outcome is neatly bounded in [0,1].&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>MapReduce : Passing additional file</title>
+      <link>http://localhost:1313/posts/archives/mapreduce-additionalfile/</link>
+      <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/mapreduce-additionalfile/</guid>
+      
+      <description>&lt;p&gt;In an earlier post, we discussed passing additional parameters to MapReduce Job. But there are cases in which we will have to pass some additional files during MapReduce. But since MapReduce runs in multiple nodes, we need to ensure that this additional file that mapper/reducer refers is in that particular node in which its running.  In this post we will disucss how to handle this. Let us say we need to find most popular movie from movie-lens database. If you download movie-lens data, there are 2 files in which we are interested in .  (u.data and u.item). The format of file is as shown here..&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>MapReduce : Chaining</title>
+      <link>http://localhost:1313/posts/archives/mapreduce-chaining/</link>
+      <pubDate>Sun, 20 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/mapreduce-chaining/</guid>
+      
+      <description>&lt;p&gt;In this post I will be explaining how  to add chaining in your map reduce job. That is output of  reducer will be chained as an input to another mapper in same job.  As an example to explain this I will be improving our regular word count program. In word count program we will get the output as a word and how many occurances of that word in input book.  But if we could sort that output based on count, we can easily predict what this books is all about.  So let&amp;rsquo;s get started.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Apache Pig - XML Parsing(XPath)</title>
+      <link>http://localhost:1313/posts/archives/pig-xml/</link>
+      <pubDate>Tue, 20 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/pig-xml/</guid>
+      
+      <description>&lt;p&gt;&lt;a href=&#34;http://pig.apache.org/&#34; target=&#34;_blank&#34;&gt;Apache Pig&lt;/a&gt; is a tool used to analyze large amounts of data by representing them as data flows. Using the Pig Latin scripting language operations like ETL (Extract, Transform and Load), adhoc data analysis and iterative processing can be easily achieved. Pig is an abstraction over MapReduce. In other words, all Pig scripts internally are converted into Map and Reduce tasks to get the task done. Pig was built to make programming MapReduce applications easier. Before Pig, Java was the only way to process the data stored on HDFS. Pig was first built in Yahoo! and later became a top level Apache project.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>MapReduce : Matrix Multiplication</title>
+      <link>http://localhost:1313/posts/archives/mapreduce-matrix/</link>
+      <pubDate>Sun, 21 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/mapreduce-matrix/</guid>
+      
+      <description>&lt;p&gt;In one of my earlier post,I discussed about matrix multiplcation using SQL. Here I will explain how to do &lt;a href=&#34;http://en.wikipedia.org/wiki/Matrix_multiplication&#34; target=&#34;_blank&#34;&gt;matrix multiplication &lt;/a&gt;using&lt;a href=&#34;http://hadoopgeek.com/?p=198&#34; target=&#34;_blank&#34;&gt; MapReduce&lt;/a&gt;. This will be efficient when we are dealing with huge matrices with thousands of rows and columns. Here we are expecting the input dataset representing matrix as a relation in database.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span style=&#34;color: #008000;&#34;&gt;Matrix in Database&lt;/span&gt;
+&lt;/strong&gt;We can represent a &lt;a href=&#34;http://en.wikipedia.org/wiki/Matrix_(mathematics)&#34; target=&#34;_blank&#34;&gt;matrix &lt;/a&gt;as a relation (table) in RDBMS  where each cell in the matrix can be represented as a record (i,j,value).  As an example let us consider the following matrix and its representation.
+&lt;span style=&#34;color: #3366ff;&#34;&gt;0 2 -1&lt;/span&gt;
+&lt;span style=&#34;color: #3366ff;&#34;&gt;1 0 0&lt;/span&gt;
+&lt;span style=&#34;color: #3366ff;&#34;&gt;0 0 -3&lt;/span&gt;
+&lt;span style=&#34;color: #3366ff;&#34;&gt;0 0 0&lt;/span&gt;
 [table]
 row#,col#,value
 0,1,2
 0,2,-1
 1,0,1
 2,2,-3
-[/table]&lt;/p></description></item><item><title>Python : Custom Context Managers</title><link>https://jithesh.blog/posts/archives/python-context-managers/</link><pubDate>Thu, 14 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/python-context-managers/</guid><description>&lt;p>Operating System resources must be released after our use. Some common resource handles are file, sockets, thread locks etc. So if our program is using these resources we need to ensure that we are releasing it after our use. A general pattern of handling resource is like this.&lt;/p>
-&lt;pre class='line-numbers'>
-&lt;code class='language-python'>
-def read_file():
-f = open(filename, 'r')
-data = f.read()
-f.close()
-&lt;/code>
-&lt;/pr</description></item><item><title>Python : Instance representation and Access control</title><link>https://jithesh.blog/posts/archives/python-instance-representation-copy/</link><pubDate>Wed, 13 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/python-instance-representation-copy/</guid><description>&lt;p>In python when we create an instance , the attributes are internally stored in a python
+[/table]&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Python : Custom Context Managers</title>
+      <link>http://localhost:1313/posts/archives/python-context-managers/</link>
+      <pubDate>Thu, 14 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/python-context-managers/</guid>
+      
+      <description>&lt;p&gt;Operating System resources must be released after our use. Some common resource handles are file, sockets, thread locks etc. So if our program is using these resources we need to ensure that we are releasing it after our use. A general pattern of handling resource is like this.&lt;/p&gt;
+&lt;pre class=&#39;line-numbers&#39;&gt;
+&lt;code class=&#39;language-python&#39;&gt;
+    def read_file():
+        f = open(filename, &#39;r&#39;)
+        data = f.read()
+        f.close()
+&lt;/code&gt;
+&lt;/pr</description>
+      
+    </item>
+    
+    <item>
+      <title>Python : Instance representation and Access control</title>
+      <link>http://localhost:1313/posts/archives/python-instance-representation-copy/</link>
+      <pubDate>Wed, 13 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/python-instance-representation-copy/</guid>
+      
+      <description>&lt;p&gt;In python when we create an instance , the attributes are internally stored in a python
 dictionary. Dictionay plays a major part in internal representation of python objects. Let us consider
-a simple class &lt;code>Person&lt;/code> as shown below.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">Person&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">object&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__init__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">age&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">id&lt;/span> &lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">name&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">age&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">age&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_id&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">id&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">get_lastname&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">split&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39; &amp;#39;&lt;/span>&lt;span class="p">)[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Python : Magic Methods</title><link>https://jithesh.blog/posts/archives/python-magic-methods/</link><pubDate>Tue, 12 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/python-magic-methods/</guid><description>&lt;p>In python everything is an object and we are applying some operations on this objects. But every operation have a
-dedicated method behind the scene in corresponding type implementation.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt; &lt;span class="nv">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">10&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt; x + &lt;span class="m">10&lt;/span> is equivalent to x.__add__&lt;span class="o">(&lt;/span>10&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt; x * &lt;span class="m">2&lt;/span> is equivalent to x.__mul__&lt;span class="o">(&lt;/span>2&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt; &lt;span class="nv">names&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">[&lt;/span>&lt;span class="s1">&amp;#39;A&amp;#39;&lt;/span>, &lt;span class="s1">&amp;#39;AB&amp;#39;&lt;/span>, &lt;span class="s1">&amp;#39;ABC&amp;#39;&lt;/span>&lt;span class="o">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt; names&lt;span class="o">[&lt;/span>0&lt;span class="o">]&lt;/span> is equivalent to names.__getitem__&lt;span class="o">(&lt;/span>0&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt; names.__setitem__&lt;span class="o">(&lt;/span>0, &lt;span class="s1">&amp;#39;BAB&amp;#39;&lt;/span>&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt; names is now &lt;span class="o">[&lt;/span>&lt;span class="s1">&amp;#39;BAB&amp;#39;&lt;/span>, &lt;span class="s1">&amp;#39;AB&amp;#39;&lt;/span>, &lt;span class="s1">&amp;#39;ABC&amp;#39;&lt;/span>&lt;span class="o">]&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Python : Object Oriented Programming (Inheritance)</title><link>https://jithesh.blog/posts/archives/python-inheritance/</link><pubDate>Mon, 11 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/python-inheritance/</guid><description>&lt;p>Let us first understand the basics of Inheritance in python. A syntax refresher. Given below is a basic inheritance
-syntax in Python.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">Parent&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">object&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">fun&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Parent fun!&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">A&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">Parent&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">fun&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;A fun&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">super&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fun&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">B&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Parent&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">fun&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;B fun&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">super&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fun&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Python : @classmethod, @staticmethod and methods</title><link>https://jithesh.blog/posts/archives/python-classmethod/</link><pubDate>Sun, 10 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/python-classmethod/</guid><description>&lt;p>In this post we will demystify the differences between @classmethod, @staticmethod and regular methods
+a simple class &lt;code&gt;Person&lt;/code&gt; as shown below.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Person&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;fm&#34;&gt;__init__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;id&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;id&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;get_lastname&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;split&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+      
+    </item>
+    
+    <item>
+      <title>Python : Magic Methods</title>
+      <link>http://localhost:1313/posts/archives/python-magic-methods/</link>
+      <pubDate>Tue, 12 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/python-magic-methods/</guid>
+      
+      <description>&lt;p&gt;In python everything is an object and we are applying some operations on this objects. But every operation have a
+dedicated method behind the scene in corresponding type implementation.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt; x + &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; is equivalent to x.__add__&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;10&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt; x * &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; is equivalent to x.__mul__&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;2&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;names&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;, &lt;span class=&#34;s1&#34;&gt;&amp;#39;AB&amp;#39;&lt;/span&gt;, &lt;span class=&#34;s1&#34;&gt;&amp;#39;ABC&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; names&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;0&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; is equivalent to names.__getitem__&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;0&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; names.__setitem__&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;0, &lt;span class=&#34;s1&#34;&gt;&amp;#39;BAB&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; names is now &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;BAB&amp;#39;&lt;/span&gt;, &lt;span class=&#34;s1&#34;&gt;&amp;#39;AB&amp;#39;&lt;/span&gt;, &lt;span class=&#34;s1&#34;&gt;&amp;#39;ABC&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+      
+    </item>
+    
+    <item>
+      <title>Python : Object Oriented Programming (Inheritance)</title>
+      <link>http://localhost:1313/posts/archives/python-inheritance/</link>
+      <pubDate>Mon, 11 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/python-inheritance/</guid>
+      
+      <description>&lt;p&gt;Let us first understand the basics of Inheritance in python. A syntax refresher.  Given below is a basic inheritance
+syntax in Python.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Parent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;fun&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Parent fun!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;A&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Parent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;fun&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;A fun&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nb&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fun&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Parent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;fun&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;B fun&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nb&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fun&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+      
+    </item>
+    
+    <item>
+      <title>Python : @classmethod, @staticmethod and methods</title>
+      <link>http://localhost:1313/posts/archives/python-classmethod/</link>
+      <pubDate>Sun, 10 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/python-classmethod/</guid>
+      
+      <description>&lt;p&gt;In this post we will demystify the differences between @classmethod, @staticmethod and regular methods
 in Python. We will discuss what is the diffrence and when to use it. After reading this post you will have a better
-understanding on which method to use in your classes.&lt;/p>
-&lt;p>Let us create a single class with following methods.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># oop.py&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">MyClass&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">method&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="s1">&amp;#39;instance method called&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="bp">self&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nd">@classmethod&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">classmethod&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">cls&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="s1">&amp;#39;class method called&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="bp">cls&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nd">@staticmethod&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">staticmethod&lt;/span>&lt;span class="p">():&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="s1">&amp;#39;static method called&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Python : Object Oriented Programming (Getattr)</title><link>https://jithesh.blog/posts/archives/python-getattr/</link><pubDate>Sun, 10 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/python-getattr/</guid><description>&lt;p>In this post we will dicuss one use case of the built-in method getattr. We will develop a generic function that
+understanding on which method to use in your classes.&lt;/p&gt;
+&lt;p&gt;Let us create a single class with following methods.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# oop.py&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;MyClass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;method&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;instance method called&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nd&#34;&gt;@classmethod&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;classmethod&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;cls&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;class method called&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;cls&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nd&#34;&gt;@staticmethod&lt;/span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;staticmethod&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;static method called&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+      
+    </item>
+    
+    <item>
+      <title>Python : Object Oriented Programming (Getattr)</title>
+      <link>http://localhost:1313/posts/archives/python-getattr/</link>
+      <pubDate>Sun, 10 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/python-getattr/</guid>
+      
+      <description>&lt;p&gt;In this post we will dicuss one use case of the built-in method getattr. We will develop a generic function that
 uses getattr to print a tabular report from object attributes. By the end of this post you will get a better understanding
-of getattr.&lt;/p>
-&lt;h4 id="getattrobject-name-default">getattr(object, name[, default])&lt;/h4>
-&lt;p>Return the value of the named attribute of object. name must be a string. If the string is the name of one of the
+of getattr.&lt;/p&gt;
+&lt;h4 id=&#34;getattrobject-name-default&#34;&gt;getattr(object, name[, default])&lt;/h4&gt;
+&lt;p&gt;Return the value of the named attribute of object. name must be a string. If the string is the name of one of the
 object’s attributes, the result is the value of that attribute. For example, getattr(x, &amp;lsquo;foobar&amp;rsquo;) is equivalent to x.foobar.
-If the named attribute does not exist, default is returned if provided, otherwise AttributeError is raised.&lt;/p></description></item><item><title>Python : Object oriented programming (Basics)</title><link>https://jithesh.blog/posts/archives/python-oop-basics/</link><pubDate>Sat, 09 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/python-oop-basics/</guid><description>&lt;p>In this post we will be learning object oriented programming in python by developing a simple battle game. we will cover topics like classes, inheritance,
-polymorphism etc&amp;hellip;&lt;/p>
-&lt;p>In Python everything is an object, if we call &lt;code>type()&lt;/code> it will tell what type of object it is. To prove our point let us try these examples.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">$&lt;/span>&lt;span class="nb">type&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">int&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">$&lt;/span>&lt;span class="nb">type&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;hello&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">str&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">$&lt;/span>&lt;span class="nb">type&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">])&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">list&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">$&lt;/span>&lt;span class="nb">type&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="s1">&amp;#39;name&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s1">&amp;#39;jon&amp;#39;&lt;/span>&lt;span class="p">})&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">dict&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">$&lt;/span>&lt;span class="k">def&lt;/span> &lt;span class="nf">square&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">num&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">$&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="n">num&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">num&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">$&lt;/span>&lt;span class="nb">type&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">square&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">function&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Python : Packaging</title><link>https://jithesh.blog/posts/archives/packaging/</link><pubDate>Fri, 08 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/packaging/</guid><description>&lt;p>This post explains how python packaging works and shows how simple it is organise modules
+If the named attribute does not exist, default is returned if provided, otherwise AttributeError is raised.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Python : Object oriented programming (Basics)</title>
+      <link>http://localhost:1313/posts/archives/python-oop-basics/</link>
+      <pubDate>Sat, 09 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/python-oop-basics/</guid>
+      
+      <description>&lt;p&gt;In this post we will be learning object oriented programming in python by developing a simple battle game. we will cover topics like classes, inheritance,
+polymorphism etc&amp;hellip;&lt;/p&gt;
+&lt;p&gt;In Python everything is an object, if we call &lt;code&gt;type()&lt;/code&gt; it will tell what type of object it is. To prove our point let us try these examples.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;str&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;list&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;jon&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;dict&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;square&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;square&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;function&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+      
+    </item>
+    
+    <item>
+      <title>Python : Packaging</title>
+      <link>http://localhost:1313/posts/archives/packaging/</link>
+      <pubDate>Fri, 08 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/packaging/</guid>
+      
+      <description>&lt;p&gt;This post explains how python packaging works and shows how simple it is organise modules
 as packages. Python&amp;rsquo;s approach of packaging is much neater and simpler than most of other programming
 languages where Class Path is important. This post will provide necessary basics about how packaging
-works in Python.&lt;/p>
-&lt;p>Any file with extension &lt;code>.py&lt;/code> is a module and any folder that contains multiple modules is called a
-python package.&lt;/p></description></item><item><title>Python : CSV data analysis</title><link>https://jithesh.blog/posts/archives/csv-data-analysis/</link><pubDate>Thu, 07 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/csv-data-analysis/</guid><description>&lt;p>In this post we will be doing some simple data analysis from CSV files using core-python API&amp;rsquo;s. We will not be
+works in Python.&lt;/p&gt;
+&lt;p&gt;Any file with extension &lt;code&gt;.py&lt;/code&gt; is a module and any folder that contains multiple modules is called a
+python package.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Python : CSV data analysis</title>
+      <link>http://localhost:1313/posts/archives/csv-data-analysis/</link>
+      <pubDate>Thu, 07 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/csv-data-analysis/</guid>
+      
+      <description>&lt;p&gt;In this post we will be doing some simple data analysis from CSV files using core-python API&amp;rsquo;s. We will not be
 using any data libraries. This will give us a chance to excercise some of the core python features like sorting, groupby and
-comprehensions. This post is an extension to my previous post&lt;a href="http://jmedium.com/csv-reader/"> generating dictionary from CSV&lt;/a>.&lt;/p>
-&lt;p>What is the data we are analysing ?&lt;/p>
-&lt;p>Data we are dealing with are bunch of small csv files, which contains some stock portfolios as shown below. It contains
-&lt;code>name, date of purchase, number of shares purchased and price&lt;/code> at the time of purchase. A sample file looks like this.&lt;/p></description></item><item><title>Python : CSV to Dictionary</title><link>https://jithesh.blog/posts/archives/csv-reader/</link><pubDate>Wed, 06 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/csv-reader/</guid><description>&lt;p>This post is about writing a CSV reader which generates a dictionary from a csv file.The reader accepts path to csv file
+comprehensions. This post is an extension to my previous post&lt;a href=&#34;http://jmedium.com/csv-reader/&#34;&gt; generating dictionary from CSV&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;What is the data we are analysing ?&lt;/p&gt;
+&lt;p&gt;Data we are dealing with are bunch of small csv files, which contains some stock portfolios as shown below.  It contains
+&lt;code&gt;name, date of purchase, number of shares purchased and price&lt;/code&gt; at the time of purchase. A sample file looks like this.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Python : CSV to Dictionary</title>
+      <link>http://localhost:1313/posts/archives/csv-reader/</link>
+      <pubDate>Wed, 06 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/csv-reader/</guid>
+      
+      <description>&lt;p&gt;This post is about writing a CSV reader which generates a dictionary from a csv file.The reader accepts path to csv file
 and python types corresponding to the CSV headers as input params. The output is a dictionary generated from the specified file. By
-the end of this post you will get a good understanding of lists, dictionary and zip in Python.&lt;/p>
-&lt;pre class='line-numbers'>
-&lt;code class='language-python'>
+the end of this post you will get a good understanding of lists, dictionary and zip  in Python.&lt;/p&gt;
+&lt;pre class=&#39;line-numbers&#39;&gt;
+&lt;code class=&#39;language-python&#39;&gt;
 import csv
 def read_csv(file, types):
-with open(file, 'r', encoding='utf-8-sig')
-rows = csv.reader(f)
-head = next(rows)
-records = []
-for row_num, row in enumerate(rows):
-try:
-record = dict(zip(head,
-[func(value) for func, value in zip(types, row)]))
-records.append(record)
-except ValueError as ve:
-print('Ignored row {} - {} in {} due to {}'
-.format(row_num, row, file, ve))
-return records
-&lt;/code>
-&lt;/pr</description></item><item><title>Python : Modules,Imports and Packages</title><link>https://jithesh.blog/posts/archives/python-module-imports/</link><pubDate>Tue, 05 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/python-module-imports/</guid><description>&lt;p>This post is about modules and imports in Python. As program grows we will split into several files
+    with open(file, &#39;r&#39;, encoding=&#39;utf-8-sig&#39;)
+        rows = csv.reader(f)
+        head = next(rows)
+        records = []
+        for row_num, row in enumerate(rows):
+            try:
+                record = dict(zip(head,
+                             [func(value) for func, value in zip(types, row)]))
+                records.append(record)
+            except ValueError as ve:
+                print(&#39;Ignored row {} - {} in {} due to {}&#39;
+                      .format(row_num, row, file, ve))
+
+        return records
+&lt;/code&gt;
+&lt;/pr</description>
+      
+    </item>
+    
+    <item>
+      <title>Python : Modules,Imports and Packages</title>
+      <link>http://localhost:1313/posts/archives/python-module-imports/</link>
+      <pubDate>Tue, 05 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/python-module-imports/</guid>
+      
+      <description>&lt;p&gt;This post is about modules and imports in Python. As program grows we will split into several files
 for easy maintainance and re-use.These files are called modules. For using functions in these modules we have to import module into
 other modules or main module. This post discusses about modules and imports. After reading this post you will get a basic understanding
-on how modules and imports works in python.&lt;/p>
-&lt;p>Let us create a module (calk.py) for advancing our discussion, this is just a module with no real meaning or functionality .&lt;/p></description></item><item><title>Python : Using Beautiful Soup</title><link>https://jithesh.blog/posts/archives/python-beautiful-soup/</link><pubDate>Mon, 04 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/python-beautiful-soup/</guid><description>&lt;p>This post is about using &lt;code>BeautifulSoup&lt;/code> and &lt;code>requests&lt;/code> module in python application for webscrapping.
+on how modules and imports works in python.&lt;/p&gt;
+&lt;p&gt;Let us create a module (calk.py) for advancing our discussion, this is just a module with no real meaning or functionality .&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Python : Using Beautiful Soup</title>
+      <link>http://localhost:1313/posts/archives/python-beautiful-soup/</link>
+      <pubDate>Mon, 04 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/python-beautiful-soup/</guid>
+      
+      <description>&lt;p&gt;This post is about using &lt;code&gt;BeautifulSoup&lt;/code&gt; and &lt;code&gt;requests&lt;/code&gt; module in python application for webscrapping.
 We are writing a simple weather application that uses request module to html page from a website and then uses
-&lt;code>BeautifulSoup&lt;/code> to scrap the web and to capture weather info at a particular zip code. After reading this post
-you will get a basic idea on how to use &lt;code>Beautiful Soup&lt;/code> and &lt;code>requests&lt;/code> module in python.&lt;/p></description></item><item><title>.Net Assemblies</title><link>https://jithesh.blog/posts/archives/dotnet-assemblies/</link><pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/dotnet-assemblies/</guid><description>&lt;p>Managed code is distributed in Assemblies. Assemblies&lt;/p>
-&lt;ul>
-&lt;li>Acts as scoping boundary for types&lt;/li>
-&lt;li>Assigns location independent names&lt;/li>
-&lt;li>Provides versioning support&lt;/li>
-&lt;/ul>
-&lt;p>When you mark a type as public, its visible for a code outside this assembly. If you omit the access modifier
+&lt;code&gt;BeautifulSoup&lt;/code&gt; to scrap the web and to capture weather info at a particular zip code. After reading this post
+you will get a basic idea on how to use &lt;code&gt;Beautiful Soup&lt;/code&gt; and &lt;code&gt;requests&lt;/code&gt; module in python.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>.Net Assemblies</title>
+      <link>http://localhost:1313/posts/archives/dotnet-assemblies/</link>
+      <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/dotnet-assemblies/</guid>
+      
+      <description>&lt;p&gt;Managed code is distributed in Assemblies. Assemblies&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Acts as scoping boundary for types&lt;/li&gt;
+&lt;li&gt;Assigns location independent names&lt;/li&gt;
+&lt;li&gt;Provides versioning support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When you mark a type as public, its visible for a code outside this assembly. If you omit the access modifier
 then its treated as internal. An internal type is visible only with in that assembly. A type name is qualified
 by the assembly name too. That is why two types under same namespace in two different assemblies is treated as
-different type.&lt;/p></description></item><item><title>.Net Framework Essentials</title><link>https://jithesh.blog/posts/archives/dotnet-framework/</link><pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/dotnet-framework/</guid><description>&lt;p>When ever we read about .Net Framework, three key terms that we encounter are CLI, CLS and CTS. These are actually standards that defines the .Net Framework. To put it another way the .Net framework is actually one implementation of a spec called as &lt;strong>CLI&lt;/strong> (Common Language Infrastructure). These are some key information you will find in this spec.&lt;/p>
-&lt;ul>
-&lt;li>This spec defines in detail the operations or features to be supported by the execution engine (EE).&lt;/li>
-&lt;li>File format. What is inside the Managed executable file in the exe or dll ? (Derivative of PE32 spec)&lt;/li>
-&lt;li>Class libraries and classes that must be implemented by implementors of the framework.&lt;/li>
-&lt;/ul>
-&lt;p>There is a portion of spec which is commonly referred as &lt;strong>CTS&lt;/strong> (Common Type System). CTS is the part of spec that defines following info. Languages targeting CLR should support CTS.&lt;/p></description></item></channel></rss>
+different type.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>.Net Framework Essentials</title>
+      <link>http://localhost:1313/posts/archives/dotnet-framework/</link>
+      <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/dotnet-framework/</guid>
+      
+      <description>&lt;p&gt;When ever we read about .Net Framework, three key terms that we encounter are CLI, CLS and CTS. These are actually standards that defines the .Net Framework. To put it another way the .Net framework is actually one implementation of a spec called as &lt;strong&gt;CLI&lt;/strong&gt; (Common Language Infrastructure). These are some key information you will find in this spec.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This spec defines in detail the operations or features to be supported by the execution engine (EE).&lt;/li&gt;
+&lt;li&gt;File format. What is inside the Managed executable file in the exe or dll ? (Derivative of PE32 spec)&lt;/li&gt;
+&lt;li&gt;Class libraries and classes that must be implemented by implementors of the framework.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is a portion of spec which is commonly referred as &lt;strong&gt;CTS&lt;/strong&gt; (Common Type System).  CTS is the part of spec that defines following info. Languages targeting CLR should support CTS.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

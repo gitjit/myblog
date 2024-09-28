@@ -1,8 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on Jithesh</title><link>https://jithesh.blog/categories/docker/</link><description>Recent content in Docker on Jithesh</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.blog/categories/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>MSSql Linux Container</title><link>https://jithesh.blog/posts/archives/mssqlcontainer/</link><pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/mssqlcontainer/</guid><description>&lt;p>Recently I was trying to follow a tutorial on EFCore that actively uses MSSql. I was using a Mac and hence decided to use Container.&lt;/p>
-&lt;p>Following are the steps I followed.&lt;/p>
-&lt;p>Ensure you have installed docker for mac. you can download it from &lt;a href="https://docs.docker.com/v17.12/docker-for-mac/install/">here&lt;/a>.&lt;/p>
-&lt;p>I am using the image : mssql-server-linux:2017-latest.&lt;/p>
-&lt;p>Now run the following docker command.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> docker run --name sql_server_demo -e &lt;span class="s1">&amp;#39;ACCEPT_EULA=Y&amp;#39;&lt;/span> -e &lt;span class="s1">&amp;#39;SA_PASSWORD=1Secure*Password1&amp;#39;&lt;/span> -e &lt;span class="s1">&amp;#39;MSSQL_PID=Enterprise&amp;#39;&lt;/span> -p 1433:1433 -d microsoft/mssql-server-linux:2017-latest
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Jithesh</title>
+    <link>http://localhost:1313/categories/docker/</link>
+    <description>Recent content in Docker on Jithesh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MSSql Linux Container</title>
+      <link>http://localhost:1313/posts/archives/mssqlcontainer/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/mssqlcontainer/</guid>
+      
+      <description>&lt;p&gt;Recently I was trying to follow a tutorial on EFCore that actively uses MSSql. I was using a Mac and hence decided to use Container.&lt;/p&gt;
+&lt;p&gt;Following are the steps I followed.&lt;/p&gt;
+&lt;p&gt;Ensure you have installed docker for mac. you can download it from &lt;a href=&#34;https://docs.docker.com/v17.12/docker-for-mac/install/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am using the image : mssql-server-linux:2017-latest.&lt;/p&gt;
+&lt;p&gt;Now run the following docker command.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; docker run --name sql_server_demo -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;ACCEPT_EULA=Y&amp;#39;&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;SA_PASSWORD=1Secure*Password1&amp;#39;&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;MSSQL_PID=Enterprise&amp;#39;&lt;/span&gt; -p 1433:1433 -d microsoft/mssql-server-linux:2017-latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+      
+    </item>
+    
+  </channel>
+</rss>

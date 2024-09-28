@@ -1,16 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>.NET on Jithesh</title><link>https://jithesh.blog/categories/.net/</link><description>Recent content in .NET on Jithesh</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 01 Apr 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.blog/categories/.net/index.xml" rel="self" type="application/rss+xml"/><item><title>.Net Assemblies</title><link>https://jithesh.blog/posts/archives/dotnet-assemblies/</link><pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/dotnet-assemblies/</guid><description>&lt;p>Managed code is distributed in Assemblies. Assemblies&lt;/p>
-&lt;ul>
-&lt;li>Acts as scoping boundary for types&lt;/li>
-&lt;li>Assigns location independent names&lt;/li>
-&lt;li>Provides versioning support&lt;/li>
-&lt;/ul>
-&lt;p>When you mark a type as public, its visible for a code outside this assembly. If you omit the access modifier
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.NET on Jithesh</title>
+    <link>http://localhost:1313/categories/.net/</link>
+    <description>Recent content in .NET on Jithesh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Apr 2011 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>.Net Assemblies</title>
+      <link>http://localhost:1313/posts/archives/dotnet-assemblies/</link>
+      <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/dotnet-assemblies/</guid>
+      
+      <description>&lt;p&gt;Managed code is distributed in Assemblies. Assemblies&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Acts as scoping boundary for types&lt;/li&gt;
+&lt;li&gt;Assigns location independent names&lt;/li&gt;
+&lt;li&gt;Provides versioning support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When you mark a type as public, its visible for a code outside this assembly. If you omit the access modifier
 then its treated as internal. An internal type is visible only with in that assembly. A type name is qualified
 by the assembly name too. That is why two types under same namespace in two different assemblies is treated as
-different type.&lt;/p></description></item><item><title>.Net Framework Essentials</title><link>https://jithesh.blog/posts/archives/dotnet-framework/</link><pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/archives/dotnet-framework/</guid><description>&lt;p>When ever we read about .Net Framework, three key terms that we encounter are CLI, CLS and CTS. These are actually standards that defines the .Net Framework. To put it another way the .Net framework is actually one implementation of a spec called as &lt;strong>CLI&lt;/strong> (Common Language Infrastructure). These are some key information you will find in this spec.&lt;/p>
-&lt;ul>
-&lt;li>This spec defines in detail the operations or features to be supported by the execution engine (EE).&lt;/li>
-&lt;li>File format. What is inside the Managed executable file in the exe or dll ? (Derivative of PE32 spec)&lt;/li>
-&lt;li>Class libraries and classes that must be implemented by implementors of the framework.&lt;/li>
-&lt;/ul>
-&lt;p>There is a portion of spec which is commonly referred as &lt;strong>CTS&lt;/strong> (Common Type System). CTS is the part of spec that defines following info. Languages targeting CLR should support CTS.&lt;/p></description></item></channel></rss>
+different type.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>.Net Framework Essentials</title>
+      <link>http://localhost:1313/posts/archives/dotnet-framework/</link>
+      <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/archives/dotnet-framework/</guid>
+      
+      <description>&lt;p&gt;When ever we read about .Net Framework, three key terms that we encounter are CLI, CLS and CTS. These are actually standards that defines the .Net Framework. To put it another way the .Net framework is actually one implementation of a spec called as &lt;strong&gt;CLI&lt;/strong&gt; (Common Language Infrastructure). These are some key information you will find in this spec.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This spec defines in detail the operations or features to be supported by the execution engine (EE).&lt;/li&gt;
+&lt;li&gt;File format. What is inside the Managed executable file in the exe or dll ? (Derivative of PE32 spec)&lt;/li&gt;
+&lt;li&gt;Class libraries and classes that must be implemented by implementors of the framework.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is a portion of spec which is commonly referred as &lt;strong&gt;CTS&lt;/strong&gt; (Common Type System).  CTS is the part of spec that defines following info. Languages targeting CLR should support CTS.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

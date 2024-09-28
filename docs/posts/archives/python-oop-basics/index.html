@@ -1,100 +1,314 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=content-type content="text/html"><meta name=viewport content="width=device-width,initial-scale=1"><title itemprop=name>Python : Object oriented programming (Basics) | Jithesh</title>
-<meta property="og:title" content="Python : Object oriented programming (Basics) | Jithesh"><meta name=twitter:title content="Python : Object oriented programming (Basics) | Jithesh"><meta itemprop=name content="Python : Object oriented programming (Basics) | Jithesh"><meta name=application-name content="Python : Object oriented programming (Basics) | Jithesh"><meta property="og:site_name" content><meta name=description content><meta itemprop=description content><meta property="og:description" content><meta name=twitter:description content><meta property="og:locale" content="en-us"><meta name=language content="en-us"><link rel=alternate hreflang=en-us href=https://jithesh.blog/posts/archives/python-oop-basics/ title=English><meta property="og:type" content="article"><meta property="og:article:published_time" content=2011-04-09T00:00:00Z><meta property="article:published_time" content=2011-04-09T00:00:00Z><meta property="og:url" content="https://jithesh.blog/posts/archives/python-oop-basics/"><meta property="og:article:author" content="Jithesh Chandrasekharan"><meta property="article:author" content="Jithesh Chandrasekharan"><meta name=author content="Jithesh Chandrasekharan"><script defer type=application/ld+json>{"@context":"http://schema.org","@type":"Article","headline":"Python : Object oriented programming (Basics)","author":{"@type":"Person","name":""},"datePublished":"2011-04-09","description":"","wordCount":1309,"mainEntityOfPage":"True","dateModified":"2011-04-09","image":{"@type":"imageObject","url":""},"publisher":{"@type":"Organization","name":"Jithesh"}}</script><meta name=generator content="Hugo 0.134.0"><meta property="og:url" content="https://jithesh.blog/posts/archives/python-oop-basics/"><meta property="og:site_name" content="Jithesh"><meta property="og:title" content="Python : Object oriented programming (Basics)"><meta property="og:description" content="In this post we will be learning object oriented programming in python by developing a simple battle game. we will cover topics like classes, inheritance, polymorphism etc…
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Python : Object oriented programming (Basics) | Jithesh</title>
+<meta property="og:title" content="Python : Object oriented programming (Basics) | Jithesh" />
+<meta name="twitter:title" content="Python : Object oriented programming (Basics) | Jithesh" />
+<meta itemprop="name" content="Python : Object oriented programming (Basics) | Jithesh" />
+<meta name="application-name" content="Python : Object oriented programming (Basics) | Jithesh" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="">
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/posts/archives/python-oop-basics/" title="English" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2011-04-09T00:00:00Z />
+    <meta property="article:published_time" content=2011-04-09T00:00:00Z />
+    <meta property="og:url" content="http://localhost:1313/posts/archives/python-oop-basics/" />
+
+    
+    <meta property="og:article:author" content="Jithesh Chandrasekharan" />
+    <meta property="article:author" content="Jithesh Chandrasekharan" />
+    <meta name="author" content="Jithesh Chandrasekharan" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Python : Object oriented programming (Basics)",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2011-04-09",
+        "description": "",
+        "wordCount":  1309 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2011-04-09",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Jithesh"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.134.0">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/archives/python-oop-basics/">
+  <meta property="og:site_name" content="Jithesh">
+  <meta property="og:title" content="Python : Object oriented programming (Basics)">
+  <meta property="og:description" content="In this post we will be learning object oriented programming in python by developing a simple battle game. we will cover topics like classes, inheritance, polymorphism etc…
 In Python everything is an object, if we call type() it will tell what type of object it is. To prove our point let us try these examples.
-$type(1) int $type('hello') str $type([1,2,3]) list $type({'name':'jon'}) dict $def square(num): $ return num * num $type(square) function "><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2011-04-09T00:00:00+00:00"><meta property="article:modified_time" content="2011-04-09T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Python : Object oriented programming (Basics)"><meta name=twitter:description content="In this post we will be learning object oriented programming in python by developing a simple battle game. we will cover topics like classes, inheritance, polymorphism etc…
+$type(1) int $type(&#39;hello&#39;) str $type([1,2,3]) list $type({&#39;name&#39;:&#39;jon&#39;}) dict $def square(num): $ return num * num $type(square) function ">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2011-04-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2011-04-09T00:00:00+00:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Python : Object oriented programming (Basics)">
+  <meta name="twitter:description" content="In this post we will be learning object oriented programming in python by developing a simple battle game. we will cover topics like classes, inheritance, polymorphism etc…
 In Python everything is an object, if we call type() it will tell what type of object it is. To prove our point let us try these examples.
-$type(1) int $type('hello') str $type([1,2,3]) list $type({'name':'jon'}) dict $def square(num): $ return num * num $type(square) function "><link rel=canonical href=https://jithesh.blog/posts/archives/python-oop-basics/><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css><link rel=stylesheet href=/css/copy-code.css><script src=/js/copy-code.js></script><link href=/style.min.da54ed9132d4ba2c4d0207a1ff9b3f2dd73aeec7858814832b1bb2bb3d91ba97.css rel=stylesheet><link href=/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css rel=stylesheet><link href=/sass/custom.min.cf467393bd3e3fc9a644f66d33a0a37039ba0d42650e5bc986be04542577c0a0.css rel=stylesheet><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/icons/favicon-16x16.png><link rel=mask-icon href=/icons/safari-pinned-tab.svg><link rel="shortcut icon" href=/favicon.ico><link rel=manifest href=https://jithesh.blog/site.webmanifest><meta name=msapplication-config content="/browserconfig.xml"><meta name=msapplication-TileColor content="#2d89ef"><meta name=theme-color content="#434648"><link rel=icon type=image/svg+xml href=/icons/favicon.svg></head><body data-theme class=notransition><script src=/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script><div class=navbar role=navigation><nav class=menu aria-label="Main Navigation"><a href=https://jithesh.blog/ class=logo><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><title>Home</title><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-</a><input type=checkbox id=menu-trigger class=menu-trigger>
-<label for=menu-trigger><span class=menu-icon><svg width="25" height="25" stroke="currentcolor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7H3.40726"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"/></svg></span></label><div class=trigger><ul class=trigger-container><li><a class=menu-link href=/>Home</a></li><li><a class="menu-link active" href=/posts/>Posts</a></li><li><a class=menu-link href=/categories/>Tags</a></li><li><a class=menu-link href=/pages/about/>About</a></li><li class=menu-separator><span>|</span></li></ul><a id=mode href=#><svg class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg><svg class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a></div></nav></div><div class="wrapper post"><main class=page-content aria-label=Content><article><header class=header><h1 class=header-title>Python : Object oriented programming (Basics)</h1><div class=post-meta><time datetime=2011-04-09T00:00:00+00:00 itemprop=datePublished>Apr 9, 2011</time></div></header><div class=page-content><p>In this post we will be learning object oriented programming in python by developing a simple battle game. we will cover topics like classes, inheritance,
-polymorphism etc&mldr;</p><p>In Python everything is an object, if we call <code>type()</code> it will tell what type of object it is. To prove our point let us try these examples.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=err>$</span><span class=nb>type</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>int</span>
-</span></span><span class=line><span class=cl><span class=err>$</span><span class=nb>type</span><span class=p>(</span><span class=s1>&#39;hello&#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>str</span>
-</span></span><span class=line><span class=cl><span class=err>$</span><span class=nb>type</span><span class=p>([</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>])</span>
-</span></span><span class=line><span class=cl><span class=nb>list</span>
-</span></span><span class=line><span class=cl><span class=err>$</span><span class=nb>type</span><span class=p>({</span><span class=s1>&#39;name&#39;</span><span class=p>:</span><span class=s1>&#39;jon&#39;</span><span class=p>})</span>
-</span></span><span class=line><span class=cl><span class=nb>dict</span>
-</span></span><span class=line><span class=cl><span class=err>$</span><span class=k>def</span> <span class=nf>square</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
-</span></span><span class=line><span class=cl><span class=err>$</span>    <span class=k>return</span> <span class=n>num</span> <span class=o>*</span> <span class=n>num</span>
-</span></span><span class=line><span class=cl><span class=err>$</span><span class=nb>type</span><span class=p>(</span><span class=n>square</span><span class=p>)</span>    
-</span></span><span class=line><span class=cl><span class=n>function</span>
-</span></span><span class=line><span class=cl> 
+$type(1) int $type(&#39;hello&#39;) str $type([1,2,3]) list $type({&#39;name&#39;:&#39;jon&#39;}) dict $def square(num): $ return num * num $type(square) function ">
+
+
+    
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/archives/python-oop-basics/"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="/css/copy-code.css">
+    <script src="/js/copy-code.js"></script>
+    <link href="/style.min.da54ed9132d4ba2c4d0207a1ff9b3f2dd73aeec7858814832b1bb2bb3d91ba97.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+    
+    <link href="/sass/custom.min.cf467393bd3e3fc9a644f66d33a0a37039ba0d42650e5bc986be04542577c0a0.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    </head>
+<body data-theme = "" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/categories/">
+                        Tags
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Python : Object oriented programming (Basics)</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2011-04-09T00:00:00&#43;00:00" itemprop="datePublished"> Apr 9, 2011 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <p>In this post we will be learning object oriented programming in python by developing a simple battle game. we will cover topics like classes, inheritance,
+polymorphism etc&hellip;</p>
+<p>In Python everything is an object, if we call <code>type()</code> it will tell what type of object it is. To prove our point let us try these examples.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">$</span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">int</span>
+</span></span><span class="line"><span class="cl"><span class="err">$</span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">str</span>
+</span></span><span class="line"><span class="cl"><span class="err">$</span><span class="nb">type</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">list</span>
+</span></span><span class="line"><span class="cl"><span class="err">$</span><span class="nb">type</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;jon&#39;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="nb">dict</span>
+</span></span><span class="line"><span class="cl"><span class="err">$</span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="err">$</span>    <span class="k">return</span> <span class="n">num</span> <span class="o">*</span> <span class="n">num</span>
+</span></span><span class="line"><span class="cl"><span class="err">$</span><span class="nb">type</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>    
+</span></span><span class="line"><span class="cl"><span class="n">function</span>
+</span></span><span class="line"><span class="cl"> 
 </span></span></code></pre></div><p>So it shows that even a function is an object in Python. So far we were discussing about built-in objects in Python.
 Now let us see how to create custom objects and that&rsquo;s where <code>Class</code> comes into picture. A class in Python defines
 the blue print of the object. A class can have attributes and method. An <code>attribute</code> is a characterstic of the an
-object and a <code>method</code> is an operation we can perform with the object. Let us create a simple class.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Circle</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=c1># class object attribute</span>
-</span></span><span class=line><span class=cl>    <span class=n>pi</span> <span class=o>=</span> <span class=mf>3.14</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>radius</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>radius</span> <span class=o>=</span> <span class=n>radius</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>area</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>pi</span> <span class=o>*</span> <span class=bp>self</span><span class=o>.</span><span class=n>radius</span><span class=o>**</span><span class=mi>2</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>perimeter</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=mi>2</span> <span class=o>*</span> <span class=bp>self</span><span class=o>.</span><span class=n>pi</span> <span class=o>*</span> <span class=bp>self</span><span class=o>.</span><span class=n>radius</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>---</span>
-</span></span><span class=line><span class=cl><span class=n>c1</span> <span class=o>=</span> <span class=n>Circle</span><span class=p>(</span><span class=mi>10</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>c1</span><span class=o>.</span><span class=n>area</span><span class=p>(),</span> <span class=n>c1</span><span class=o>.</span><span class=n>perimeter</span><span class=p>(),</span> <span class=n>c1</span><span class=o>.</span><span class=n>pi</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>c2</span> <span class=o>=</span> <span class=n>Circle</span><span class=p>(</span><span class=mi>100</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>c2</span><span class=o>.</span><span class=n>area</span><span class=p>(),</span> <span class=n>c2</span><span class=o>.</span><span class=n>perimeter</span><span class=p>())</span>
+object and a <code>method</code> is an operation we can perform with the object. Let us create a simple class.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Circle</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># class object attribute</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">---</span>
+</span></span><span class="line"><span class="cl"><span class="n">c1</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">c1</span><span class="o">.</span><span class="n">area</span><span class="p">(),</span> <span class="n">c1</span><span class="o">.</span><span class="n">perimeter</span><span class="p">(),</span> <span class="n">c1</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">c2</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">c2</span><span class="o">.</span><span class="n">area</span><span class="p">(),</span> <span class="n">c2</span><span class="o">.</span><span class="n">perimeter</span><span class="p">())</span>
 </span></span></code></pre></div><p>So an attribute is defined using <code>self</code> keyword and <code>__init__</code> is a special/magic method to initialize attributes of an object.
 I additon a class can have <code>class object attribute</code> which is like static members and shared across all objects. In the above
-example <code>pi</code> in a class object attribute.</p><h3 id=inheritance>Inheritance</h3><p>Inheritance is the way of creating a new class using classes that have been already defined. The newly formed classes are called
+example <code>pi</code> in a class object attribute.</p>
+<h3 id="inheritance">Inheritance</h3>
+<p>Inheritance is the way of creating a new class using classes that have been already defined. The newly formed classes are called
 derived classes, the classes that we derive from are called base classess. Inheritance improves code reuse and reduce program
-complexity. The derived class can override/extend the functionality of base classess.</p><p>Let us create a base class &ldquo;Animal&rdquo;.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># animal.py</span>
-</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Animal</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;Animal created !&#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>whoami</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;I am an Animal.&#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>eat</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;Eating...&#39;</span><span class=p>)</span>
+complexity. The derived class can override/extend the functionality of base classess.</p>
+<p>Let us create a base class &ldquo;Animal&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># animal.py</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Animal</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Animal created !&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">whoami</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am an Animal.&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Eating...&#39;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Now let us derive a Dog from Animal. Dog overrides the <code>__init__</code> and <code>whoami</code>. In addition
 Dog has its own method <code>bark</code>. Its important that in this example,Dog initializer is also calling base class
-initializer.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># dog.py</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Dog</span><span class=p>(</span><span class=n>Animal</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>breed</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=n>Animal</span><span class=o>.</span><span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>)</span> <span class=c1># call base class initializer</span>
-</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>breed</span> <span class=o>=</span> <span class=n>breed</span>
-</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Dog created !&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>whoami</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;I am a dog and my breed is </span><span class=si>{}</span><span class=s2>.&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>breed</span><span class=p>))</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>bark</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;Whoof whoof&#39;</span><span class=p>)</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># program.py</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>d</span> <span class=o>=</span> <span class=n>Dog</span><span class=p>(</span><span class=s1>&#39;husky&#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=n>d</span><span class=o>.</span><span class=n>whoami</span><span class=p>()</span>
-</span></span><span class=line><span class=cl><span class=n>d</span><span class=o>.</span><span class=n>eat</span><span class=p>()</span>
-</span></span><span class=line><span class=cl><span class=n>d</span><span class=o>.</span><span class=n>bark</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>--</span><span class=n>output</span><span class=o>--</span>
-</span></span><span class=line><span class=cl><span class=n>Animal</span> <span class=n>created</span> <span class=err>!</span>
-</span></span><span class=line><span class=cl><span class=n>Dog</span> <span class=n>created</span> <span class=err>!</span>
-</span></span><span class=line><span class=cl><span class=n>I</span> <span class=n>am</span> <span class=n>a</span> <span class=n>dog</span> <span class=ow>and</span> <span class=n>my</span> <span class=n>breed</span> <span class=ow>is</span> <span class=n>husky</span><span class=o>.</span>
-</span></span><span class=line><span class=cl><span class=n>Eating</span><span class=o>...</span>
-</span></span><span class=line><span class=cl><span class=n>Whoof</span> <span class=n>whoof</span>
-</span></span></code></pre></div><h3 id=a-simple-game>A simple game</h3><p>Now to solidify our understanding let us create a simple Game.
+initializer.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># dog.py</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">breed</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Animal</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="c1"># call base class initializer</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="n">breed</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Dog created !&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">whoami</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;I am a dog and my breed is </span><span class="si">{}</span><span class="s2">.&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">breed</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Whoof whoof&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># program.py</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;husky&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="o">.</span><span class="n">whoami</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="o">.</span><span class="n">eat</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">output</span><span class="o">--</span>
+</span></span><span class="line"><span class="cl"><span class="n">Animal</span> <span class="n">created</span> <span class="err">!</span>
+</span></span><span class="line"><span class="cl"><span class="n">Dog</span> <span class="n">created</span> <span class="err">!</span>
+</span></span><span class="line"><span class="cl"><span class="n">I</span> <span class="n">am</span> <span class="n">a</span> <span class="n">dog</span> <span class="ow">and</span> <span class="n">my</span> <span class="n">breed</span> <span class="ow">is</span> <span class="n">husky</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Eating</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">Whoof</span> <span class="n">whoof</span>
+</span></span></code></pre></div><h3 id="a-simple-game">A simple game</h3>
+<p>Now to solidify our understanding let us create a simple Game.
 This is how the game works. Our hero is trapped in a forest,where there will be
 different kind of creatures who is ready to attack the hero.A creature will appear in front
-of our hero and our hero can do three actions 1) Attack 2) Run 3) List all creatures.</p><p>All our actors in this game have 2 things in common. They have a name and a level. Based
+of our hero and our hero can do three actions 1) Attack 2) Run 3) List all creatures.</p>
+<p>All our actors in this game have 2 things in common. They have a name and a level. Based
 on level we decides the strength of attack.Here is how we determines the winner. When
 our hero attacks, we roll a dice for hero and creature. Multiply the roll value with
 the level to determine the attack strength.One with higher attack strength wins the
 battle.So based on this we can create a base class which contains the common fields
-and functions. This is part of <code>actor.py</code> module.</p><pre class=line-numbers>
-<code class=language-python>
+and functions. This is part of <code>actor.py</code> module.</p>
+<pre class="line-numbers" >
+<code class="language-python">
 # This is the base class
 class Creature:
     def __init__(self, name, level):
@@ -108,13 +322,16 @@ class Creature:
         roll = random.randint(1, 12) * self.level
         return roll
     </code>
-</pre><p><code>__init__</code> is the magic method which acts as the constructor of the class. get_roll
-is the common method that implements dice rolling.</p><p>Now let us create the Hero class, which is inherited from the Creature base class. Hero
+</pre>  
+<p><code>__init__</code> is the magic method which acts as the constructor of the class. get_roll
+is the common method that implements dice rolling.</p>
+<p>Now let us create the Hero class, which is inherited from the Creature base class. Hero
 is a human and human&rsquo;s can have IQ in addition to default level. So we over-ride the
 constructor by adding an iq parameter. In addition,Hero can attack the creature,so we have added that method too.We also have to accommodate iq level when we roll for Hero,
 so we over-ride the get_roll() method too as shown below. Its important to remember that
-we are calling base class methods inside the over-ridden method when necessary.</p><pre class=line-numbers>
-<code class=language-python>
+we are calling base class methods inside the over-ridden method when necessary.</p>
+<pre class="line-numbers" >
+<code class="language-python">
 # This class represents the Hero.
 class Hero(Creature):
     def __init__(self, name, level, iq):
@@ -135,8 +352,10 @@ class Hero(Creature):
             return False
 
 </code>
-</pre><p>In similar way we are also creating some creatures inheriting from the base class.</p><pre class=line-numbers>
-<code class=language-python>
+</pre>    
+<p>In similar way we are also creating some creatures inheriting from the base class.</p>
+<pre class="line-numbers" >
+<code class="language-python">
 class Reptile(Creature):
     def __init__(self, name, level, is_poison):
         super().__init__(name, level)
@@ -148,8 +367,10 @@ class Reptile(Creature):
         return int(base_roll * poison_modifier)
 
 </code>
-</pre><p>Now let us create a Dragon and Predator respectively.</p><pre class=line-numbers>
-<code class=language-python>
+</pre>    
+<p>Now let us create a Dragon and Predator respectively.</p>
+<pre class="line-numbers" >
+<code class="language-python">
 
 # This class represents a dragon
 class Dragon(Creature):
@@ -164,19 +385,25 @@ class Dragon(Creature):
         return int(base_roll * fire_modifier )
 
 </code>
-</pre><p>Predator class is just same as the base class. We can add some methods or fields later
-if needed. For time being just pass.</p><pre class=line-numbers>
-<code class=language-python>
+</pre> 
+<p>Predator class is just same as the base class. We can add some methods or fields later
+if needed. For time being just pass.</p>
+<pre class="line-numbers" >
+<code class="language-python">
 
 # This class represents a predator.
 class Predator(Creature):
     pass
     
 </code>
-</pre><p>Now we are done with creating all actors in our game, now let us focus on our game loop.
+</pre> 
+<p>Now we are done with creating all actors in our game, now let us focus on our game loop.
 The program will exit game loop if all creatures are killed by hero or if player exited
-the program by entering an invalid key other than (a, r or l). We started creating our hero and array of creatures (line : 4 and 5).<br>Once we enter the loop, an active creature is selected using random.choice() (line:9). The name and level of the active creature is displayed to player. Player can provide the input based on selected creature as shown in line : 12.</p><p>If hero attacks and failed, then hero is given three lives. We use thread module to sleep for 5 seconds to revitalize our hero as show in line:31.</p><pre class=line-numbers>
-<code class=language-python>
+the program by entering an invalid key other than (a, r or l). We started creating our hero and array of creatures (line : 4 and 5).<br>
+Once we enter the loop, an active creature is selected using random.choice() (line:9). The name and level of the active creature is displayed to player. Player can provide the input based on selected creature as shown in line : 12.</p>
+<p>If hero attacks and failed, then hero is given three lives. We use thread module to sleep for 5 seconds to revitalize our hero as show in line:31.</p>
+<pre class="line-numbers" >
+<code class="language-python">
 def game_loop():
 
     life_count = 0;
@@ -218,8 +445,10 @@ def game_loop():
     print()
     
 </code>
-</pre><p>This our main entry and includes..</p><pre class=line-numbers>
-<code class=language-python>
+</pre>
+<p>This our main entry  and includes..</p>
+<pre class="line-numbers" >
+<code class="language-python">
 from actor import Hero, Reptile, Predator, Dragon
 import random
 import time
@@ -228,8 +457,10 @@ if __name__ == '__main__':
     print_header()
     game_loop()
 </code>
-</pre><p>Output:</p><pre class=line-numbers>
-<code class=language-bash>
+</pre>
+<p>Output:</p>
+<pre class="line-numbers" >
+<code class="language-bash">
 
 ------------------------------------
       Wizard Battle (OOP)           
@@ -253,6 +484,60 @@ Hero defeated the Viper
 You killed all creatures and game over !
 
 </code>
-</pre><p><em>Coding is fun enjoy&mldr;</em></p></div></article></main></div><footer class=footer><span class=footer_item></span>&nbsp;<div class=footer_social-icons><a href=https://github.com/gitjit target=_blank rel="noopener noreferrer me" title=Github><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
-</a><a href=https://twitter.com/jitbytes target=_blank rel="noopener noreferrer me" title=Twitter><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg>
-</a><a href=https://www.linkedin.com/in/jitheshc target=_blank rel="noopener noreferrer me" title=Linkedin><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><small class=footer_copyright>© 2024 Jithesh Chandrasekharan.</small></footer><script src=https://jithesh.blog/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script></body></html>
+</pre>
+<p><em>Coding is fun enjoy&hellip;</em></p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/gitjit" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://twitter.com/jitbytes" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/jitheshc" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Jithesh Chandrasekharan.
+    </small>
+</footer>
+
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>
