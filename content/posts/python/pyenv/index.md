@@ -13,7 +13,6 @@ math = true
 
 <img src="pyenv.webp" alt="pyenv image" style="width:60%; height:auto;">
 
----
 
 ## **Step 1: Update and Install Dependencies**
 Before installing `pyenv`, update your system and install necessary build dependencies.

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jithesh</title><link>https://jithesh.blog/</link><description>Recent content on Jithesh</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 28 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Pyenv in WSL</title><link>https://jithesh.blog/posts/python/pyenv/</link><pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/python/pyenv/</guid><description>&lt;h1 id="setting-up-pyenv-in-wsl-ubuntu">Setting Up &lt;code>pyenv&lt;/code> in WSL (Ubuntu)&lt;/h1>
 &lt;p>&lt;code>pyenv&lt;/code> is a tool that allows you to manage multiple Python versions easily. This guide will walk you through setting up &lt;code>pyenv&lt;/code> on &lt;strong>WSL Ubuntu&lt;/strong> and installing Python &lt;strong>3.11&lt;/strong>.&lt;/p>
-&lt;hr>
+&lt;img src="pyenv.webp" alt="pyenv image" style="width:60%; height:auto;">
 &lt;h2 id="step-1-update-and-install-dependencies">&lt;strong>Step 1: Update and Install Dependencies&lt;/strong>&lt;/h2>
 &lt;p>Before installing &lt;code>pyenv&lt;/code>, update your system and install necessary build dependencies.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">sudo apt update &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> sudo apt upgrade -y
