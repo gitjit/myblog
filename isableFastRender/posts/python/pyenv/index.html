@@ -53,7 +53,7 @@
         },
         "datePublished": "2024-10-28",
         "description": "",
-        "wordCount":  303 ,
+        "wordCount":  502 ,
         "mainEntityOfPage": "True",
         "dateModified": "2024-10-28",
         "image": {
@@ -239,6 +239,13 @@ stroke-linejoin="round" class="feather feather-home">
     <li><a href="#step-4-verify-pyenv-installation"><strong>Step 4: Verify <code>pyenv</code> Installation</strong></a></li>
     <li><a href="#step-5-install-python-311-using-pyenv"><strong>Step 5: Install Python 3.11 Using <code>pyenv</code></strong></a></li>
     <li><a href="#step-6-set-python-311-as-default-version"><strong>Step 6: Set Python 3.11 as Default Version</strong></a></li>
+    <li><a href="#how-pyenv-internally-works"><strong>How <code>pyenv</code> Internally Works</strong></a>
+      <ul>
+        <li><a href="#how-pyenv-manages-python-versions">How <code>pyenv</code> Manages Python Versions</a></li>
+        <li><a href="#how-pyenv-installs-python-packages">How <code>pyenv</code> Installs Python Packages</a></li>
+        <li><a href="#how-pyenv-overrides-system-python">How <code>pyenv</code> Overrides System Python</a></li>
+      </ul>
+    </li>
     <li><a href="#youre-all-set-"><strong>You&rsquo;re All Set! 🎉</strong></a></li>
   </ul>
 </nav>
@@ -285,10 +292,14 @@ stroke-linejoin="round" class="feather feather-home">
 <pre tabindex="0"><code>pyenv 2.3.0
 </code></pre><hr>
 <h2 id="step-5-install-python-311-using-pyenv"><strong>Step 5: Install Python 3.11 Using <code>pyenv</code></strong></h2>
-<p>Once <code>pyenv</code> is set up, you can install Python <strong>3.11.5</strong> (or the latest available version) using:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pyenv install 3.11.5
-</span></span></code></pre></div><p>To list all available Python versions:</p>
+<p>To list all available Python versions installable using <code>pyenv</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pyenv install --list
+</span></span></code></pre></div><p>Once <code>pyenv</code> is set up, you can install Python <strong>3.11.5</strong> (or the latest available version) using:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pyenv install 3.11.5
+</span></span></code></pre></div><p>or if you try to install the latest version:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pyenv install 3.11
+</span></span></code></pre></div><p>Once installed, you can check the installed versions:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pyenv versions
 </span></span></code></pre></div><hr>
 <h2 id="step-6-set-python-311-as-default-version"><strong>Step 6: Set Python 3.11 as Default Version</strong></h2>
 <p>To set Python <strong>3.11.5</strong> as the global default version:</p>
@@ -300,8 +311,45 @@ stroke-linejoin="round" class="feather feather-home">
 </code></pre><p>To use a different Python version locally in a project directory:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pyenv <span class="nb">local</span> 3.11.5
 </span></span></code></pre></div><hr>
+<h2 id="how-pyenv-internally-works"><strong>How <code>pyenv</code> Internally Works</strong></h2>
+<h3 id="how-pyenv-manages-python-versions">How <code>pyenv</code> Manages Python Versions</h3>
+<ul>
+<li>When you install a Python version using <code>pyenv install &lt;version&gt;</code>, it:
+<ol>
+<li><strong>Downloads the Python source code</strong> from official sources.</li>
+<li><strong>Compiles and installs Python</strong> into <code>~/.pyenv/versions/&lt;version&gt;/</code>.</li>
+<li><strong>Creates a shim directory</strong> at <code>~/.pyenv/shims/</code>, which intercepts Python-related commands.</li>
+<li><strong>Determines which Python version to use</strong> based on:
+<ul>
+<li>The local <code>.python-version</code> file (if present in the current directory)</li>
+<li>The <code>PYENV_VERSION</code> environment variable (if set)</li>
+<li>The globally set Python version (<code>pyenv global &lt;version&gt;</code>)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="how-pyenv-installs-python-packages">How <code>pyenv</code> Installs Python Packages</h3>
+<p><code>pyenv</code> itself does <strong>not</strong> manage Python packages, but you can use package managers like <code>pip</code> inside a <code>pyenv</code> environment.</p>
+<p>To install packages:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pip install &lt;package&gt;
+</span></span></code></pre></div><ul>
+<li>These packages will be installed in the respective Python version directory under <code>~/.pyenv/versions/&lt;version&gt;/lib/python3.x/site-packages/</code>.</li>
+<li>If you&rsquo;re using <code>pyenv virtualenv</code>, each virtual environment will have its own package directory.</li>
+</ul>
+<h3 id="how-pyenv-overrides-system-python">How <code>pyenv</code> Overrides System Python</h3>
+<ul>
+<li><code>pyenv</code> modifies your shell’s <code>PATH</code> to <strong>prioritize its own versions of Python</strong>.</li>
+<li>When you run <code>python</code>, your shell looks in <code>~/.pyenv/shims/</code>, which then directs to the correct Python binary.</li>
+<li>You can check which Python is currently being used with:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">which python
+</span></span></code></pre></div>Expected output:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/home/user/.pyenv/shims/python
+</span></span></code></pre></div></li>
+</ul>
+<hr>
 <h2 id="youre-all-set-"><strong>You&rsquo;re All Set! 🎉</strong></h2>
-<p>Now you have <code>pyenv</code> installed on <strong>WSL Ubuntu</strong>, and Python <strong>3.11.5</strong> is ready to use. Let me know if you need further assistance! 🚀</p>
+<p>Now you have <code>pyenv</code> installed on <strong>WSL Ubuntu</strong>, and Python <strong>3.11.5</strong> is ready to use. 🚀</p>
 
             </div>
         </article></main>
