@@ -1,6 +1,6 @@
 +++
 title = 'Redux Essentials'
-date = 2024-09-04T12:54:03-07:00
+date = 2021-04-04T12:54:03-07:00
 categories = ["React"]
 +++
 

@@ -1,7 +1,7 @@
 
 +++
 title = 'Understanding DNS: How It Works with a Real Example'
-date = 2024-09-05
+date = 2021-04-01
 categories = ["Foundation"]
 toc = true
 +++

@@ -6,11 +6,69 @@
     <description>Recent content on Jithesh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Porting from Jekyll to Hugo</title>
+      <link>http://localhost:1313/posts/blog/porting/</link>
+      <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/blog/porting/</guid>
+      
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Migrating blog posts from one platform to another can be a daunting task, especially when you have years of content. In this post, I will walk through how I ported my existing Jekyll blog posts to Hugo by converting Markdown files, extracting images, updating image tags, and replacing Jekyll&amp;rsquo;s front matter with Hugo-compatible front matter. This process allows for a seamless transition and ensures that all your content is properly formatted in the new environment.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Hugo Essentials</title>
+      <link>http://localhost:1313/posts/blog/hugo/</link>
+      <pubDate>Mon, 02 Sep 2024 12:54:03 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/blog/hugo/</guid>
+      
+      <description>&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
+&lt;p&gt;To install Hugo in my windows PC, all I did was download the binary image (x64). Create a folder Hugo/bin in the Program Files and paste it there. Then edited the System Environment variable and add that to the path.  Please refer the video.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/blog/hugo/b1a593305292e2ab89d2f74231e99eee.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=8BrADPJgA-4&amp;t=170s&#34;&gt;How to Install Hugo on Windows - YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now with hugo installed let us create a site as shown below.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Semantic Versioning</title>
+      <link>http://localhost:1313/posts/fundas/versioning/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/fundas/versioning/</guid>
+      
+      <description>&lt;h2 id=&#34;semantic-versioning-semver&#34;&gt;Semantic Versioning (SemVer)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Semantic Versioning (SemVer)&lt;/strong&gt; is a versioning system used in software development to indicate changes in a structured and predictable manner.&lt;/p&gt;
+&lt;h3 id=&#34;versioning-format&#34;&gt;&lt;strong&gt;Versioning Format&lt;/strong&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;MAJOR.MINOR.PATCH
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MAJOR&lt;/strong&gt; → Increases when there are &lt;strong&gt;backward-incompatible&lt;/strong&gt; changes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MINOR&lt;/strong&gt; → Increases when new &lt;strong&gt;features&lt;/strong&gt; are added but in a &lt;strong&gt;backward-compatible&lt;/strong&gt; way.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PATCH&lt;/strong&gt; → Increases when &lt;strong&gt;bug fixes&lt;/strong&gt; or &lt;strong&gt;security patches&lt;/strong&gt; are made without changing functionality.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;how-semver-works&#34;&gt;&lt;strong&gt;How SemVer Works&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Starting Version:&lt;/strong&gt; &lt;code&gt;1.0.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bug Fix Release:&lt;/strong&gt; If a bug is fixed without affecting existing features → &lt;code&gt;1.0.1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Feature Addition:&lt;/strong&gt; If a new feature is added but is backward-compatible → &lt;code&gt;1.1.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Breaking Changes:&lt;/strong&gt; If changes break backward compatibility → &lt;code&gt;2.0.0&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;handling-deprecation-warnings-in-semver&#34;&gt;&lt;strong&gt;Handling Deprecation Warnings in SemVer&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Deprecation warnings help developers transition away from obsolete features before they are removed in a future major version.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Pyenv in WSL</title>
       <link>http://localhost:1313/posts/python/pyenv/</link>
-      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/python/pyenv/</guid>
       
@@ -29,64 +87,9 @@
     </item>
     
     <item>
-      <title>Rational Numbers</title>
-      <link>http://localhost:1313/posts/math/rational/</link>
-      <pubDate>Sat, 28 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/math/rational/</guid>
-      
-      <description>&lt;h2 id=&#34;what-are-rational-numbers&#34;&gt;What Are Rational Numbers?&lt;/h2&gt;
-&lt;p&gt;A &lt;strong&gt;rational number&lt;/strong&gt; is any number that can be expressed in the form of a fraction $( \frac{m}{n} )$, where $( m )$ and ( n ) are integers and $( n \neq 0 )$. Examples include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;$( \frac{1}{2} )$&lt;/li&gt;
-&lt;li&gt;$( -\frac{3}{4} )$&lt;/li&gt;
-&lt;li&gt;5 (which can be written as $( \frac{5}{1} ))$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In rational numbers, both positive and negative fractions exist. If $( n )$ is negative, the rational number is negative.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Porting from Jekyll to Hugo</title>
-      <link>http://localhost:1313/posts/blog/porting/</link>
-      <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/blog/porting/</guid>
-      
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Migrating blog posts from one platform to another can be a daunting task, especially when you have years of content. In this post, I will walk through how I ported my existing Jekyll blog posts to Hugo by converting Markdown files, extracting images, updating image tags, and replacing Jekyll&amp;rsquo;s front matter with Hugo-compatible front matter. This process allows for a seamless transition and ensures that all your content is properly formatted in the new environment.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Understanding DNS: How It Works with a Real Example</title>
-      <link>http://localhost:1313/posts/fundas/dns/</link>
-      <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/fundas/dns/</guid>
-      
-      <description>&lt;p&gt;Have you ever wondered what happens behind the scenes when you type a URL like jithesh.blog into your browser? You simply expect to see the website, but there’s an entire system working in the background to make that happen. This system is called the Domain Name System (DNS).&lt;/p&gt;
-&lt;p&gt;In this post, I’ll walk you through how DNS works, using my own blog (jithesh.blog) as an example. By the end, you’ll understand how DNS translates a domain name into an IP address and connects you to the right server.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Redux Essentials</title>
-      <link>http://localhost:1313/posts/react/redux-essentials/</link>
-      <pubDate>Wed, 04 Sep 2024 12:54:03 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/react/redux-essentials/</guid>
-      
-      <description>&lt;h2 id=&#34;why-redux-&#34;&gt;Why Redux ?&lt;/h2&gt;
-&lt;p&gt;As React applications grow, managing state across multiple components can become complex and difficult to maintain. This is where Redux comes in, providing a predictable state management solution that helps developers maintain consistency across their applications. In this post, we’ll explore Redux, specifically using Redux Toolkit, to make our state management simpler and more efficient.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;alt text&#34; src=&#34;http://localhost:1313/posts/react/redux-essentials/image.png&#34;&gt;&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
       <title>React Hooks</title>
       <link>http://localhost:1313/posts/react/hooks/</link>
-      <pubDate>Tue, 03 Sep 2024 12:54:03 -0700</pubDate>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/react/hooks/</guid>
       
@@ -98,17 +101,27 @@
     </item>
     
     <item>
-      <title>Hugo Essentials</title>
-      <link>http://localhost:1313/posts/blog/hugo/</link>
-      <pubDate>Mon, 02 Sep 2024 12:54:03 -0700</pubDate>
+      <title>Redux Essentials</title>
+      <link>http://localhost:1313/posts/react/redux-essentials/</link>
+      <pubDate>Sun, 04 Apr 2021 12:54:03 -0700</pubDate>
       
-      <guid>http://localhost:1313/posts/blog/hugo/</guid>
+      <guid>http://localhost:1313/posts/react/redux-essentials/</guid>
       
-      <description>&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
-&lt;p&gt;To install Hugo in my windows PC, all I did was download the binary image (x64). Create a folder Hugo/bin in the Program Files and paste it there. Then edited the System Environment variable and add that to the path.  Please refer the video.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/blog/hugo/b1a593305292e2ab89d2f74231e99eee.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=8BrADPJgA-4&amp;t=170s&#34;&gt;How to Install Hugo on Windows - YouTube&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Now with hugo installed let us create a site as shown below.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;why-redux-&#34;&gt;Why Redux ?&lt;/h2&gt;
+&lt;p&gt;As React applications grow, managing state across multiple components can become complex and difficult to maintain. This is where Redux comes in, providing a predictable state management solution that helps developers maintain consistency across their applications. In this post, we’ll explore Redux, specifically using Redux Toolkit, to make our state management simpler and more efficient.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;alt text&#34; src=&#34;http://localhost:1313/posts/react/redux-essentials/image.png&#34;&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Understanding DNS: How It Works with a Real Example</title>
+      <link>http://localhost:1313/posts/fundas/dns/</link>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/fundas/dns/</guid>
+      
+      <description>&lt;p&gt;Have you ever wondered what happens behind the scenes when you type a URL like jithesh.blog into your browser? You simply expect to see the website, but there’s an entire system working in the background to make that happen. This system is called the Domain Name System (DNS).&lt;/p&gt;
+&lt;p&gt;In this post, I’ll walk you through how DNS works, using my own blog (jithesh.blog) as an example. By the end, you’ll understand how DNS translates a domain name into an IP address and connects you to the right server.&lt;/p&gt;</description>
       
     </item>
     
@@ -739,6 +752,24 @@ different type.&lt;/p&gt;</description>
 &lt;li&gt;Class libraries and classes that must be implemented by implementors of the framework.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;There is a portion of spec which is commonly referred as &lt;strong&gt;CTS&lt;/strong&gt; (Common Type System).  CTS is the part of spec that defines following info. Languages targeting CLR should support CTS.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Rational Numbers</title>
+      <link>http://localhost:1313/posts/math/rational/</link>
+      <pubDate>Wed, 01 Apr 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/math/rational/</guid>
+      
+      <description>&lt;h2 id=&#34;what-are-rational-numbers&#34;&gt;What Are Rational Numbers?&lt;/h2&gt;
+&lt;p&gt;A &lt;strong&gt;rational number&lt;/strong&gt; is any number that can be expressed in the form of a fraction $( \frac{m}{n} )$, where $( m )$ and ( n ) are integers and $( n \neq 0 )$. Examples include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$( \frac{1}{2} )$&lt;/li&gt;
+&lt;li&gt;$( -\frac{3}{4} )$&lt;/li&gt;
+&lt;li&gt;5 (which can be written as $( \frac{5}{1} ))$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In rational numbers, both positive and negative fractions exist. If $( n )$ is negative, the rational number is negative.&lt;/p&gt;</description>
       
     </item>
     

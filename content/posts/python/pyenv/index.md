@@ -1,6 +1,6 @@
 +++
 title = 'Pyenv in WSL'
-date = 2024-10-28
+date = 2021-04-15
 categories = ["Python"]
 toc = true
 math = true

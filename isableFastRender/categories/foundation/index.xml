@@ -6,7 +6,38 @@
     <description>Recent content in Foundation on Jithesh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/foundation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/foundation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Semantic Versioning</title>
+      <link>http://localhost:1313/posts/fundas/versioning/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/fundas/versioning/</guid>
+      
+      <description>&lt;h2 id=&#34;semantic-versioning-semver&#34;&gt;Semantic Versioning (SemVer)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Semantic Versioning (SemVer)&lt;/strong&gt; is a versioning system used in software development to indicate changes in a structured and predictable manner.&lt;/p&gt;
+&lt;h3 id=&#34;versioning-format&#34;&gt;&lt;strong&gt;Versioning Format&lt;/strong&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;MAJOR.MINOR.PATCH
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MAJOR&lt;/strong&gt; → Increases when there are &lt;strong&gt;backward-incompatible&lt;/strong&gt; changes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MINOR&lt;/strong&gt; → Increases when new &lt;strong&gt;features&lt;/strong&gt; are added but in a &lt;strong&gt;backward-compatible&lt;/strong&gt; way.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PATCH&lt;/strong&gt; → Increases when &lt;strong&gt;bug fixes&lt;/strong&gt; or &lt;strong&gt;security patches&lt;/strong&gt; are made without changing functionality.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;how-semver-works&#34;&gt;&lt;strong&gt;How SemVer Works&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Starting Version:&lt;/strong&gt; &lt;code&gt;1.0.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bug Fix Release:&lt;/strong&gt; If a bug is fixed without affecting existing features → &lt;code&gt;1.0.1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Feature Addition:&lt;/strong&gt; If a new feature is added but is backward-compatible → &lt;code&gt;1.1.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Breaking Changes:&lt;/strong&gt; If changes break backward compatibility → &lt;code&gt;2.0.0&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;handling-deprecation-warnings-in-semver&#34;&gt;&lt;strong&gt;Handling Deprecation Warnings in SemVer&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Deprecation warnings help developers transition away from obsolete features before they are removed in a future major version.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Understanding DNS: How It Works with a Real Example</title>
       <link>http://localhost:1313/posts/fundas/dns/</link>
