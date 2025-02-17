@@ -6,40 +6,7 @@
     <description>Recent content in Categories on Jithesh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Python</title>
-      <link>http://localhost:1313/categories/python/</link>
-      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/categories/python/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Foundation</title>
-      <link>http://localhost:1313/categories/foundation/</link>
-      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/categories/foundation/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Math</title>
-      <link>http://localhost:1313/categories/math/</link>
-      <pubDate>Sat, 28 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/categories/math/</guid>
-      
-      <description></description>
-      
-    </item>
-    
+    <lastBuildDate>Thu, 05 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo</title>
       <link>http://localhost:1313/categories/hugo/</link>
@@ -52,9 +19,42 @@
     </item>
     
     <item>
+      <title>Foundation</title>
+      <link>http://localhost:1313/categories/foundation/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/foundation/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>AI Engineer</title>
+      <link>http://localhost:1313/categories/ai-engineer/</link>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/ai-engineer/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/categories/python/</link>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/python/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>React</title>
       <link>http://localhost:1313/categories/react/</link>
-      <pubDate>Wed, 04 Sep 2024 12:54:03 -0700</pubDate>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/categories/react/</guid>
       
@@ -112,6 +112,17 @@
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/categories/.net/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Math</title>
+      <link>http://localhost:1313/categories/math/</link>
+      <pubDate>Wed, 01 Apr 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/math/</guid>
       
       <description></description>
       
