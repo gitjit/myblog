@@ -121,6 +121,13 @@ To use a different Python version locally in a project directory:
 pyenv local 3.11.5
 ```
 
+If you want to switch between versions of python in a shell:
+Ensure that python version you specified is installed using `pyenv install <version>`
+
+```sh
+pyenv shell 3.11.5
+```
+
 ---
 
 ## **How `pyenv` Internally Works**
