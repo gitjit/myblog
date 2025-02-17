@@ -17,6 +17,9 @@ publishDir = "docs"
     endLevel = 4     # ToC ends at H4
     ordered = false  # Generates <ul> instead of <ol>
 
+[params]
+  mainSections = ["posts"]
+
 [[params.socialIcons]]
   name = "github"
   url = "https://github.com/gitjit"

@@ -1,0 +1,28 @@
+.copy-code-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: transparent; /* Make the background transparent */
+    color: #fff; /* White color for icon and text (you can adjust as needed) */
+    border: none; /* Remove the border */
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    opacity: 0.7; /* Slight transparency to make it less obtrusive */
+}
+
+.copy-code-btn i {
+    margin-right: 5px; /* Add space between the icon and text */
+    font-size: 14px;
+    color: #fff; /* White color for the icon */
+}
+
+.copy-code-btn:hover {
+    opacity: 1; /* Make the button fully visible on hover */
+}
+
+pre {
+    position: relative;
+}
