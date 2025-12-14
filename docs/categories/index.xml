@@ -1,1 +1,132 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on Jithesh</title><link>https://jithesh.blog/categories/</link><description>Recent content in Categories on Jithesh</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 05 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.blog/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo</title><link>https://jithesh.blog/categories/hugo/</link><pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate><guid>https://jithesh.blog/categories/hugo/</guid><description/></item><item><title>Foundation</title><link>https://jithesh.blog/categories/foundation/</link><pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate><guid>https://jithesh.blog/categories/foundation/</guid><description/></item><item><title>AI Engineer</title><link>https://jithesh.blog/categories/ai-engineer/</link><pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate><guid>https://jithesh.blog/categories/ai-engineer/</guid><description/></item><item><title>Python</title><link>https://jithesh.blog/categories/python/</link><pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate><guid>https://jithesh.blog/categories/python/</guid><description/></item><item><title>React</title><link>https://jithesh.blog/categories/react/</link><pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate><guid>https://jithesh.blog/categories/react/</guid><description/></item><item><title>AWS</title><link>https://jithesh.blog/categories/aws/</link><pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate><guid>https://jithesh.blog/categories/aws/</guid><description/></item><item><title>Docker</title><link>https://jithesh.blog/categories/docker/</link><pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate><guid>https://jithesh.blog/categories/docker/</guid><description/></item><item><title>Data Engineering</title><link>https://jithesh.blog/categories/data-engineering/</link><pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate><guid>https://jithesh.blog/categories/data-engineering/</guid><description/></item><item><title>Web</title><link>https://jithesh.blog/categories/web/</link><pubDate>Tue, 03 Mar 2015 00:00:00 +0000</pubDate><guid>https://jithesh.blog/categories/web/</guid><description/></item><item><title>.NET</title><link>https://jithesh.blog/categories/.net/</link><pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate><guid>https://jithesh.blog/categories/.net/</guid><description/></item><item><title>Math</title><link>https://jithesh.blog/categories/math/</link><pubDate>Wed, 01 Apr 2009 00:00:00 +0000</pubDate><guid>https://jithesh.blog/categories/math/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Jithesh</title>
+    <link>https://jithesh.org/categories/</link>
+    <description>Recent content in Categories on Jithesh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo</title>
+      <link>https://jithesh.org/categories/hugo/</link>
+      <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jithesh.org/categories/hugo/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Foundation</title>
+      <link>https://jithesh.org/categories/foundation/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jithesh.org/categories/foundation/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>AI Engineer</title>
+      <link>https://jithesh.org/categories/ai-engineer/</link>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jithesh.org/categories/ai-engineer/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://jithesh.org/categories/python/</link>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jithesh.org/categories/python/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>https://jithesh.org/categories/react/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jithesh.org/categories/react/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>https://jithesh.org/categories/aws/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jithesh.org/categories/aws/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://jithesh.org/categories/docker/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jithesh.org/categories/docker/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Data Engineering</title>
+      <link>https://jithesh.org/categories/data-engineering/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jithesh.org/categories/data-engineering/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://jithesh.org/categories/web/</link>
+      <pubDate>Tue, 03 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jithesh.org/categories/web/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>.NET</title>
+      <link>https://jithesh.org/categories/.net/</link>
+      <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://jithesh.org/categories/.net/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Math</title>
+      <link>https://jithesh.org/categories/math/</link>
+      <pubDate>Wed, 01 Apr 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://jithesh.org/categories/math/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

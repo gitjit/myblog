@@ -1,22 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Foundation on Jithesh</title><link>https://jithesh.blog/categories/foundation/</link><description>Recent content in Foundation on Jithesh</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.blog/categories/foundation/index.xml" rel="self" type="application/rss+xml"/><item><title>Semantic Versioning</title><link>https://jithesh.blog/posts/fundas/versioning/</link><pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/fundas/versioning/</guid><description>&lt;h2 id="semantic-versioning-semver">Semantic Versioning (SemVer)&lt;/h2>
-&lt;p>&lt;strong>Semantic Versioning (SemVer)&lt;/strong> is a versioning system used in software development to indicate changes in a structured and predictable manner.&lt;/p>
-&lt;h3 id="versioning-format">&lt;strong>Versioning Format&lt;/strong>&lt;/h3>
-&lt;pre tabindex="0">&lt;code>MAJOR.MINOR.PATCH
-&lt;/code>&lt;/pre>&lt;p>Where:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>MAJOR&lt;/strong> → Increases when there are &lt;strong>backward-incompatible&lt;/strong> changes.&lt;/li>
-&lt;li>&lt;strong>MINOR&lt;/strong> → Increases when new &lt;strong>features&lt;/strong> are added but in a &lt;strong>backward-compatible&lt;/strong> way.&lt;/li>
-&lt;li>&lt;strong>PATCH&lt;/strong> → Increases when &lt;strong>bug fixes&lt;/strong> or &lt;strong>security patches&lt;/strong> are made without changing functionality.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="how-semver-works">&lt;strong>How SemVer Works&lt;/strong>&lt;/h3>
-&lt;ol>
-&lt;li>&lt;strong>Starting Version:&lt;/strong> &lt;code>1.0.0&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Bug Fix Release:&lt;/strong> If a bug is fixed without affecting existing features → &lt;code>1.0.1&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Feature Addition:&lt;/strong> If a new feature is added but is backward-compatible → &lt;code>1.1.0&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Breaking Changes:&lt;/strong> If changes break backward compatibility → &lt;code>2.0.0&lt;/code>&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h3 id="handling-deprecation-warnings-in-semver">&lt;strong>Handling Deprecation Warnings in SemVer&lt;/strong>&lt;/h3>
-&lt;p>Deprecation warnings help developers transition away from obsolete features before they are removed in a future major version.&lt;/p></description></item><item><title>Understanding DNS: How It Works with a Real Example</title><link>https://jithesh.blog/posts/fundas/dns/</link><pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/fundas/dns/</guid><description>&lt;p>Have you ever wondered what happens behind the scenes when you type a URL like jithesh.blog into your browser? You simply expect to see the website, but there’s an entire system working in the background to make that happen. This system is called the Domain Name System (DNS).&lt;/p>
-&lt;p>In this post, I’ll walk you through how DNS works, using my own blog (jithesh.blog) as an example. By the end, you’ll understand how DNS translates a domain name into an IP address and connects you to the right server.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Foundation on Jithesh</title>
+    <link>https://jithesh.org/categories/foundation/</link>
+    <description>Recent content in Foundation on Jithesh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.org/categories/foundation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Semantic Versioning</title>
+      <link>https://jithesh.org/posts/fundas/versioning/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jithesh.org/posts/fundas/versioning/</guid>
+      
+      <description>&lt;h2 id=&#34;semantic-versioning-semver&#34;&gt;Semantic Versioning (SemVer)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Semantic Versioning (SemVer)&lt;/strong&gt; is a versioning system used in software development to indicate changes in a structured and predictable manner.&lt;/p&gt;
+&lt;h3 id=&#34;versioning-format&#34;&gt;&lt;strong&gt;Versioning Format&lt;/strong&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;MAJOR.MINOR.PATCH
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MAJOR&lt;/strong&gt; → Increases when there are &lt;strong&gt;backward-incompatible&lt;/strong&gt; changes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MINOR&lt;/strong&gt; → Increases when new &lt;strong&gt;features&lt;/strong&gt; are added but in a &lt;strong&gt;backward-compatible&lt;/strong&gt; way.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PATCH&lt;/strong&gt; → Increases when &lt;strong&gt;bug fixes&lt;/strong&gt; or &lt;strong&gt;security patches&lt;/strong&gt; are made without changing functionality.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;how-semver-works&#34;&gt;&lt;strong&gt;How SemVer Works&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Starting Version:&lt;/strong&gt; &lt;code&gt;1.0.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bug Fix Release:&lt;/strong&gt; If a bug is fixed without affecting existing features → &lt;code&gt;1.0.1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Feature Addition:&lt;/strong&gt; If a new feature is added but is backward-compatible → &lt;code&gt;1.1.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Breaking Changes:&lt;/strong&gt; If changes break backward compatibility → &lt;code&gt;2.0.0&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;handling-deprecation-warnings-in-semver&#34;&gt;&lt;strong&gt;Handling Deprecation Warnings in SemVer&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Deprecation warnings help developers transition away from obsolete features before they are removed in a future major version.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Understanding DNS: How It Works with a Real Example</title>
+      <link>https://jithesh.org/posts/fundas/dns/</link>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jithesh.org/posts/fundas/dns/</guid>
+      
+      <description>&lt;p&gt;Have you ever wondered what happens behind the scenes when you type a URL like jithesh.blog into your browser? You simply expect to see the website, but there’s an entire system working in the background to make that happen. This system is called the Domain Name System (DNS).&lt;/p&gt;
+&lt;p&gt;In this post, I’ll walk you through how DNS works, using my own blog (jithesh.blog) as an example. By the end, you’ll understand how DNS translates a domain name into an IP address and connects you to the right server.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

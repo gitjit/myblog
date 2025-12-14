@@ -1,11 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Jithesh</title><link>https://jithesh.blog/categories/python/</link><description>Recent content in Python on Jithesh</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 15 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.blog/categories/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Pyenv in WSL</title><link>https://jithesh.blog/posts/python/pyenv/</link><pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate><guid>https://jithesh.blog/posts/python/pyenv/</guid><description>&lt;h1 id="setting-up-pyenv-in-wsl-ubuntu">Setting Up &lt;code>pyenv&lt;/code> in WSL (Ubuntu)&lt;/h1>
-&lt;p>&lt;code>pyenv&lt;/code> is a tool that allows you to manage multiple Python versions easily. This guide will walk you through setting up &lt;code>pyenv&lt;/code> on &lt;strong>WSL Ubuntu&lt;/strong> and installing Python &lt;strong>3.11&lt;/strong>.&lt;/p>
-&lt;img src="pyenv.webp" alt="pyenv image" style="width:60%; height:auto;">
-&lt;h2 id="step-1-update-and-install-dependencies">&lt;strong>Step 1: Update and Install Dependencies&lt;/strong>&lt;/h2>
-&lt;p>Before installing &lt;code>pyenv&lt;/code>, update your system and install necessary build dependencies.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">sudo apt update &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> sudo apt upgrade -y
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt install -y make build-essential libssl-dev zlib1g-dev &lt;span class="se">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> libbz2-dev libreadline-dev libsqlite3-dev curl &lt;span class="se">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> libncursesw5-dev xz-utils tk-dev libxml2-dev &lt;span class="se">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> libxmlsec1-dev libffi-dev liblzma-dev
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Jithesh</title>
+    <link>https://jithesh.org/categories/python/</link>
+    <description>Recent content in Python on Jithesh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.org/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pyenv in WSL</title>
+      <link>https://jithesh.org/posts/python/pyenv/</link>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jithesh.org/posts/python/pyenv/</guid>
+      
+      <description>&lt;h1 id=&#34;setting-up-pyenv-in-wsl-ubuntu&#34;&gt;Setting Up &lt;code&gt;pyenv&lt;/code&gt; in WSL (Ubuntu)&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;pyenv&lt;/code&gt; is a tool that allows you to manage multiple Python versions easily. This guide will walk you through setting up &lt;code&gt;pyenv&lt;/code&gt; on &lt;strong&gt;WSL Ubuntu&lt;/strong&gt; and installing Python &lt;strong&gt;3.11&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src=&#34;pyenv.webp&#34; alt=&#34;pyenv image&#34; style=&#34;width:60%; height:auto;&#34;&gt;
+&lt;h2 id=&#34;step-1-update-and-install-dependencies&#34;&gt;&lt;strong&gt;Step 1: Update and Install Dependencies&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Before installing &lt;code&gt;pyenv&lt;/code&gt;, update your system and install necessary build dependencies.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt upgrade -y
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install -y make build-essential libssl-dev zlib1g-dev &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    libbz2-dev libreadline-dev libsqlite3-dev curl &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    libncursesw5-dev xz-utils tk-dev libxml2-dev &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    libxmlsec1-dev libffi-dev liblzma-dev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;These dependencies are required for compiling Python versions.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
