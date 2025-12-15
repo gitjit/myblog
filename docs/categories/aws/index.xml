@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AWS on Jithesh</title>
-    <link>https://jithesh.org/categories/aws/</link>
+    <link>http://localhost:1313/categories/aws/</link>
     <description>Recent content in AWS on Jithesh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.org/categories/aws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS Essentials : Elastic Load Balancer (ELB)</title>
-      <link>https://jithesh.org/posts/archives/aws-elb/</link>
+      <link>http://localhost:1313/posts/archives/aws-elb/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-elb/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-elb/</guid>
       
       <description>&lt;p&gt;In this post, we will discuss about AWS Elastic Load Balancer (ELB), various types of Load Balancers and how to configure them.&lt;/p&gt;
 &lt;p&gt;Let us consider a scenario in which you have an S3 Bucket and your EC2 instance needs to access the S3 Bucket.  The quickest and dirtiest way to do this is to store the access keys in EC2 instance and access the buckets.&lt;/p&gt;
@@ -23,10 +23,10 @@
     
     <item>
       <title>AWS Essentials : Scalability and High Availabilty</title>
-      <link>https://jithesh.org/posts/archives/aws-scalability-ha/</link>
+      <link>http://localhost:1313/posts/archives/aws-scalability-ha/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-scalability-ha/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-scalability-ha/</guid>
       
       <description>&lt;p&gt;In this post, we will discuss about Scalability and High Availability and how they are linked together.&lt;/p&gt;
 &lt;p&gt;Scalability means that an application/system  can handle greater loads by adapting. There are two kinds of scalability :&lt;/p&gt;
@@ -42,10 +42,10 @@
     
     <item>
       <title>AWS Essentials : IAM Roles</title>
-      <link>https://jithesh.org/posts/archives/aws-iam-role/</link>
+      <link>http://localhost:1313/posts/archives/aws-iam-role/</link>
       <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-iam-role/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-iam-role/</guid>
       
       <description>&lt;p&gt;In this post, we will discuss about AWS IAM roles and how it secure our AWS resource and how to set it up.&lt;/p&gt;
 &lt;p&gt;Let us consider a scenario in which you have an S3 Bucket and your EC2 instance needs to access the S3 Bucket.  The quickest and dirtiest way to do this is to store the access keys in EC2 instance and access the buckets.&lt;/p&gt;
@@ -56,10 +56,10 @@
     
     <item>
       <title>AWS Essentials : Elastic IP</title>
-      <link>https://jithesh.org/posts/archives/aws-elastic/</link>
+      <link>http://localhost:1313/posts/archives/aws-elastic/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-elastic/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-elastic/</guid>
       
       <description>&lt;p&gt;In this post, we will discuss about Private, Public and Elastic IP&amp;rsquo;s. We will also see various methods to setup Elastic IP for an EC2 Instance.&lt;/p&gt;
 &lt;h3 id=&#34;public-private-and-elastic-ip&#34;&gt;Public, Private and Elastic IP&lt;/h3&gt;
@@ -70,10 +70,10 @@
     
     <item>
       <title>AWS Essentials :NAT Instance and NAT Gateway</title>
-      <link>https://jithesh.org/posts/archives/aws-nat/</link>
+      <link>http://localhost:1313/posts/archives/aws-nat/</link>
       <pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-nat/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-nat/</guid>
       
       <description>&lt;p&gt;In our previous post, we created a private instance and we set up a Bastion host to connect to the private instance. In this post, we will see how we can securely enable external internet access from this private host using NAT. Let&amp;rsquo;s get started.&lt;/p&gt;
 &lt;p&gt;There are two ways, you can add NAT support in AWS.&lt;/p&gt;
@@ -84,10 +84,10 @@
     
     <item>
       <title>AWS Essentials : Bastion Hosts</title>
-      <link>https://jithesh.org/posts/archives/aws-bastion/</link>
+      <link>http://localhost:1313/posts/archives/aws-bastion/</link>
       <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-bastion/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-bastion/</guid>
       
       <description>&lt;p&gt;In our previous post, we created a private instance. In this post we will see how we can connect to the private host by creating a Bastion Host. Lets get started.&lt;/p&gt;
 &lt;p&gt;So in-order to connect to a private instance, we first need a public instance running in our VPC. First we need to connect to this public instance and from this public instance we need to connect to the private instance. Now this public host is called as a Bastion Host or Jumper host.&lt;/p&gt;</description>
@@ -96,10 +96,10 @@
     
     <item>
       <title>AWS Essentials : Private Subnets</title>
-      <link>https://jithesh.org/posts/archives/aws-private-subnets/</link>
+      <link>http://localhost:1313/posts/archives/aws-private-subnets/</link>
       <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-private-subnets/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-private-subnets/</guid>
       
       <description>&lt;p&gt;The objective of this post is to get a good understanding on subnetting in VPC and how to create a private subnet in VPC. Let&amp;rsquo;s get started.&lt;/p&gt;
 &lt;p&gt;Let us start with a clean slate. When ever you create an EC2 Instance in a particular region, AWS creates following services in the background for us.&lt;/p&gt;
@@ -115,10 +115,10 @@
     
     <item>
       <title>AWS Essentials : AWS Global Infrastructure</title>
-      <link>https://jithesh.org/posts/archives/aws-global-infra/</link>
+      <link>http://localhost:1313/posts/archives/aws-global-infra/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-global-infra/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-global-infra/</guid>
       
       <description>&lt;p&gt;In this post we are going to discuss some essential topics we need to understand about AWS Global Infrastructure. Following are the major players in AWS Infrastructure.
 &lt;img src=&#34;2020-11-13-23-11-07.png&#34; class=&#34;img-responsive&#34;/&gt;&lt;/p&gt;
@@ -135,10 +135,10 @@
     
     <item>
       <title>AWS Essentials : Identity and Access Management(IAM)</title>
-      <link>https://jithesh.org/posts/archives/aws-iam-essentials/</link>
+      <link>http://localhost:1313/posts/archives/aws-iam-essentials/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-iam-essentials/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-iam-essentials/</guid>
       
       <description>&lt;p&gt;In this post we are going to discuss some essential topics we need to understand in  AWS IAM.&lt;/p&gt;
 &lt;h2 id=&#34;iam-policies&#34;&gt;IAM Policies&lt;/h2&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Jithesh</title>
-    <link>https://jithesh.org/categories/docker/</link>
+    <link>http://localhost:1313/categories/docker/</link>
     <description>Recent content in Docker on Jithesh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.org/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MSSql Linux Container</title>
-      <link>https://jithesh.org/posts/archives/mssqlcontainer/</link>
+      <link>http://localhost:1313/posts/archives/mssqlcontainer/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/mssqlcontainer/</guid>
+      <guid>http://localhost:1313/posts/archives/mssqlcontainer/</guid>
       
       <description>&lt;p&gt;Recently I was trying to follow a tutorial on EFCore that actively uses MSSql. I was using a Mac and hence decided to use Container.&lt;/p&gt;
 &lt;p&gt;Following are the steps I followed.&lt;/p&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jithesh</title>
-    <link>https://jithesh.org/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Jithesh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Porting from Jekyll to Hugo</title>
-      <link>https://jithesh.org/posts/blog/porting/</link>
+      <link>http://localhost:1313/posts/blog/porting/</link>
       <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/blog/porting/</guid>
+      <guid>http://localhost:1313/posts/blog/porting/</guid>
       
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Migrating blog posts from one platform to another can be a daunting task, especially when you have years of content. In this post, I will walk through how I ported my existing Jekyll blog posts to Hugo by converting Markdown files, extracting images, updating image tags, and replacing Jekyll&amp;rsquo;s front matter with Hugo-compatible front matter. This process allows for a seamless transition and ensures that all your content is properly formatted in the new environment.&lt;/p&gt;</description>
@@ -21,14 +21,14 @@
     
     <item>
       <title>Hugo Essentials</title>
-      <link>https://jithesh.org/posts/blog/hugo/</link>
+      <link>http://localhost:1313/posts/blog/hugo/</link>
       <pubDate>Mon, 02 Sep 2024 12:54:03 -0700</pubDate>
       
-      <guid>https://jithesh.org/posts/blog/hugo/</guid>
+      <guid>http://localhost:1313/posts/blog/hugo/</guid>
       
       <description>&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
 &lt;p&gt;To install Hugo in my windows PC, all I did was download the binary image (x64). Create a folder Hugo/bin in the Program Files and paste it there. Then edited the System Environment variable and add that to the path.  Please refer the video.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://jithesh.org/posts/blog/hugo/b1a593305292e2ab89d2f74231e99eee.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/blog/hugo/b1a593305292e2ab89d2f74231e99eee.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=8BrADPJgA-4&amp;amp;t=170s&#34;&gt;How to Install Hugo on Windows - YouTube&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Now with hugo installed let us create a site as shown below.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo new site hugo-demo
@@ -37,11 +37,25 @@
     </item>
     
     <item>
+      <title>Webpack/SystemJS</title>
+      <link>http://localhost:1313/posts/web/module-loaders/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/web/module-loaders/</guid>
+      
+      <description>&lt;h2 id=&#34;the-module-loading-journey&#34;&gt;The Module Loading Journey&lt;/h2&gt;
+&lt;p&gt;JavaScript module loading is one of those topics that seems simple on the surface but reveals incredible depth once you start digging. I recently spent several weeks building a comprehensive lab to understand how JavaScript modules are loaded, bundled, and delivered to browsers. This post shares everything I learned, complete with actual code from the projects I built.&lt;/p&gt;
+&lt;h2 id=&#34;the-problem-why-module-loaders-exist&#34;&gt;The Problem: Why Module Loaders Exist&lt;/h2&gt;
+&lt;p&gt;Before we had module systems, JavaScript development was chaotic. Here&amp;rsquo;s what a typical website looked like:&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>Semantic Versioning</title>
-      <link>https://jithesh.org/posts/fundas/versioning/</link>
+      <link>http://localhost:1313/posts/fundas/versioning/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/fundas/versioning/</guid>
+      <guid>http://localhost:1313/posts/fundas/versioning/</guid>
       
       <description>&lt;h2 id=&#34;semantic-versioning-semver&#34;&gt;Semantic Versioning (SemVer)&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Semantic Versioning (SemVer)&lt;/strong&gt; is a versioning system used in software development to indicate changes in a structured and predictable manner.&lt;/p&gt;
@@ -69,10 +83,10 @@
     
     <item>
       <title>Pyenv in WSL</title>
-      <link>https://jithesh.org/posts/python/pyenv/</link>
+      <link>http://localhost:1313/posts/python/pyenv/</link>
       <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/python/pyenv/</guid>
+      <guid>http://localhost:1313/posts/python/pyenv/</guid>
       
       <description>&lt;h1 id=&#34;setting-up-pyenv-in-wsl-ubuntu&#34;&gt;Setting Up &lt;code&gt;pyenv&lt;/code&gt; in WSL (Ubuntu)&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;pyenv&lt;/code&gt; is a tool that allows you to manage multiple Python versions easily. This guide will walk you through setting up &lt;code&gt;pyenv&lt;/code&gt; on &lt;strong&gt;WSL Ubuntu&lt;/strong&gt; and installing Python &lt;strong&gt;3.11&lt;/strong&gt;.&lt;/p&gt;
@@ -90,13 +104,13 @@
     
     <item>
       <title>React Hooks</title>
-      <link>https://jithesh.org/posts/react/hooks/</link>
+      <link>http://localhost:1313/posts/react/hooks/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/react/hooks/</guid>
+      <guid>http://localhost:1313/posts/react/hooks/</guid>
       
       <description>&lt;h2 id=&#34;react-hooks&#34;&gt;React Hooks&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://jithesh.org/posts/react/hooks/2024-09-04-15-10-36.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/react/hooks/2024-09-04-15-10-36.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;As React applications grow, managing state across multiple components can become complex and difficult to maintain. This is where Redux comes in, providing a predictable state management solution that helps developers maintain consistency across their applications. In this post, we’ll explore Redux, specifically using Redux Toolkit, to make our state management simpler and more efficient.&lt;/p&gt;
 &lt;p&gt;In React, Hooks are special functions that let you use React features like state and lifecycle methods in functional components. Before React Hooks were introduced, only class components could manage state and lifecycle events. Hooks enable developers to use functional components with all the capabilities that class components had, such as managing local component state, side effects, context, and more.&lt;/p&gt;</description>
       
@@ -104,23 +118,23 @@
     
     <item>
       <title>Redux Essentials</title>
-      <link>https://jithesh.org/posts/react/redux-essentials/</link>
+      <link>http://localhost:1313/posts/react/redux-essentials/</link>
       <pubDate>Sun, 04 Apr 2021 12:54:03 -0700</pubDate>
       
-      <guid>https://jithesh.org/posts/react/redux-essentials/</guid>
+      <guid>http://localhost:1313/posts/react/redux-essentials/</guid>
       
       <description>&lt;h2 id=&#34;why-redux-&#34;&gt;Why Redux ?&lt;/h2&gt;
 &lt;p&gt;As React applications grow, managing state across multiple components can become complex and difficult to maintain. This is where Redux comes in, providing a predictable state management solution that helps developers maintain consistency across their applications. In this post, we’ll explore Redux, specifically using Redux Toolkit, to make our state management simpler and more efficient.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://jithesh.org/posts/react/redux-essentials/image.png&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/react/redux-essentials/image.png&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Understanding DNS: How It Works with a Real Example</title>
-      <link>https://jithesh.org/posts/fundas/dns/</link>
+      <link>http://localhost:1313/posts/fundas/dns/</link>
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/fundas/dns/</guid>
+      <guid>http://localhost:1313/posts/fundas/dns/</guid>
       
       <description>&lt;p&gt;Have you ever wondered what happens behind the scenes when you type a URL like jithesh.blog into your browser? You simply expect to see the website, but there’s an entire system working in the background to make that happen. This system is called the Domain Name System (DNS).&lt;/p&gt;
 &lt;p&gt;In this post, I’ll walk you through how DNS works, using my own blog (jithesh.blog) as an example. By the end, you’ll understand how DNS translates a domain name into an IP address and connects you to the right server.&lt;/p&gt;</description>
@@ -129,10 +143,10 @@
     
     <item>
       <title>AWS Essentials : Elastic Load Balancer (ELB)</title>
-      <link>https://jithesh.org/posts/archives/aws-elb/</link>
+      <link>http://localhost:1313/posts/archives/aws-elb/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-elb/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-elb/</guid>
       
       <description>&lt;p&gt;In this post, we will discuss about AWS Elastic Load Balancer (ELB), various types of Load Balancers and how to configure them.&lt;/p&gt;
 &lt;p&gt;Let us consider a scenario in which you have an S3 Bucket and your EC2 instance needs to access the S3 Bucket.  The quickest and dirtiest way to do this is to store the access keys in EC2 instance and access the buckets.&lt;/p&gt;
@@ -143,10 +157,10 @@
     
     <item>
       <title>AWS Essentials : Scalability and High Availabilty</title>
-      <link>https://jithesh.org/posts/archives/aws-scalability-ha/</link>
+      <link>http://localhost:1313/posts/archives/aws-scalability-ha/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-scalability-ha/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-scalability-ha/</guid>
       
       <description>&lt;p&gt;In this post, we will discuss about Scalability and High Availability and how they are linked together.&lt;/p&gt;
 &lt;p&gt;Scalability means that an application/system  can handle greater loads by adapting. There are two kinds of scalability :&lt;/p&gt;
@@ -162,10 +176,10 @@
     
     <item>
       <title>AWS Essentials : IAM Roles</title>
-      <link>https://jithesh.org/posts/archives/aws-iam-role/</link>
+      <link>http://localhost:1313/posts/archives/aws-iam-role/</link>
       <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-iam-role/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-iam-role/</guid>
       
       <description>&lt;p&gt;In this post, we will discuss about AWS IAM roles and how it secure our AWS resource and how to set it up.&lt;/p&gt;
 &lt;p&gt;Let us consider a scenario in which you have an S3 Bucket and your EC2 instance needs to access the S3 Bucket.  The quickest and dirtiest way to do this is to store the access keys in EC2 instance and access the buckets.&lt;/p&gt;
@@ -176,10 +190,10 @@
     
     <item>
       <title>AWS Essentials : Elastic IP</title>
-      <link>https://jithesh.org/posts/archives/aws-elastic/</link>
+      <link>http://localhost:1313/posts/archives/aws-elastic/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-elastic/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-elastic/</guid>
       
       <description>&lt;p&gt;In this post, we will discuss about Private, Public and Elastic IP&amp;rsquo;s. We will also see various methods to setup Elastic IP for an EC2 Instance.&lt;/p&gt;
 &lt;h3 id=&#34;public-private-and-elastic-ip&#34;&gt;Public, Private and Elastic IP&lt;/h3&gt;
@@ -190,10 +204,10 @@
     
     <item>
       <title>AWS Essentials :NAT Instance and NAT Gateway</title>
-      <link>https://jithesh.org/posts/archives/aws-nat/</link>
+      <link>http://localhost:1313/posts/archives/aws-nat/</link>
       <pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-nat/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-nat/</guid>
       
       <description>&lt;p&gt;In our previous post, we created a private instance and we set up a Bastion host to connect to the private instance. In this post, we will see how we can securely enable external internet access from this private host using NAT. Let&amp;rsquo;s get started.&lt;/p&gt;
 &lt;p&gt;There are two ways, you can add NAT support in AWS.&lt;/p&gt;
@@ -204,10 +218,10 @@
     
     <item>
       <title>AWS Essentials : Bastion Hosts</title>
-      <link>https://jithesh.org/posts/archives/aws-bastion/</link>
+      <link>http://localhost:1313/posts/archives/aws-bastion/</link>
       <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-bastion/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-bastion/</guid>
       
       <description>&lt;p&gt;In our previous post, we created a private instance. In this post we will see how we can connect to the private host by creating a Bastion Host. Lets get started.&lt;/p&gt;
 &lt;p&gt;So in-order to connect to a private instance, we first need a public instance running in our VPC. First we need to connect to this public instance and from this public instance we need to connect to the private instance. Now this public host is called as a Bastion Host or Jumper host.&lt;/p&gt;</description>
@@ -216,10 +230,10 @@
     
     <item>
       <title>AWS Essentials : Private Subnets</title>
-      <link>https://jithesh.org/posts/archives/aws-private-subnets/</link>
+      <link>http://localhost:1313/posts/archives/aws-private-subnets/</link>
       <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-private-subnets/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-private-subnets/</guid>
       
       <description>&lt;p&gt;The objective of this post is to get a good understanding on subnetting in VPC and how to create a private subnet in VPC. Let&amp;rsquo;s get started.&lt;/p&gt;
 &lt;p&gt;Let us start with a clean slate. When ever you create an EC2 Instance in a particular region, AWS creates following services in the background for us.&lt;/p&gt;
@@ -235,10 +249,10 @@
     
     <item>
       <title>AWS Essentials : AWS Global Infrastructure</title>
-      <link>https://jithesh.org/posts/archives/aws-global-infra/</link>
+      <link>http://localhost:1313/posts/archives/aws-global-infra/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-global-infra/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-global-infra/</guid>
       
       <description>&lt;p&gt;In this post we are going to discuss some essential topics we need to understand about AWS Global Infrastructure. Following are the major players in AWS Infrastructure.
 &lt;img src=&#34;2020-11-13-23-11-07.png&#34; class=&#34;img-responsive&#34;/&gt;&lt;/p&gt;
@@ -255,10 +269,10 @@
     
     <item>
       <title>AWS Essentials : Identity and Access Management(IAM)</title>
-      <link>https://jithesh.org/posts/archives/aws-iam-essentials/</link>
+      <link>http://localhost:1313/posts/archives/aws-iam-essentials/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/aws-iam-essentials/</guid>
+      <guid>http://localhost:1313/posts/archives/aws-iam-essentials/</guid>
       
       <description>&lt;p&gt;In this post we are going to discuss some essential topics we need to understand in  AWS IAM.&lt;/p&gt;
 &lt;h2 id=&#34;iam-policies&#34;&gt;IAM Policies&lt;/h2&gt;
@@ -284,10 +298,10 @@ Let us consider you have a Lambda function that needs to access some records in 
     
     <item>
       <title>MSSql Linux Container</title>
-      <link>https://jithesh.org/posts/archives/mssqlcontainer/</link>
+      <link>http://localhost:1313/posts/archives/mssqlcontainer/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/mssqlcontainer/</guid>
+      <guid>http://localhost:1313/posts/archives/mssqlcontainer/</guid>
       
       <description>&lt;p&gt;Recently I was trying to follow a tutorial on EFCore that actively uses MSSql. I was using a Mac and hence decided to use Container.&lt;/p&gt;
 &lt;p&gt;Following are the steps I followed.&lt;/p&gt;
@@ -302,10 +316,10 @@ Let us consider you have a Lambda function that needs to access some records in 
     
     <item>
       <title>Pyspark and Jupyter notebook setup in Mac</title>
-      <link>https://jithesh.org/posts/archives/pyspark-in-mac/</link>
+      <link>http://localhost:1313/posts/archives/pyspark-in-mac/</link>
       <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/pyspark-in-mac/</guid>
+      <guid>http://localhost:1313/posts/archives/pyspark-in-mac/</guid>
       
       <description>&lt;p&gt;Step 1:&lt;/p&gt;
 &lt;p&gt;Install latest Python3 in Mac OS (If you already have Python3 that should work perfectly fine too). I prefer Anaconda distribution since it comes with lot of packages which we need in further development. You can install Anaconda distribution from &lt;a href=&#34;https://www.continuum.io/downloads#macos&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -322,10 +336,10 @@ can download and install Java from &lt;a href=&#34;http://www.oracle.com/technet
     
     <item>
       <title>Pyspark and Jupyter notebook setup in Ubuntu</title>
-      <link>https://jithesh.org/posts/archives/pyspark-in-python/</link>
+      <link>http://localhost:1313/posts/archives/pyspark-in-python/</link>
       <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/pyspark-in-python/</guid>
+      <guid>http://localhost:1313/posts/archives/pyspark-in-python/</guid>
       
       <description>&lt;p&gt;As a first step ensure that Python3 is installed in Ubuntu. By default latest version of Ubuntu comes with Python2 and Python3 versions.&lt;/p&gt;
 &lt;p&gt;Step 1 : Install PIP3&lt;/p&gt;
@@ -342,10 +356,10 @@ can download and install Java from &lt;a href=&#34;http://www.oracle.com/technet
     
     <item>
       <title>JQuery : Basics</title>
-      <link>https://jithesh.org/posts/archives/jquery/</link>
+      <link>http://localhost:1313/posts/archives/jquery/</link>
       <pubDate>Tue, 03 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/jquery/</guid>
+      <guid>http://localhost:1313/posts/archives/jquery/</guid>
       
       <description>&lt;p&gt;This post covers some basic JQuery. JQuery is a Javascript library which is actually a large single.js file that
 has many prebuilt methods and objects that can simplify your workflow, specifically interaction with DOM and making HTTP
@@ -362,10 +376,10 @@ requests (AJAX). We can understand this with a simple example as shown below..&l
     
     <item>
       <title>Javascript : Objects and  Dom</title>
-      <link>https://jithesh.org/posts/archives/javascript-dom/</link>
+      <link>http://localhost:1313/posts/archives/javascript-dom/</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/javascript-dom/</guid>
+      <guid>http://localhost:1313/posts/archives/javascript-dom/</guid>
       
       <description>&lt;p&gt;Before starting our discussion on DOM(Document object model) in Javascript let us revise our understanding on &lt;code&gt;Objects&lt;/code&gt;
 and &lt;code&gt;Object Methods&lt;/code&gt; in Javascript. Objects in JS are similar to dictionaries in python. Object methods enables JS objects
@@ -389,10 +403,10 @@ using &lt;code&gt;this&lt;/code&gt; keyword.&lt;/p&gt;</description>
     
     <item>
       <title>Bootstrap : Fundamentals</title>
-      <link>https://jithesh.org/posts/archives/bootstrap/</link>
+      <link>http://localhost:1313/posts/archives/bootstrap/</link>
       <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/bootstrap/</guid>
+      <guid>http://localhost:1313/posts/archives/bootstrap/</guid>
       
       <description>&lt;p&gt;This post discusses some Bootstrap basics that will give a jump start to design beautiful web sites
 using Bootstrap.As a part of this we will be creating a simple webpage that will cover topics like Navbar,
@@ -405,10 +419,10 @@ classes.&lt;/p&gt;
     
     <item>
       <title>MapReduce and Cosine Similarity : Movie Recommendation</title>
-      <link>https://jithesh.org/posts/archives/movies-recommendation/</link>
+      <link>http://localhost:1313/posts/archives/movies-recommendation/</link>
       <pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/movies-recommendation/</guid>
+      <guid>http://localhost:1313/posts/archives/movies-recommendation/</guid>
       
       <description>&lt;p&gt;In this post we will be writing a map reduce program to recommend movies based on user ratings.  We will be using movie-lens data to generate recommendation. So goal here is to read the movies lens (u.data) and for each movies give recommended movies or similar movies to watch based on their ratings. (For example Is movie &amp;lsquo;&lt;strong&gt;12 Angry Men&lt;/strong&gt;&amp;rsquo; similar to &amp;lsquo;&lt;strong&gt;Real Genius&lt;/strong&gt;&amp;rsquo; ?) Let&amp;rsquo;s get started.&lt;/p&gt;</description>
       
@@ -416,10 +430,10 @@ classes.&lt;/p&gt;
     
     <item>
       <title>Cosine Similarity : Simple Example</title>
-      <link>https://jithesh.org/posts/archives/cosine-similarity/</link>
+      <link>http://localhost:1313/posts/archives/cosine-similarity/</link>
       <pubDate>Mon, 25 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/cosine-similarity/</guid>
+      <guid>http://localhost:1313/posts/archives/cosine-similarity/</guid>
       
       <description>&lt;p&gt;Cosine similarity is widely used in data mining, recommendation systems, information retrieval .Here we will be discussing Cosine similarity as a proximity measure between two vectors. The cosine of 0° is 1, and it is less than 1 for any other angle. It is thus a judgment of orientation and not magnitude: two vectors with the same orientation have a cosine similarity of 1, two vectors at 90° have a similarity of 0, and two vectors diametrically opposed have a similarity of -1, independent of their magnitude. Cosine similarity is particularly used in positive space, where the outcome is neatly bounded in [0,1].&lt;/p&gt;</description>
       
@@ -427,10 +441,10 @@ classes.&lt;/p&gt;
     
     <item>
       <title>MapReduce : Passing additional file</title>
-      <link>https://jithesh.org/posts/archives/mapreduce-additionalfile/</link>
+      <link>http://localhost:1313/posts/archives/mapreduce-additionalfile/</link>
       <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/mapreduce-additionalfile/</guid>
+      <guid>http://localhost:1313/posts/archives/mapreduce-additionalfile/</guid>
       
       <description>&lt;p&gt;In an earlier post, we discussed passing additional parameters to MapReduce Job. But there are cases in which we will have to pass some additional files during MapReduce. But since MapReduce runs in multiple nodes, we need to ensure that this additional file that mapper/reducer refers is in that particular node in which its running.  In this post we will disucss how to handle this. Let us say we need to find most popular movie from movie-lens database. If you download movie-lens data, there are 2 files in which we are interested in .  (u.data and u.item). The format of file is as shown here..&lt;/p&gt;</description>
       
@@ -438,10 +452,10 @@ classes.&lt;/p&gt;
     
     <item>
       <title>MapReduce : Chaining</title>
-      <link>https://jithesh.org/posts/archives/mapreduce-chaining/</link>
+      <link>http://localhost:1313/posts/archives/mapreduce-chaining/</link>
       <pubDate>Sun, 20 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/mapreduce-chaining/</guid>
+      <guid>http://localhost:1313/posts/archives/mapreduce-chaining/</guid>
       
       <description>&lt;p&gt;In this post I will be explaining how  to add chaining in your map reduce job. That is output of  reducer will be chained as an input to another mapper in same job.  As an example to explain this I will be improving our regular word count program. In word count program we will get the output as a word and how many occurances of that word in input book.  But if we could sort that output based on count, we can easily predict what this books is all about.  So let&amp;rsquo;s get started.&lt;/p&gt;</description>
       
@@ -449,10 +463,10 @@ classes.&lt;/p&gt;
     
     <item>
       <title>Apache Pig - XML Parsing(XPath)</title>
-      <link>https://jithesh.org/posts/archives/pig-xml/</link>
+      <link>http://localhost:1313/posts/archives/pig-xml/</link>
       <pubDate>Tue, 20 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/pig-xml/</guid>
+      <guid>http://localhost:1313/posts/archives/pig-xml/</guid>
       
       <description>&lt;p&gt;&lt;a href=&#34;http://pig.apache.org/&#34; target=&#34;_blank&#34;&gt;Apache Pig&lt;/a&gt; is a tool used to analyze large amounts of data by representing them as data flows. Using the Pig Latin scripting language operations like ETL (Extract, Transform and Load), adhoc data analysis and iterative processing can be easily achieved. Pig is an abstraction over MapReduce. In other words, all Pig scripts internally are converted into Map and Reduce tasks to get the task done. Pig was built to make programming MapReduce applications easier. Before Pig, Java was the only way to process the data stored on HDFS. Pig was first built in Yahoo! and later became a top level Apache project.&lt;/p&gt;</description>
       
@@ -460,10 +474,10 @@ classes.&lt;/p&gt;
     
     <item>
       <title>MapReduce : Matrix Multiplication</title>
-      <link>https://jithesh.org/posts/archives/mapreduce-matrix/</link>
+      <link>http://localhost:1313/posts/archives/mapreduce-matrix/</link>
       <pubDate>Sun, 21 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/mapreduce-matrix/</guid>
+      <guid>http://localhost:1313/posts/archives/mapreduce-matrix/</guid>
       
       <description>&lt;p&gt;In one of my earlier post,I discussed about matrix multiplcation using SQL. Here I will explain how to do &lt;a href=&#34;http://en.wikipedia.org/wiki/Matrix_multiplication&#34; target=&#34;_blank&#34;&gt;matrix multiplication &lt;/a&gt;using&lt;a href=&#34;http://hadoopgeek.com/?p=198&#34; target=&#34;_blank&#34;&gt; MapReduce&lt;/a&gt;. This will be efficient when we are dealing with huge matrices with thousands of rows and columns. Here we are expecting the input dataset representing matrix as a relation in database.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;span style=&#34;color: #008000;&#34;&gt;Matrix in Database&lt;/span&gt;
@@ -484,10 +498,10 @@ row#,col#,value
     
     <item>
       <title>Python : Custom Context Managers</title>
-      <link>https://jithesh.org/posts/archives/python-context-managers/</link>
+      <link>http://localhost:1313/posts/archives/python-context-managers/</link>
       <pubDate>Thu, 14 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-context-managers/</guid>
+      <guid>http://localhost:1313/posts/archives/python-context-managers/</guid>
       
       <description>&lt;p&gt;Operating System resources must be released after our use. Some common resource handles are file, sockets, thread locks etc. So if our program is using these resources we need to ensure that we are releasing it after our use. A general pattern of handling resource is like this.&lt;/p&gt;
 &lt;pre class=&#39;line-numbers&#39;&gt;
@@ -504,10 +518,10 @@ row#,col#,value
     
     <item>
       <title>Python : Instance representation and Access control</title>
-      <link>https://jithesh.org/posts/archives/python-instance-representation-copy/</link>
+      <link>http://localhost:1313/posts/archives/python-instance-representation-copy/</link>
       <pubDate>Wed, 13 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-instance-representation-copy/</guid>
+      <guid>http://localhost:1313/posts/archives/python-instance-representation-copy/</guid>
       
       <description>&lt;p&gt;In python when we create an instance , the attributes are internally stored in a python
 dictionary. Dictionay plays a major part in internal representation of python objects. Let us consider
@@ -535,10 +549,10 @@ object on the fly as shown below. In this case we are adding a new attribute on 
     
     <item>
       <title>Python : Magic Methods</title>
-      <link>https://jithesh.org/posts/archives/python-magic-methods/</link>
+      <link>http://localhost:1313/posts/archives/python-magic-methods/</link>
       <pubDate>Tue, 12 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-magic-methods/</guid>
+      <guid>http://localhost:1313/posts/archives/python-magic-methods/</guid>
       
       <description>&lt;p&gt;In python everything is an object and we are applying some operations on this objects. But every operation have a
 dedicated method behind the scene in corresponding type implementation.&lt;/p&gt;
@@ -573,10 +587,10 @@ dedicated method behind the scene in corresponding type implementation.&lt;/p&gt
     
     <item>
       <title>Python : Object Oriented Programming (Inheritance)</title>
-      <link>https://jithesh.org/posts/archives/python-inheritance/</link>
+      <link>http://localhost:1313/posts/archives/python-inheritance/</link>
       <pubDate>Mon, 11 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-inheritance/</guid>
+      <guid>http://localhost:1313/posts/archives/python-inheritance/</guid>
       
       <description>&lt;p&gt;Let us first understand the basics of Inheritance in python. A syntax refresher.  Given below is a basic inheritance
 syntax in Python.&lt;/p&gt;
@@ -602,10 +616,10 @@ call the base class method from sub class.&lt;/p&gt;</description>
     
     <item>
       <title>Python : @classmethod, @staticmethod and methods</title>
-      <link>https://jithesh.org/posts/archives/python-classmethod/</link>
+      <link>http://localhost:1313/posts/archives/python-classmethod/</link>
       <pubDate>Sun, 10 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-classmethod/</guid>
+      <guid>http://localhost:1313/posts/archives/python-classmethod/</guid>
       
       <description>&lt;p&gt;In this post we will demystify the differences between @classmethod, @staticmethod and regular methods
 in Python. We will discuss what is the diffrence and when to use it. After reading this post you will have a better
@@ -632,10 +646,10 @@ can modify both object state and class state.&lt;/p&gt;</description>
     
     <item>
       <title>Python : Object Oriented Programming (Getattr)</title>
-      <link>https://jithesh.org/posts/archives/python-getattr/</link>
+      <link>http://localhost:1313/posts/archives/python-getattr/</link>
       <pubDate>Sun, 10 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-getattr/</guid>
+      <guid>http://localhost:1313/posts/archives/python-getattr/</guid>
       
       <description>&lt;p&gt;In this post we will dicuss one use case of the built-in method getattr. We will develop a generic function that
 uses getattr to print a tabular report from object attributes. By the end of this post you will get a better understanding
@@ -649,10 +663,10 @@ If the named attribute does not exist, default is returned if provided, otherwis
     
     <item>
       <title>Python : Object oriented programming (Basics)</title>
-      <link>https://jithesh.org/posts/archives/python-oop-basics/</link>
+      <link>http://localhost:1313/posts/archives/python-oop-basics/</link>
       <pubDate>Sat, 09 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-oop-basics/</guid>
+      <guid>http://localhost:1313/posts/archives/python-oop-basics/</guid>
       
       <description>&lt;p&gt;In this post we will be learning object oriented programming in python by developing a simple battle game. we will cover topics like classes, inheritance,
 polymorphism etc&amp;hellip;&lt;/p&gt;
@@ -680,10 +694,10 @@ object and a &lt;code&gt;method&lt;/code&gt; is an operation we can perform with
     
     <item>
       <title>Python : Packaging</title>
-      <link>https://jithesh.org/posts/archives/packaging/</link>
+      <link>http://localhost:1313/posts/archives/packaging/</link>
       <pubDate>Fri, 08 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/packaging/</guid>
+      <guid>http://localhost:1313/posts/archives/packaging/</guid>
       
       <description>&lt;p&gt;This post explains how python packaging works and shows how simple it is organise modules
 as packages. Python&amp;rsquo;s approach of packaging is much neater and simpler than most of other programming
@@ -699,10 +713,10 @@ name conflicts. So let us make these modules as part of a package called &amp;ld
     
     <item>
       <title>Python : CSV data analysis</title>
-      <link>https://jithesh.org/posts/archives/csv-data-analysis/</link>
+      <link>http://localhost:1313/posts/archives/csv-data-analysis/</link>
       <pubDate>Thu, 07 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/csv-data-analysis/</guid>
+      <guid>http://localhost:1313/posts/archives/csv-data-analysis/</guid>
       
       <description>&lt;p&gt;In this post we will be doing some simple data analysis from CSV files using core-python API&amp;rsquo;s. We will not be
 using any data libraries. This will give us a chance to excercise some of the core python features like sorting, groupby and
@@ -715,10 +729,10 @@ comprehensions. This post is an extension to my previous post&lt;a href=&#34;htt
     
     <item>
       <title>Python : CSV to Dictionary</title>
-      <link>https://jithesh.org/posts/archives/csv-reader/</link>
+      <link>http://localhost:1313/posts/archives/csv-reader/</link>
       <pubDate>Wed, 06 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/csv-reader/</guid>
+      <guid>http://localhost:1313/posts/archives/csv-reader/</guid>
       
       <description>&lt;p&gt;This post is about writing a CSV reader which generates a dictionary from a csv file.The reader accepts path to csv file
 and python types corresponding to the CSV headers as input params. The output is a dictionary generated from the specified file. By
@@ -749,10 +763,10 @@ def read_csv(file, types):
     
     <item>
       <title>Python : Modules,Imports and Packages</title>
-      <link>https://jithesh.org/posts/archives/python-module-imports/</link>
+      <link>http://localhost:1313/posts/archives/python-module-imports/</link>
       <pubDate>Tue, 05 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-module-imports/</guid>
+      <guid>http://localhost:1313/posts/archives/python-module-imports/</guid>
       
       <description>&lt;p&gt;This post is about modules and imports in Python. As program grows we will split into several files
 for easy maintainance and re-use.These files are called modules. For using functions in these modules we have to import module into
@@ -764,10 +778,10 @@ on how modules and imports works in python.&lt;/p&gt;
     
     <item>
       <title>Python : Using Beautiful Soup</title>
-      <link>https://jithesh.org/posts/archives/python-beautiful-soup/</link>
+      <link>http://localhost:1313/posts/archives/python-beautiful-soup/</link>
       <pubDate>Mon, 04 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-beautiful-soup/</guid>
+      <guid>http://localhost:1313/posts/archives/python-beautiful-soup/</guid>
       
       <description>&lt;p&gt;This post is about using &lt;code&gt;BeautifulSoup&lt;/code&gt; and &lt;code&gt;requests&lt;/code&gt; module in python application for webscrapping.
 We are writing a simple weather application that uses request module to html page from a website and then uses
@@ -778,10 +792,10 @@ you will get a basic idea on how to use &lt;code&gt;Beautiful Soup&lt;/code&gt; 
     
     <item>
       <title>.Net Assemblies</title>
-      <link>https://jithesh.org/posts/archives/dotnet-assemblies/</link>
+      <link>http://localhost:1313/posts/archives/dotnet-assemblies/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/dotnet-assemblies/</guid>
+      <guid>http://localhost:1313/posts/archives/dotnet-assemblies/</guid>
       
       <description>&lt;p&gt;Managed code is distributed in Assemblies. Assemblies&lt;/p&gt;
 &lt;ul&gt;
@@ -798,10 +812,10 @@ different type.&lt;/p&gt;</description>
     
     <item>
       <title>.Net Framework Essentials</title>
-      <link>https://jithesh.org/posts/archives/dotnet-framework/</link>
+      <link>http://localhost:1313/posts/archives/dotnet-framework/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/dotnet-framework/</guid>
+      <guid>http://localhost:1313/posts/archives/dotnet-framework/</guid>
       
       <description>&lt;p&gt;When ever we read about .Net Framework, three key terms that we encounter are CLI, CLS and CTS. These are actually standards that defines the .Net Framework. To put it another way the .Net framework is actually one implementation of a spec called as &lt;strong&gt;CLI&lt;/strong&gt; (Common Language Infrastructure). These are some key information you will find in this spec.&lt;/p&gt;
 &lt;ul&gt;
@@ -815,10 +829,10 @@ different type.&lt;/p&gt;</description>
     
     <item>
       <title>Rational Numbers</title>
-      <link>https://jithesh.org/posts/math/rational/</link>
+      <link>http://localhost:1313/posts/math/rational/</link>
       <pubDate>Wed, 01 Apr 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/math/rational/</guid>
+      <guid>http://localhost:1313/posts/math/rational/</guid>
       
       <description>&lt;h2 id=&#34;what-are-rational-numbers&#34;&gt;What Are Rational Numbers?&lt;/h2&gt;
 &lt;p&gt;A &lt;strong&gt;rational number&lt;/strong&gt; is any number that can be expressed in the form of a fraction $( \frac{m}{n} )$, where $( m )$ and ( n ) are integers and $( n \neq 0 )$. Examples include:&lt;/p&gt;
@@ -833,10 +847,10 @@ different type.&lt;/p&gt;</description>
     
     <item>
       <title>About</title>
-      <link>https://jithesh.org/pages/about/</link>
+      <link>http://localhost:1313/pages/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/pages/about/</guid>
+      <guid>http://localhost:1313/pages/about/</guid>
       
       <description>&lt;p&gt;I&amp;rsquo;m Jithesh Chandrasekharan, a Software Engineer with a passion for breaking down complex concepts into simple, foundational steps. I enjoy exploring technologies from the ground up, focusing on a solid understanding before building upon them. This blog reflects that approach, offering a methodical and thoughtful exploration of the tools and techniques I work with.
 This is my personal programming journal, where I share my experiments, experiences, and insights—whether they’re from work or personal projects.&lt;/p&gt;</description>

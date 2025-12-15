@@ -2,17 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web on Jithesh</title>
-    <link>https://jithesh.org/categories/web/</link>
+    <link>http://localhost:1313/categories/web/</link>
     <description>Recent content in Web on Jithesh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Mar 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.org/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webpack/SystemJS</title>
+      <link>http://localhost:1313/posts/web/module-loaders/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/web/module-loaders/</guid>
+      
+      <description>&lt;h2 id=&#34;the-module-loading-journey&#34;&gt;The Module Loading Journey&lt;/h2&gt;
+&lt;p&gt;JavaScript module loading is one of those topics that seems simple on the surface but reveals incredible depth once you start digging. I recently spent several weeks building a comprehensive lab to understand how JavaScript modules are loaded, bundled, and delivered to browsers. This post shares everything I learned, complete with actual code from the projects I built.&lt;/p&gt;
+&lt;h2 id=&#34;the-problem-why-module-loaders-exist&#34;&gt;The Problem: Why Module Loaders Exist&lt;/h2&gt;
+&lt;p&gt;Before we had module systems, JavaScript development was chaotic. Here&amp;rsquo;s what a typical website looked like:&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>JQuery : Basics</title>
-      <link>https://jithesh.org/posts/archives/jquery/</link>
+      <link>http://localhost:1313/posts/archives/jquery/</link>
       <pubDate>Tue, 03 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/jquery/</guid>
+      <guid>http://localhost:1313/posts/archives/jquery/</guid>
       
       <description>&lt;p&gt;This post covers some basic JQuery. JQuery is a Javascript library which is actually a large single.js file that
 has many prebuilt methods and objects that can simplify your workflow, specifically interaction with DOM and making HTTP
@@ -29,10 +43,10 @@ requests (AJAX). We can understand this with a simple example as shown below..&l
     
     <item>
       <title>Javascript : Objects and  Dom</title>
-      <link>https://jithesh.org/posts/archives/javascript-dom/</link>
+      <link>http://localhost:1313/posts/archives/javascript-dom/</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/javascript-dom/</guid>
+      <guid>http://localhost:1313/posts/archives/javascript-dom/</guid>
       
       <description>&lt;p&gt;Before starting our discussion on DOM(Document object model) in Javascript let us revise our understanding on &lt;code&gt;Objects&lt;/code&gt;
 and &lt;code&gt;Object Methods&lt;/code&gt; in Javascript. Objects in JS are similar to dictionaries in python. Object methods enables JS objects
@@ -56,10 +70,10 @@ using &lt;code&gt;this&lt;/code&gt; keyword.&lt;/p&gt;</description>
     
     <item>
       <title>Bootstrap : Fundamentals</title>
-      <link>https://jithesh.org/posts/archives/bootstrap/</link>
+      <link>http://localhost:1313/posts/archives/bootstrap/</link>
       <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/bootstrap/</guid>
+      <guid>http://localhost:1313/posts/archives/bootstrap/</guid>
       
       <description>&lt;p&gt;This post discusses some Bootstrap basics that will give a jump start to design beautiful web sites
 using Bootstrap.As a part of this we will be creating a simple webpage that will cover topics like Navbar,

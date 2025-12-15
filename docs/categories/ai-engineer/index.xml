@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AI Engineer on Jithesh</title>
-    <link>https://jithesh.org/categories/ai-engineer/</link>
+    <link>http://localhost:1313/categories/ai-engineer/</link>
     <description>Recent content in AI Engineer on Jithesh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.org/categories/ai-engineer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/ai-engineer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pyenv in WSL</title>
-      <link>https://jithesh.org/posts/python/pyenv/</link>
+      <link>http://localhost:1313/posts/python/pyenv/</link>
       <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/python/pyenv/</guid>
+      <guid>http://localhost:1313/posts/python/pyenv/</guid>
       
       <description>&lt;h1 id=&#34;setting-up-pyenv-in-wsl-ubuntu&#34;&gt;Setting Up &lt;code&gt;pyenv&lt;/code&gt; in WSL (Ubuntu)&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;pyenv&lt;/code&gt; is a tool that allows you to manage multiple Python versions easily. This guide will walk you through setting up &lt;code&gt;pyenv&lt;/code&gt; on &lt;strong&gt;WSL Ubuntu&lt;/strong&gt; and installing Python &lt;strong&gt;3.11&lt;/strong&gt;.&lt;/p&gt;

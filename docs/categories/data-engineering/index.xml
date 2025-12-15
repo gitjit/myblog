@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Engineering on Jithesh</title>
-    <link>https://jithesh.org/categories/data-engineering/</link>
+    <link>http://localhost:1313/categories/data-engineering/</link>
     <description>Recent content in Data Engineering on Jithesh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Jun 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.org/categories/data-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jun 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/data-engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pyspark and Jupyter notebook setup in Mac</title>
-      <link>https://jithesh.org/posts/archives/pyspark-in-mac/</link>
+      <link>http://localhost:1313/posts/archives/pyspark-in-mac/</link>
       <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/pyspark-in-mac/</guid>
+      <guid>http://localhost:1313/posts/archives/pyspark-in-mac/</guid>
       
       <description>&lt;p&gt;Step 1:&lt;/p&gt;
 &lt;p&gt;Install latest Python3 in Mac OS (If you already have Python3 that should work perfectly fine too). I prefer Anaconda distribution since it comes with lot of packages which we need in further development. You can install Anaconda distribution from &lt;a href=&#34;https://www.continuum.io/downloads#macos&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -29,10 +29,10 @@ can download and install Java from &lt;a href=&#34;http://www.oracle.com/technet
     
     <item>
       <title>Pyspark and Jupyter notebook setup in Ubuntu</title>
-      <link>https://jithesh.org/posts/archives/pyspark-in-python/</link>
+      <link>http://localhost:1313/posts/archives/pyspark-in-python/</link>
       <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/pyspark-in-python/</guid>
+      <guid>http://localhost:1313/posts/archives/pyspark-in-python/</guid>
       
       <description>&lt;p&gt;As a first step ensure that Python3 is installed in Ubuntu. By default latest version of Ubuntu comes with Python2 and Python3 versions.&lt;/p&gt;
 &lt;p&gt;Step 1 : Install PIP3&lt;/p&gt;
@@ -49,10 +49,10 @@ can download and install Java from &lt;a href=&#34;http://www.oracle.com/technet
     
     <item>
       <title>MapReduce and Cosine Similarity : Movie Recommendation</title>
-      <link>https://jithesh.org/posts/archives/movies-recommendation/</link>
+      <link>http://localhost:1313/posts/archives/movies-recommendation/</link>
       <pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/movies-recommendation/</guid>
+      <guid>http://localhost:1313/posts/archives/movies-recommendation/</guid>
       
       <description>&lt;p&gt;In this post we will be writing a map reduce program to recommend movies based on user ratings.  We will be using movie-lens data to generate recommendation. So goal here is to read the movies lens (u.data) and for each movies give recommended movies or similar movies to watch based on their ratings. (For example Is movie &amp;lsquo;&lt;strong&gt;12 Angry Men&lt;/strong&gt;&amp;rsquo; similar to &amp;lsquo;&lt;strong&gt;Real Genius&lt;/strong&gt;&amp;rsquo; ?) Let&amp;rsquo;s get started.&lt;/p&gt;</description>
       
@@ -60,10 +60,10 @@ can download and install Java from &lt;a href=&#34;http://www.oracle.com/technet
     
     <item>
       <title>Cosine Similarity : Simple Example</title>
-      <link>https://jithesh.org/posts/archives/cosine-similarity/</link>
+      <link>http://localhost:1313/posts/archives/cosine-similarity/</link>
       <pubDate>Mon, 25 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/cosine-similarity/</guid>
+      <guid>http://localhost:1313/posts/archives/cosine-similarity/</guid>
       
       <description>&lt;p&gt;Cosine similarity is widely used in data mining, recommendation systems, information retrieval .Here we will be discussing Cosine similarity as a proximity measure between two vectors. The cosine of 0° is 1, and it is less than 1 for any other angle. It is thus a judgment of orientation and not magnitude: two vectors with the same orientation have a cosine similarity of 1, two vectors at 90° have a similarity of 0, and two vectors diametrically opposed have a similarity of -1, independent of their magnitude. Cosine similarity is particularly used in positive space, where the outcome is neatly bounded in [0,1].&lt;/p&gt;</description>
       
@@ -71,10 +71,10 @@ can download and install Java from &lt;a href=&#34;http://www.oracle.com/technet
     
     <item>
       <title>MapReduce : Passing additional file</title>
-      <link>https://jithesh.org/posts/archives/mapreduce-additionalfile/</link>
+      <link>http://localhost:1313/posts/archives/mapreduce-additionalfile/</link>
       <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/mapreduce-additionalfile/</guid>
+      <guid>http://localhost:1313/posts/archives/mapreduce-additionalfile/</guid>
       
       <description>&lt;p&gt;In an earlier post, we discussed passing additional parameters to MapReduce Job. But there are cases in which we will have to pass some additional files during MapReduce. But since MapReduce runs in multiple nodes, we need to ensure that this additional file that mapper/reducer refers is in that particular node in which its running.  In this post we will disucss how to handle this. Let us say we need to find most popular movie from movie-lens database. If you download movie-lens data, there are 2 files in which we are interested in .  (u.data and u.item). The format of file is as shown here..&lt;/p&gt;</description>
       
@@ -82,10 +82,10 @@ can download and install Java from &lt;a href=&#34;http://www.oracle.com/technet
     
     <item>
       <title>MapReduce : Chaining</title>
-      <link>https://jithesh.org/posts/archives/mapreduce-chaining/</link>
+      <link>http://localhost:1313/posts/archives/mapreduce-chaining/</link>
       <pubDate>Sun, 20 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/mapreduce-chaining/</guid>
+      <guid>http://localhost:1313/posts/archives/mapreduce-chaining/</guid>
       
       <description>&lt;p&gt;In this post I will be explaining how  to add chaining in your map reduce job. That is output of  reducer will be chained as an input to another mapper in same job.  As an example to explain this I will be improving our regular word count program. In word count program we will get the output as a word and how many occurances of that word in input book.  But if we could sort that output based on count, we can easily predict what this books is all about.  So let&amp;rsquo;s get started.&lt;/p&gt;</description>
       
@@ -93,10 +93,10 @@ can download and install Java from &lt;a href=&#34;http://www.oracle.com/technet
     
     <item>
       <title>Apache Pig - XML Parsing(XPath)</title>
-      <link>https://jithesh.org/posts/archives/pig-xml/</link>
+      <link>http://localhost:1313/posts/archives/pig-xml/</link>
       <pubDate>Tue, 20 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/pig-xml/</guid>
+      <guid>http://localhost:1313/posts/archives/pig-xml/</guid>
       
       <description>&lt;p&gt;&lt;a href=&#34;http://pig.apache.org/&#34; target=&#34;_blank&#34;&gt;Apache Pig&lt;/a&gt; is a tool used to analyze large amounts of data by representing them as data flows. Using the Pig Latin scripting language operations like ETL (Extract, Transform and Load), adhoc data analysis and iterative processing can be easily achieved. Pig is an abstraction over MapReduce. In other words, all Pig scripts internally are converted into Map and Reduce tasks to get the task done. Pig was built to make programming MapReduce applications easier. Before Pig, Java was the only way to process the data stored on HDFS. Pig was first built in Yahoo! and later became a top level Apache project.&lt;/p&gt;</description>
       
@@ -104,10 +104,10 @@ can download and install Java from &lt;a href=&#34;http://www.oracle.com/technet
     
     <item>
       <title>MapReduce : Matrix Multiplication</title>
-      <link>https://jithesh.org/posts/archives/mapreduce-matrix/</link>
+      <link>http://localhost:1313/posts/archives/mapreduce-matrix/</link>
       <pubDate>Sun, 21 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/mapreduce-matrix/</guid>
+      <guid>http://localhost:1313/posts/archives/mapreduce-matrix/</guid>
       
       <description>&lt;p&gt;In one of my earlier post,I discussed about matrix multiplcation using SQL. Here I will explain how to do &lt;a href=&#34;http://en.wikipedia.org/wiki/Matrix_multiplication&#34; target=&#34;_blank&#34;&gt;matrix multiplication &lt;/a&gt;using&lt;a href=&#34;http://hadoopgeek.com/?p=198&#34; target=&#34;_blank&#34;&gt; MapReduce&lt;/a&gt;. This will be efficient when we are dealing with huge matrices with thousands of rows and columns. Here we are expecting the input dataset representing matrix as a relation in database.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;span style=&#34;color: #008000;&#34;&gt;Matrix in Database&lt;/span&gt;
@@ -128,10 +128,10 @@ row#,col#,value
     
     <item>
       <title>Python : Custom Context Managers</title>
-      <link>https://jithesh.org/posts/archives/python-context-managers/</link>
+      <link>http://localhost:1313/posts/archives/python-context-managers/</link>
       <pubDate>Thu, 14 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-context-managers/</guid>
+      <guid>http://localhost:1313/posts/archives/python-context-managers/</guid>
       
       <description>&lt;p&gt;Operating System resources must be released after our use. Some common resource handles are file, sockets, thread locks etc. So if our program is using these resources we need to ensure that we are releasing it after our use. A general pattern of handling resource is like this.&lt;/p&gt;
 &lt;pre class=&#39;line-numbers&#39;&gt;
@@ -148,10 +148,10 @@ row#,col#,value
     
     <item>
       <title>Python : Instance representation and Access control</title>
-      <link>https://jithesh.org/posts/archives/python-instance-representation-copy/</link>
+      <link>http://localhost:1313/posts/archives/python-instance-representation-copy/</link>
       <pubDate>Wed, 13 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-instance-representation-copy/</guid>
+      <guid>http://localhost:1313/posts/archives/python-instance-representation-copy/</guid>
       
       <description>&lt;p&gt;In python when we create an instance , the attributes are internally stored in a python
 dictionary. Dictionay plays a major part in internal representation of python objects. Let us consider
@@ -179,10 +179,10 @@ object on the fly as shown below. In this case we are adding a new attribute on 
     
     <item>
       <title>Python : Magic Methods</title>
-      <link>https://jithesh.org/posts/archives/python-magic-methods/</link>
+      <link>http://localhost:1313/posts/archives/python-magic-methods/</link>
       <pubDate>Tue, 12 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-magic-methods/</guid>
+      <guid>http://localhost:1313/posts/archives/python-magic-methods/</guid>
       
       <description>&lt;p&gt;In python everything is an object and we are applying some operations on this objects. But every operation have a
 dedicated method behind the scene in corresponding type implementation.&lt;/p&gt;
@@ -217,10 +217,10 @@ dedicated method behind the scene in corresponding type implementation.&lt;/p&gt
     
     <item>
       <title>Python : Object Oriented Programming (Inheritance)</title>
-      <link>https://jithesh.org/posts/archives/python-inheritance/</link>
+      <link>http://localhost:1313/posts/archives/python-inheritance/</link>
       <pubDate>Mon, 11 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-inheritance/</guid>
+      <guid>http://localhost:1313/posts/archives/python-inheritance/</guid>
       
       <description>&lt;p&gt;Let us first understand the basics of Inheritance in python. A syntax refresher.  Given below is a basic inheritance
 syntax in Python.&lt;/p&gt;
@@ -246,10 +246,10 @@ call the base class method from sub class.&lt;/p&gt;</description>
     
     <item>
       <title>Python : @classmethod, @staticmethod and methods</title>
-      <link>https://jithesh.org/posts/archives/python-classmethod/</link>
+      <link>http://localhost:1313/posts/archives/python-classmethod/</link>
       <pubDate>Sun, 10 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-classmethod/</guid>
+      <guid>http://localhost:1313/posts/archives/python-classmethod/</guid>
       
       <description>&lt;p&gt;In this post we will demystify the differences between @classmethod, @staticmethod and regular methods
 in Python. We will discuss what is the diffrence and when to use it. After reading this post you will have a better
@@ -276,10 +276,10 @@ can modify both object state and class state.&lt;/p&gt;</description>
     
     <item>
       <title>Python : Object Oriented Programming (Getattr)</title>
-      <link>https://jithesh.org/posts/archives/python-getattr/</link>
+      <link>http://localhost:1313/posts/archives/python-getattr/</link>
       <pubDate>Sun, 10 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-getattr/</guid>
+      <guid>http://localhost:1313/posts/archives/python-getattr/</guid>
       
       <description>&lt;p&gt;In this post we will dicuss one use case of the built-in method getattr. We will develop a generic function that
 uses getattr to print a tabular report from object attributes. By the end of this post you will get a better understanding
@@ -293,10 +293,10 @@ If the named attribute does not exist, default is returned if provided, otherwis
     
     <item>
       <title>Python : Object oriented programming (Basics)</title>
-      <link>https://jithesh.org/posts/archives/python-oop-basics/</link>
+      <link>http://localhost:1313/posts/archives/python-oop-basics/</link>
       <pubDate>Sat, 09 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-oop-basics/</guid>
+      <guid>http://localhost:1313/posts/archives/python-oop-basics/</guid>
       
       <description>&lt;p&gt;In this post we will be learning object oriented programming in python by developing a simple battle game. we will cover topics like classes, inheritance,
 polymorphism etc&amp;hellip;&lt;/p&gt;
@@ -324,10 +324,10 @@ object and a &lt;code&gt;method&lt;/code&gt; is an operation we can perform with
     
     <item>
       <title>Python : Packaging</title>
-      <link>https://jithesh.org/posts/archives/packaging/</link>
+      <link>http://localhost:1313/posts/archives/packaging/</link>
       <pubDate>Fri, 08 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/packaging/</guid>
+      <guid>http://localhost:1313/posts/archives/packaging/</guid>
       
       <description>&lt;p&gt;This post explains how python packaging works and shows how simple it is organise modules
 as packages. Python&amp;rsquo;s approach of packaging is much neater and simpler than most of other programming
@@ -343,10 +343,10 @@ name conflicts. So let us make these modules as part of a package called &amp;ld
     
     <item>
       <title>Python : CSV data analysis</title>
-      <link>https://jithesh.org/posts/archives/csv-data-analysis/</link>
+      <link>http://localhost:1313/posts/archives/csv-data-analysis/</link>
       <pubDate>Thu, 07 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/csv-data-analysis/</guid>
+      <guid>http://localhost:1313/posts/archives/csv-data-analysis/</guid>
       
       <description>&lt;p&gt;In this post we will be doing some simple data analysis from CSV files using core-python API&amp;rsquo;s. We will not be
 using any data libraries. This will give us a chance to excercise some of the core python features like sorting, groupby and
@@ -359,10 +359,10 @@ comprehensions. This post is an extension to my previous post&lt;a href=&#34;htt
     
     <item>
       <title>Python : CSV to Dictionary</title>
-      <link>https://jithesh.org/posts/archives/csv-reader/</link>
+      <link>http://localhost:1313/posts/archives/csv-reader/</link>
       <pubDate>Wed, 06 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/csv-reader/</guid>
+      <guid>http://localhost:1313/posts/archives/csv-reader/</guid>
       
       <description>&lt;p&gt;This post is about writing a CSV reader which generates a dictionary from a csv file.The reader accepts path to csv file
 and python types corresponding to the CSV headers as input params. The output is a dictionary generated from the specified file. By
@@ -393,10 +393,10 @@ def read_csv(file, types):
     
     <item>
       <title>Python : Modules,Imports and Packages</title>
-      <link>https://jithesh.org/posts/archives/python-module-imports/</link>
+      <link>http://localhost:1313/posts/archives/python-module-imports/</link>
       <pubDate>Tue, 05 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-module-imports/</guid>
+      <guid>http://localhost:1313/posts/archives/python-module-imports/</guid>
       
       <description>&lt;p&gt;This post is about modules and imports in Python. As program grows we will split into several files
 for easy maintainance and re-use.These files are called modules. For using functions in these modules we have to import module into
@@ -408,10 +408,10 @@ on how modules and imports works in python.&lt;/p&gt;
     
     <item>
       <title>Python : Using Beautiful Soup</title>
-      <link>https://jithesh.org/posts/archives/python-beautiful-soup/</link>
+      <link>http://localhost:1313/posts/archives/python-beautiful-soup/</link>
       <pubDate>Mon, 04 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/archives/python-beautiful-soup/</guid>
+      <guid>http://localhost:1313/posts/archives/python-beautiful-soup/</guid>
       
       <description>&lt;p&gt;This post is about using &lt;code&gt;BeautifulSoup&lt;/code&gt; and &lt;code&gt;requests&lt;/code&gt; module in python application for webscrapping.
 We are writing a simple weather application that uses request module to html page from a website and then uses

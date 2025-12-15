@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Math on Jithesh</title>
-    <link>https://jithesh.org/categories/math/</link>
+    <link>http://localhost:1313/categories/math/</link>
     <description>Recent content in Math on Jithesh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Apr 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://jithesh.org/categories/math/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Apr 2009 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rational Numbers</title>
-      <link>https://jithesh.org/posts/math/rational/</link>
+      <link>http://localhost:1313/posts/math/rational/</link>
       <pubDate>Wed, 01 Apr 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://jithesh.org/posts/math/rational/</guid>
+      <guid>http://localhost:1313/posts/math/rational/</guid>
       
       <description>&lt;h2 id=&#34;what-are-rational-numbers&#34;&gt;What Are Rational Numbers?&lt;/h2&gt;
 &lt;p&gt;A &lt;strong&gt;rational number&lt;/strong&gt; is any number that can be expressed in the form of a fraction $( \frac{m}{n} )$, where $( m )$ and ( n ) are integers and $( n \neq 0 )$. Examples include:&lt;/p&gt;

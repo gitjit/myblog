@@ -2,181 +2,184 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jithesh.org/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2024-09-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/categories/hugo/</loc>
+    <loc>http://localhost:1313/categories/hugo/</loc>
     <lastmod>2024-09-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-09-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/blog/porting/</loc>
+    <loc>http://localhost:1313/posts/blog/porting/</loc>
     <lastmod>2024-09-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2024-09-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/blog/hugo/</loc>
+    <loc>http://localhost:1313/posts/blog/hugo/</loc>
     <lastmod>2024-09-02T12:54:03-07:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/categories/foundation/</loc>
+    <loc>http://localhost:1313/categories/web/</loc>
+    <lastmod>2023-12-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/web/module-loaders/</loc>
+    <lastmod>2023-12-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/foundation/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/fundas/versioning/</loc>
+    <loc>http://localhost:1313/posts/fundas/versioning/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/categories/ai-engineer/</loc>
+    <loc>http://localhost:1313/categories/ai-engineer/</loc>
     <lastmod>2021-04-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/python/pyenv/</loc>
+    <loc>http://localhost:1313/posts/python/pyenv/</loc>
     <lastmod>2021-04-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/categories/python/</loc>
+    <loc>http://localhost:1313/categories/python/</loc>
     <lastmod>2021-04-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/categories/react/</loc>
+    <loc>http://localhost:1313/categories/react/</loc>
     <lastmod>2021-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/react/hooks/</loc>
+    <loc>http://localhost:1313/posts/react/hooks/</loc>
     <lastmod>2021-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/react/redux-essentials/</loc>
+    <loc>http://localhost:1313/posts/react/redux-essentials/</loc>
     <lastmod>2021-04-04T12:54:03-07:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/fundas/dns/</loc>
+    <loc>http://localhost:1313/posts/fundas/dns/</loc>
     <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/categories/aws/</loc>
+    <loc>http://localhost:1313/categories/aws/</loc>
     <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/aws-elb/</loc>
+    <loc>http://localhost:1313/posts/archives/aws-elb/</loc>
     <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/aws-scalability-ha/</loc>
+    <loc>http://localhost:1313/posts/archives/aws-scalability-ha/</loc>
     <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/aws-iam-role/</loc>
+    <loc>http://localhost:1313/posts/archives/aws-iam-role/</loc>
     <lastmod>2020-01-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/aws-elastic/</loc>
+    <loc>http://localhost:1313/posts/archives/aws-elastic/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/aws-nat/</loc>
+    <loc>http://localhost:1313/posts/archives/aws-nat/</loc>
     <lastmod>2020-01-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/aws-bastion/</loc>
+    <loc>http://localhost:1313/posts/archives/aws-bastion/</loc>
     <lastmod>2020-01-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/aws-private-subnets/</loc>
+    <loc>http://localhost:1313/posts/archives/aws-private-subnets/</loc>
     <lastmod>2020-01-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/aws-global-infra/</loc>
+    <loc>http://localhost:1313/posts/archives/aws-global-infra/</loc>
     <lastmod>2020-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/aws-iam-essentials/</loc>
+    <loc>http://localhost:1313/posts/archives/aws-iam-essentials/</loc>
     <lastmod>2020-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/categories/docker/</loc>
+    <loc>http://localhost:1313/categories/docker/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/mssqlcontainer/</loc>
+    <loc>http://localhost:1313/posts/archives/mssqlcontainer/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/categories/data-engineering/</loc>
+    <loc>http://localhost:1313/categories/data-engineering/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/pyspark-in-mac/</loc>
+    <loc>http://localhost:1313/posts/archives/pyspark-in-mac/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/pyspark-in-python/</loc>
+    <loc>http://localhost:1313/posts/archives/pyspark-in-python/</loc>
     <lastmod>2017-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/jquery/</loc>
+    <loc>http://localhost:1313/posts/archives/jquery/</loc>
     <lastmod>2015-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/categories/web/</loc>
-    <lastmod>2015-03-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jithesh.org/posts/archives/javascript-dom/</loc>
+    <loc>http://localhost:1313/posts/archives/javascript-dom/</loc>
     <lastmod>2015-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/bootstrap/</loc>
+    <loc>http://localhost:1313/posts/archives/bootstrap/</loc>
     <lastmod>2015-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/movies-recommendation/</loc>
+    <loc>http://localhost:1313/posts/archives/movies-recommendation/</loc>
     <lastmod>2013-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/cosine-similarity/</loc>
+    <loc>http://localhost:1313/posts/archives/cosine-similarity/</loc>
     <lastmod>2013-11-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/mapreduce-additionalfile/</loc>
+    <loc>http://localhost:1313/posts/archives/mapreduce-additionalfile/</loc>
     <lastmod>2013-10-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/mapreduce-chaining/</loc>
+    <loc>http://localhost:1313/posts/archives/mapreduce-chaining/</loc>
     <lastmod>2013-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/pig-xml/</loc>
+    <loc>http://localhost:1313/posts/archives/pig-xml/</loc>
     <lastmod>2013-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/mapreduce-matrix/</loc>
+    <loc>http://localhost:1313/posts/archives/mapreduce-matrix/</loc>
     <lastmod>2013-07-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/python-context-managers/</loc>
+    <loc>http://localhost:1313/posts/archives/python-context-managers/</loc>
     <lastmod>2011-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/python-instance-representation-copy/</loc>
+    <loc>http://localhost:1313/posts/archives/python-instance-representation-copy/</loc>
     <lastmod>2011-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/python-magic-methods/</loc>
+    <loc>http://localhost:1313/posts/archives/python-magic-methods/</loc>
     <lastmod>2011-04-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/python-inheritance/</loc>
+    <loc>http://localhost:1313/posts/archives/python-inheritance/</loc>
     <lastmod>2011-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/python-classmethod/</loc>
+    <loc>http://localhost:1313/posts/archives/python-classmethod/</loc>
     <lastmod>2011-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/python-getattr/</loc>
+    <loc>http://localhost:1313/posts/archives/python-getattr/</loc>
     <lastmod>2011-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/python-oop-basics/</loc>
+    <loc>http://localhost:1313/posts/archives/python-oop-basics/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/packaging/</loc>
+    <loc>http://localhost:1313/posts/archives/packaging/</loc>
     <lastmod>2011-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/csv-data-analysis/</loc>
+    <loc>http://localhost:1313/posts/archives/csv-data-analysis/</loc>
     <lastmod>2011-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/csv-reader/</loc>
+    <loc>http://localhost:1313/posts/archives/csv-reader/</loc>
     <lastmod>2011-04-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/python-module-imports/</loc>
+    <loc>http://localhost:1313/posts/archives/python-module-imports/</loc>
     <lastmod>2011-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/python-beautiful-soup/</loc>
+    <loc>http://localhost:1313/posts/archives/python-beautiful-soup/</loc>
     <lastmod>2011-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/categories/.net/</loc>
+    <loc>http://localhost:1313/categories/.net/</loc>
     <lastmod>2011-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/dotnet-assemblies/</loc>
+    <loc>http://localhost:1313/posts/archives/dotnet-assemblies/</loc>
     <lastmod>2011-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/archives/dotnet-framework/</loc>
+    <loc>http://localhost:1313/posts/archives/dotnet-framework/</loc>
     <lastmod>2011-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/categories/math/</loc>
+    <loc>http://localhost:1313/categories/math/</loc>
     <lastmod>2009-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/posts/math/rational/</loc>
+    <loc>http://localhost:1313/posts/math/rational/</loc>
     <lastmod>2009-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jithesh.org/pages/about/</loc>
+    <loc>http://localhost:1313/pages/about/</loc>
   </url><url>
-    <loc>https://jithesh.org/pages/</loc>
+    <loc>http://localhost:1313/pages/</loc>
   </url><url>
-    <loc>https://jithesh.org/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>
