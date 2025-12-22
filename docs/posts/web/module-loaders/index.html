@@ -1,762 +1,379 @@
-<!DOCTYPE html>
-<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="content-type" content="text/html">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title itemprop="name">Webpack/SystemJS | Jithesh</title>
-<meta property="og:title" content="Webpack/SystemJS | Jithesh" />
-<meta name="twitter:title" content="Webpack/SystemJS | Jithesh" />
-<meta itemprop="name" content="Webpack/SystemJS | Jithesh" />
-<meta name="application-name" content="Webpack/SystemJS | Jithesh" />
-<meta property="og:site_name" content="" />
-
-<meta name="description" content="">
-<meta itemprop="description" content="" />
-<meta property="og:description" content="" />
-<meta name="twitter:description" content="" />
-
-<meta property="og:locale" content="en-us" />
-<meta name="language" content="en-us" />
-
-  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/posts/web/module-loaders/" title="English" />
-
-
-
-
-
-    
-    
-    
-
-    <meta property="og:type" content="article" />
-    <meta property="og:article:published_time" content=2023-12-14T00:00:00Z />
-    <meta property="article:published_time" content=2023-12-14T00:00:00Z />
-    <meta property="og:url" content="http://localhost:1313/posts/web/module-loaders/" />
-
-    
-    <meta property="og:article:author" content="Jithesh Chandrasekharan" />
-    <meta property="article:author" content="Jithesh Chandrasekharan" />
-    <meta name="author" content="Jithesh Chandrasekharan" />
-    
-    
-
-    
-
-    <script defer type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "Article",
-        "headline": "Webpack/SystemJS",
-        "author": {
-        "@type": "Person",
-        "name": ""
-        },
-        "datePublished": "2023-12-14",
-        "description": "",
-        "wordCount":  2352 ,
-        "mainEntityOfPage": "True",
-        "dateModified": "2023-12-14",
-        "image": {
-        "@type": "imageObject",
-        "url": ""
-        },
-        "publisher": {
-        "@type": "Organization",
-        "name": "Jithesh"
-        }
-    }
-    </script>
-
-
-<meta name="generator" content="Hugo 0.152.2">
-
-    
-    <meta property="og:url" content="http://localhost:1313/posts/web/module-loaders/">
-  <meta property="og:site_name" content="Jithesh">
-  <meta property="og:title" content="Webpack/SystemJS">
-  <meta property="og:description" content="The Module Loading Journey JavaScript module loading is one of those topics that seems simple on the surface but reveals incredible depth once you start digging. I recently spent several weeks building a comprehensive lab to understand how JavaScript modules are loaded, bundled, and delivered to browsers. This post shares everything I learned, complete with actual code from the projects I built.
-The Problem: Why Module Loaders Exist Before we had module systems, JavaScript development was chaotic. Here’s what a typical website looked like:">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2023-12-14T00:00:00+00:00">
-    <meta property="article:modified_time" content="2023-12-14T00:00:00+00:00">
-
-
-    
-    
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Webpack/SystemJS">
-  <meta name="twitter:description" content="The Module Loading Journey JavaScript module loading is one of those topics that seems simple on the surface but reveals incredible depth once you start digging. I recently spent several weeks building a comprehensive lab to understand how JavaScript modules are loaded, bundled, and delivered to browsers. This post shares everything I learned, complete with actual code from the projects I built.
-The Problem: Why Module Loaders Exist Before we had module systems, JavaScript development was chaotic. Here’s what a typical website looked like:">
-
-
-    
-
-    
-    <link rel="canonical" href="http://localhost:1313/posts/web/module-loaders/"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link rel="stylesheet" href="/css/copy-code.css">
-    <script src="/js/copy-code.js"></script>
-    <link href="/style.min.5767c7fefc45e3605de83dcdea72fdabe76f36022626d99d080b7e632f0e68f1.css" rel="stylesheet">
-    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
-    
-    <link href="/sass/custom.min.cf467393bd3e3fc9a644f66d33a0a37039ba0d42650e5bc986be04542577c0a0.css" rel="stylesheet">
-
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
-    <link rel="shortcut icon" href="/favicon.ico">
-
-
-
-
-<link rel="manifest" href="http://localhost:1313/site.webmanifest">
-
-<meta name="msapplication-config" content="/browserconfig.xml">
-<meta name="msapplication-TileColor" content="#2d89ef">
-<meta name="theme-color" content="#434648">
-
-    
-    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
-
-    </head>
-<body data-theme = "" class="notransition">
-
-<script src="/js/theme.js"></script>
-
-<div class="navbar" role="navigation">
-    <nav class="menu" aria-label="Main Navigation">
-        <a href="http://localhost:1313/" class="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
-viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
-stroke-linejoin="round" class="feather feather-home">
-<title>Home</title>
-<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-<polyline points="9 22 9 12 15 12 15 22"></polyline>
-</svg>
-        </a>
-        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
-        <label for="menu-trigger">
-            <span class="menu-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
-            </span>
-        </label>
-
-        <div class="trigger">
-            <ul class="trigger-container">
-                
-                
-                <li>
-                    <a class="menu-link " href="/">
-                        Home
-                    </a>
-                    
-                </li>
-                
-                <li>
-                    <a class="menu-link active" href="/posts/">
-                        Posts
-                    </a>
-                    
-                </li>
-                
-                <li>
-                    <a class="menu-link " href="/categories/">
-                        Tags
-                    </a>
-                    
-                </li>
-                
-                <li>
-                    <a class="menu-link " href="/pages/about/">
-                        About
-                    </a>
-                    
-                </li>
-                
-                <li class="menu-separator">
-                    <span>|</span>
-                </li>
-                
-                
-            </ul>
-            <a id="mode" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
-<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
-<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
-            </a>
-        </div>
-    </nav>
-</div>
-
-<div class="wrapper post">
-    <main class="page-content" aria-label="Content">
-        <article>
-            <header class="header">
-                <h1 class="header-title">Webpack/SystemJS</h1>
-                
-                
-                <div class="post-meta">
-                    <time datetime="2023-12-14T00:00:00&#43;00:00" itemprop="datePublished"> Dec 14, 2023 </time>
-                </div>
-                
-            </header>
-            
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b>Table of Contents</b></summary>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#the-module-loading-journey">The Module Loading Journey</a></li>
-    <li><a href="#the-problem-why-module-loaders-exist">The Problem: Why Module Loaders Exist</a>
-      <ul>
-        <li><a href="#problem-1-order-matters-a-lot">Problem 1: Order Matters (A Lot!)</a></li>
-        <li><a href="#problem-2-everything-is-global">Problem 2: Everything is Global</a></li>
-        <li><a href="#problem-3-slow-page-loads">Problem 3: Slow Page Loads</a></li>
-        <li><a href="#problem-4-no-dependency-tracking">Problem 4: No Dependency Tracking</a></li>
-      </ul>
-    </li>
-    <li><a href="#the-solution-modules">The Solution: Modules</a></li>
-    <li><a href="#the-two-worlds-of-module-loading">The Two Worlds of Module Loading</a>
-      <ul>
-        <li><a href="#1-build-time-bundling-webpack">1. Build-Time Bundling (Webpack)</a></li>
-        <li><a href="#2-runtime-loading-systemjs">2. Runtime Loading (SystemJS)</a></li>
-      </ul>
-    </li>
-    <li><a href="#building-custom-webpack-loaders">Building Custom Webpack Loaders</a>
-      <ul>
-        <li><a href="#anatomy-of-a-loader">Anatomy of a Loader</a></li>
-        <li><a href="#using-the-custom-loader">Using the Custom Loader</a></li>
-        <li><a href="#building-a-css-loader-from-scratch">Building a CSS Loader from Scratch</a></li>
-      </ul>
-    </li>
-    <li><a href="#systemjs-and-the-systemregister-format">SystemJS and the System.register Format</a></li>
-    <li><a href="#the-power-move-combining-webpack--systemjs">The Power Move: Combining Webpack + SystemJS</a>
-      <ul>
-        <li><a href="#lazy-loading-pattern">Lazy Loading Pattern</a></li>
-      </ul>
-    </li>
-    <li><a href="#micro-frontends-different-teams-different-tools">Micro-Frontends: Different Teams, Different Tools</a>
-      <ul>
-        <li><a href="#the-architecture">The Architecture</a></li>
-        <li><a href="#team-b-babel-no-bundling">Team B: Babel (No Bundling!)</a></li>
-        <li><a href="#why-choose-babel-over-webpack">Why Choose Babel Over Webpack?</a></li>
-        <li><a href="#the-shell-combines-everything">The Shell Combines Everything</a></li>
-      </ul>
-    </li>
-    <li><a href="#module-federation-runtime-code-sharing">Module Federation: Runtime Code Sharing</a>
-      <ul>
-        <li><a href="#the-setup">The Setup</a></li>
-        <li><a href="#the-runtime-flow">The Runtime Flow</a></li>
-        <li><a href="#tradeoffs">Tradeoffs</a></li>
-      </ul>
-    </li>
-    <li><a href="#key-learnings">Key Learnings</a>
-      <ul>
-        <li><a href="#1-loaders-are-just-functions">1. Loaders Are Just Functions</a></li>
-        <li><a href="#2-css-becomes-javascript">2. CSS Becomes JavaScript</a></li>
-        <li><a href="#3-build-time--runtime--best-of-both-worlds">3. Build-Time + Runtime = Best of Both Worlds</a></li>
-        <li><a href="#4-babel--webpack">4. Babel ≠ Webpack</a></li>
-        <li><a href="#5-librarytarget-system-is-the-bridge">5. libraryTarget: &lsquo;system&rsquo; is the Bridge</a></li>
-        <li><a href="#6-micro-frontends-are-practical">6. Micro-Frontends Are Practical</a></li>
-      </ul>
-    </li>
-    <li><a href="#practical-recommendations">Practical Recommendations</a></li>
-    <li><a href="#the-foundation-matters">The Foundation Matters</a></li>
-    <li><a href="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
-    </details>
-            <div class="page-content">
-                <h2 id="the-module-loading-journey">The Module Loading Journey</h2>
-<p>JavaScript module loading is one of those topics that seems simple on the surface but reveals incredible depth once you start digging. I recently spent several weeks building a comprehensive lab to understand how JavaScript modules are loaded, bundled, and delivered to browsers. This post shares everything I learned, complete with actual code from the projects I built.</p>
-<h2 id="the-problem-why-module-loaders-exist">The Problem: Why Module Loaders Exist</h2>
-<p>Before we had module systems, JavaScript development was chaotic. Here&rsquo;s what a typical website looked like:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- Load all our JavaScript files --&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;js/jquery.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;js/utils.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;js/validation.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;js/api.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;js/app.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>This approach had four critical problems:</p>
-<h3 id="problem-1-order-matters-a-lot">Problem 1: Order Matters (A Lot!)</h3>
-<p>If <code>app.js</code> uses a function from <code>utils.js</code>, you must load <code>utils.js</code> first:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// utils.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">formatDate</span><span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">date</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// app.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="nx">formatDate</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>  <span class="c1">// Uses formatDate from utils.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">today</span><span class="p">);</span>
-</span></span></code></pre></div><p>Swap the order in your HTML and you get: <code>Uncaught ReferenceError: formatDate is not defined</code></p>
-<p>With 5 files this is annoying. With 50 files? A nightmare.</p>
-<h3 id="problem-2-everything-is-global">Problem 2: Everything is Global</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// utils.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&#34;Utils Helper&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">formatDate</span><span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// api.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&#34;API Module&#34;</span><span class="p">;</span>  <span class="c1">// Oops! Overwrites the previous &#39;name&#39;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">formatDate</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>  <span class="c1">// Oops! Overwrites the function!
-</span></span></span></code></pre></div><p>As teams grow, name collisions become inevitable.</p>
-<h3 id="problem-3-slow-page-loads">Problem 3: Slow Page Loads</h3>
-<p>Each <code>&lt;script&gt;</code> tag = separate HTTP request:</p>
-<ul>
-<li>5 files = 5 round trips to the server</li>
-<li>On a slow connection, users stare at blank pages</li>
-</ul>
-<h3 id="problem-4-no-dependency-tracking">Problem 4: No Dependency Tracking</h3>
-<p>Looking at a file, you can&rsquo;t tell what it depends on without reading through everything.</p>
-<h2 id="the-solution-modules">The Solution: Modules</h2>
-<p>Developers thought: &ldquo;What if each file could explicitly declare what it needs and provides?&rdquo;</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// utils.js - A module that EXPORTS functionality
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kd">function</span> <span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">formatDate</span><span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">date</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// app.js - A module that IMPORTS what it needs
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">greet</span><span class="p">,</span> <span class="nx">formatDate</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./utils.js&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">greet</span><span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="nx">formatDate</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Today is: </span><span class="si">${</span><span class="nx">today</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span></span></code></pre></div><p><strong>Benefits:</strong></p>
-<ul>
-<li>Clear dependencies (we see <code>app.js</code> needs <code>utils.js</code>)</li>
-<li>No global pollution (variables stay inside modules)</li>
-<li>Order is automatic (the system figures it out)</li>
-</ul>
-<p><strong>The catch:</strong> Browsers didn&rsquo;t support this! Enter build tools.</p>
-<h2 id="the-two-worlds-of-module-loading">The Two Worlds of Module Loading</h2>
-<p>My exploration revealed two fundamentally different approaches:</p>
-<h3 id="1-build-time-bundling-webpack">1. Build-Time Bundling (Webpack)</h3>
-<p>Webpack processes code <strong>before deployment</strong>:</p>
-<pre tabindex="0"><code>Your modular code → [Webpack Build] → bundle.js → Browser loads once
-</code></pre><p><strong>How it works:</strong></p>
-<ol>
-<li>Starts at entry point (<code>index.js</code>)</li>
-<li>Follows all imports, building a dependency graph</li>
-<li>Bundles everything into one (or few) optimized files</li>
-<li>Transforms non-JavaScript files using loaders</li>
-</ol>
-<p><strong>Pros:</strong> One HTTP request, optimized, tree-shaking, minification
-<strong>Cons:</strong> Large initial download, rebuild needed for changes</p>
-<h3 id="2-runtime-loading-systemjs">2. Runtime Loading (SystemJS)</h3>
-<p>SystemJS loads modules <strong>in the browser</strong> when needed:</p>
-<pre tabindex="0"><code>Browser runs → Needs module → Fetches it → Needs another → Fetches it
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=content-type content="text/html"><meta name=viewport content="width=device-width,initial-scale=1"><title itemprop=name>Webpack/SystemJS | Jithesh</title><meta property="og:title" content="Webpack/SystemJS | Jithesh"><meta name=twitter:title content="Webpack/SystemJS | Jithesh"><meta itemprop=name content="Webpack/SystemJS | Jithesh"><meta name=application-name content="Webpack/SystemJS | Jithesh"><meta property="og:site_name" content><meta name=description content><meta itemprop=description content><meta property="og:description" content><meta name=twitter:description content><meta property="og:locale" content="en-us"><meta name=language content="en-us"><link rel=alternate hreflang=en-us href=https://jithesh.org/posts/web/module-loaders/ title=English><meta property="og:type" content="article"><meta property="og:article:published_time" content=2023-12-14T00:00:00Z><meta property="article:published_time" content=2023-12-14T00:00:00Z><meta property="og:url" content="https://jithesh.org/posts/web/module-loaders/"><meta property="og:article:author" content="Jithesh Chandrasekharan"><meta property="article:author" content="Jithesh Chandrasekharan"><meta name=author content="Jithesh Chandrasekharan"><script defer type=application/ld+json>{"@context":"http://schema.org","@type":"Article","headline":"Webpack/SystemJS","author":{"@type":"Person","name":""},"datePublished":"2023-12-14","description":"","wordCount":2352,"mainEntityOfPage":"True","dateModified":"2023-12-14","image":{"@type":"imageObject","url":""},"publisher":{"@type":"Organization","name":"Jithesh"}}</script><meta name=generator content="Hugo 0.152.2"><meta property="og:url" content="https://jithesh.org/posts/web/module-loaders/"><meta property="og:site_name" content="Jithesh"><meta property="og:title" content="Webpack/SystemJS"><meta property="og:description" content="The Module Loading Journey JavaScript module loading is one of those topics that seems simple on the surface but reveals incredible depth once you start digging. I recently spent several weeks building a comprehensive lab to understand how JavaScript modules are loaded, bundled, and delivered to browsers. This post shares everything I learned, complete with actual code from the projects I built.
+The Problem: Why Module Loaders Exist Before we had module systems, JavaScript development was chaotic. Here’s what a typical website looked like:"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-12-14T00:00:00+00:00"><meta property="article:modified_time" content="2023-12-14T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Webpack/SystemJS"><meta name=twitter:description content="The Module Loading Journey JavaScript module loading is one of those topics that seems simple on the surface but reveals incredible depth once you start digging. I recently spent several weeks building a comprehensive lab to understand how JavaScript modules are loaded, bundled, and delivered to browsers. This post shares everything I learned, complete with actual code from the projects I built.
+The Problem: Why Module Loaders Exist Before we had module systems, JavaScript development was chaotic. Here’s what a typical website looked like:"><link rel=canonical href=https://jithesh.org/posts/web/module-loaders/><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css><link rel=stylesheet href=/css/copy-code.css><script src=/js/copy-code.js></script><link href=/style.min.5767c7fefc45e3605de83dcdea72fdabe76f36022626d99d080b7e632f0e68f1.css rel=stylesheet><link href=/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css rel=stylesheet><link href=/sass/custom.min.cf467393bd3e3fc9a644f66d33a0a37039ba0d42650e5bc986be04542577c0a0.css rel=stylesheet><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/icons/favicon-16x16.png><link rel=mask-icon href=/icons/safari-pinned-tab.svg><link rel="shortcut icon" href=/favicon.ico><link rel=manifest href=https://jithesh.org/site.webmanifest><meta name=msapplication-config content="/browserconfig.xml"><meta name=msapplication-TileColor content="#2d89ef"><meta name=theme-color content="#434648"><link rel=icon type=image/svg+xml href=/icons/favicon.svg></head><body data-theme class=notransition><script src=/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script><div class=navbar role=navigation><nav class=menu aria-label="Main Navigation"><a href=https://jithesh.org/ class=logo><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><title>Home</title><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+</a><input type=checkbox id=menu-trigger class=menu-trigger>
+<label for=menu-trigger><span class=menu-icon><svg width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7H3.40726"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"/></svg></span></label><div class=trigger><ul class=trigger-container><li><a class=menu-link href=/>Home</a></li><li><a class="menu-link active" href=/posts/>Posts</a></li><li><a class=menu-link href=/categories/>Tags</a></li><li><a class=menu-link href=/pages/about/>About</a></li><li class=menu-separator><span>|</span></li></ul><a id=mode href=#><svg class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+<svg class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a></div></nav></div><div class="wrapper post"><main class=page-content aria-label=Content><article><header class=header><h1 class=header-title>Webpack/SystemJS</h1><div class=post-meta><time datetime=2023-12-14T00:00:00+00:00 itemprop=datePublished>Dec 14, 2023</time></div></header><details class=toc zgotmplz><summary><b>Table of Contents</b></summary><nav id=TableOfContents><ul><li><a href=#the-module-loading-journey>The Module Loading Journey</a></li><li><a href=#the-problem-why-module-loaders-exist>The Problem: Why Module Loaders Exist</a><ul><li><a href=#problem-1-order-matters-a-lot>Problem 1: Order Matters (A Lot!)</a></li><li><a href=#problem-2-everything-is-global>Problem 2: Everything is Global</a></li><li><a href=#problem-3-slow-page-loads>Problem 3: Slow Page Loads</a></li><li><a href=#problem-4-no-dependency-tracking>Problem 4: No Dependency Tracking</a></li></ul></li><li><a href=#the-solution-modules>The Solution: Modules</a></li><li><a href=#the-two-worlds-of-module-loading>The Two Worlds of Module Loading</a><ul><li><a href=#1-build-time-bundling-webpack>1. Build-Time Bundling (Webpack)</a></li><li><a href=#2-runtime-loading-systemjs>2. Runtime Loading (SystemJS)</a></li></ul></li><li><a href=#building-custom-webpack-loaders>Building Custom Webpack Loaders</a><ul><li><a href=#anatomy-of-a-loader>Anatomy of a Loader</a></li><li><a href=#using-the-custom-loader>Using the Custom Loader</a></li><li><a href=#building-a-css-loader-from-scratch>Building a CSS Loader from Scratch</a></li></ul></li><li><a href=#systemjs-and-the-systemregister-format>SystemJS and the System.register Format</a></li><li><a href=#the-power-move-combining-webpack--systemjs>The Power Move: Combining Webpack + SystemJS</a><ul><li><a href=#lazy-loading-pattern>Lazy Loading Pattern</a></li></ul></li><li><a href=#micro-frontends-different-teams-different-tools>Micro-Frontends: Different Teams, Different Tools</a><ul><li><a href=#the-architecture>The Architecture</a></li><li><a href=#team-b-babel-no-bundling>Team B: Babel (No Bundling!)</a></li><li><a href=#why-choose-babel-over-webpack>Why Choose Babel Over Webpack?</a></li><li><a href=#the-shell-combines-everything>The Shell Combines Everything</a></li></ul></li><li><a href=#module-federation-runtime-code-sharing>Module Federation: Runtime Code Sharing</a><ul><li><a href=#the-setup>The Setup</a></li><li><a href=#the-runtime-flow>The Runtime Flow</a></li><li><a href=#tradeoffs>Tradeoffs</a></li></ul></li><li><a href=#key-learnings>Key Learnings</a><ul><li><a href=#1-loaders-are-just-functions>1. Loaders Are Just Functions</a></li><li><a href=#2-css-becomes-javascript>2. CSS Becomes JavaScript</a></li><li><a href=#3-build-time--runtime--best-of-both-worlds>3. Build-Time + Runtime = Best of Both Worlds</a></li><li><a href=#4-babel--webpack>4. Babel ≠ Webpack</a></li><li><a href=#5-librarytarget-system-is-the-bridge>5. libraryTarget: &lsquo;system&rsquo; is the Bridge</a></li><li><a href=#6-micro-frontends-are-practical>6. Micro-Frontends Are Practical</a></li></ul></li><li><a href=#practical-recommendations>Practical Recommendations</a></li><li><a href=#the-foundation-matters>The Foundation Matters</a></li><li><a href=#conclusion>Conclusion</a></li></ul></nav></details><div class=page-content><h2 id=the-module-loading-journey>The Module Loading Journey</h2><p>JavaScript module loading is one of those topics that seems simple on the surface but reveals incredible depth once you start digging. I recently spent several weeks building a comprehensive lab to understand how JavaScript modules are loaded, bundled, and delivered to browsers. This post shares everything I learned, complete with actual code from the projects I built.</p><h2 id=the-problem-why-module-loaders-exist>The Problem: Why Module Loaders Exist</h2><p>Before we had module systems, JavaScript development was chaotic. Here&rsquo;s what a typical website looked like:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=cp>&lt;!DOCTYPE html&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>html</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>h1</span><span class=p>&gt;</span>Welcome!<span class=p>&lt;/</span><span class=nt>h1</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- Load all our JavaScript files --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;js/jquery.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;js/utils.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;js/validation.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;js/api.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;js/app.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</span></span></code></pre></div><p>This approach had four critical problems:</p><h3 id=problem-1-order-matters-a-lot>Problem 1: Order Matters (A Lot!)</h3><p>If <code>app.js</code> uses a function from <code>utils.js</code>, you must load <code>utils.js</code> first:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// utils.js
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>function</span> <span class=nx>formatDate</span><span class=p>(</span><span class=nx>date</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=nx>date</span><span class=p>.</span><span class=nx>toLocaleDateString</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// app.js
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>const</span> <span class=nx>today</span> <span class=o>=</span> <span class=nx>formatDate</span><span class=p>(</span><span class=k>new</span> <span class=nb>Date</span><span class=p>());</span>  <span class=c1>// Uses formatDate from utils.js
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>today</span><span class=p>);</span>
+</span></span></code></pre></div><p>Swap the order in your HTML and you get: <code>Uncaught ReferenceError: formatDate is not defined</code></p><p>With 5 files this is annoying. With 50 files? A nightmare.</p><h3 id=problem-2-everything-is-global>Problem 2: Everything is Global</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// utils.js
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>var</span> <span class=nx>name</span> <span class=o>=</span> <span class=s2>&#34;Utils Helper&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>formatDate</span><span class=p>(</span><span class=nx>date</span><span class=p>)</span> <span class=p>{</span> <span class=p>...</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// api.js
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>var</span> <span class=nx>name</span> <span class=o>=</span> <span class=s2>&#34;API Module&#34;</span><span class=p>;</span>  <span class=c1>// Oops! Overwrites the previous &#39;name&#39;
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>function</span> <span class=nx>formatDate</span><span class=p>(</span><span class=nx>response</span><span class=p>)</span> <span class=p>{</span> <span class=p>...</span> <span class=p>}</span>  <span class=c1>// Oops! Overwrites the function!
+</span></span></span></code></pre></div><p>As teams grow, name collisions become inevitable.</p><h3 id=problem-3-slow-page-loads>Problem 3: Slow Page Loads</h3><p>Each <code>&lt;script></code> tag = separate HTTP request:</p><ul><li>5 files = 5 round trips to the server</li><li>On a slow connection, users stare at blank pages</li></ul><h3 id=problem-4-no-dependency-tracking>Problem 4: No Dependency Tracking</h3><p>Looking at a file, you can&rsquo;t tell what it depends on without reading through everything.</p><h2 id=the-solution-modules>The Solution: Modules</h2><p>Developers thought: &ldquo;What if each file could explicitly declare what it needs and provides?&rdquo;</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// utils.js - A module that EXPORTS functionality
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>export</span> <span class=kd>function</span> <span class=nx>greet</span><span class=p>(</span><span class=nx>name</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=sb>`Hello, </span><span class=si>${</span><span class=nx>name</span><span class=si>}</span><span class=sb>!`</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=kd>function</span> <span class=nx>formatDate</span><span class=p>(</span><span class=nx>date</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=nx>date</span><span class=p>.</span><span class=nx>toLocaleDateString</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// app.js - A module that IMPORTS what it needs
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>import</span> <span class=p>{</span> <span class=nx>greet</span><span class=p>,</span> <span class=nx>formatDate</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;./utils.js&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>message</span> <span class=o>=</span> <span class=nx>greet</span><span class=p>(</span><span class=s1>&#39;World&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>today</span> <span class=o>=</span> <span class=nx>formatDate</span><span class=p>(</span><span class=k>new</span> <span class=nb>Date</span><span class=p>());</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>message</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`Today is: </span><span class=si>${</span><span class=nx>today</span><span class=si>}</span><span class=sb>`</span><span class=p>);</span>
+</span></span></code></pre></div><p><strong>Benefits:</strong></p><ul><li>Clear dependencies (we see <code>app.js</code> needs <code>utils.js</code>)</li><li>No global pollution (variables stay inside modules)</li><li>Order is automatic (the system figures it out)</li></ul><p><strong>The catch:</strong> Browsers didn&rsquo;t support this! Enter build tools.</p><h2 id=the-two-worlds-of-module-loading>The Two Worlds of Module Loading</h2><p>My exploration revealed two fundamentally different approaches:</p><h3 id=1-build-time-bundling-webpack>1. Build-Time Bundling (Webpack)</h3><p>Webpack processes code <strong>before deployment</strong>:</p><pre tabindex=0><code>Your modular code → [Webpack Build] → bundle.js → Browser loads once
+</code></pre><p><strong>How it works:</strong></p><ol><li>Starts at entry point (<code>index.js</code>)</li><li>Follows all imports, building a dependency graph</li><li>Bundles everything into one (or few) optimized files</li><li>Transforms non-JavaScript files using loaders</li></ol><p><strong>Pros:</strong> One HTTP request, optimized, tree-shaking, minification
+<strong>Cons:</strong> Large initial download, rebuild needed for changes</p><h3 id=2-runtime-loading-systemjs>2. Runtime Loading (SystemJS)</h3><p>SystemJS loads modules <strong>in the browser</strong> when needed:</p><pre tabindex=0><code>Browser runs → Needs module → Fetches it → Needs another → Fetches it
 </code></pre><p><strong>Pros:</strong> Smaller initial load, true lazy loading
-<strong>Cons:</strong> Many HTTP requests, no build-time optimization</p>
-<h2 id="building-custom-webpack-loaders">Building Custom Webpack Loaders</h2>
-<p>My biggest &ldquo;aha!&rdquo; moment: <strong>loaders are just functions</strong>.</p>
-<p>Webpack only understands JavaScript. Try to import CSS:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="s1">&#39;./styles.css&#39;</span><span class="p">;</span>
-</span></span></code></pre></div><p>Webpack says: &ldquo;I don&rsquo;t understand <code>.css</code>!&rdquo;</p>
-<p>That&rsquo;s where loaders come in.</p>
-<h3 id="anatomy-of-a-loader">Anatomy of a Loader</h3>
-<p>A loader is a function that:</p>
-<ol>
-<li>Receives file content as a string</li>
-<li>Transforms it</li>
-<li>Returns JavaScript</li>
-</ol>
-<p>Here&rsquo;s the complete custom banner loader I built:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// loaders/banner-loader.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="cm">/**
-</span></span></span><span class="line"><span class="cl"><span class="cm"> * A loader is just a function that:
-</span></span></span><span class="line"><span class="cl"><span class="cm"> * 1. Receives file content (as a string)
-</span></span></span><span class="line"><span class="cl"><span class="cm"> * 2. Transforms it
-</span></span></span><span class="line"><span class="cl"><span class="cm"> * 3. Returns the transformed content
-</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">bannerLoader</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Get today&#39;s date
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">toISOString</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Create a banner comment
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">banner</span> <span class="o">=</span> <span class="sb">`// Built with Webpack - </span><span class="si">${</span><span class="nx">today</span><span class="si">}</span><span class="sb">\n`</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Prepend banner to the original content
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="nx">banner</span> <span class="o">+</span> <span class="nx">content</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Export the loader function (CommonJS style - required by webpack)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">bannerLoader</span><span class="p">;</span>
-</span></span></code></pre></div><p>That&rsquo;s it! The fancy loaders like <code>babel-loader</code> and <code>css-loader</code> follow the same pattern - they just do more complex transformations.</p>
-<h3 id="using-the-custom-loader">Using the Custom Loader</h3>
-<p>Configure it in <code>webpack.config.js</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">entry</span><span class="o">:</span> <span class="s1">&#39;./src/index.js&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;bundle.js&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">path</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;dist&#39;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;development&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">rules</span><span class="o">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">            <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.js$/</span><span class="p">,</span>            <span class="c1">// Match .js files
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="nx">exclude</span><span class="o">:</span> <span class="sr">/node_modules/</span><span class="p">,</span>  <span class="c1">// Don&#39;t process node_modules
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="nx">use</span><span class="o">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">                    <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;loaders/banner-loader.js&#39;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">                <span class="p">],</span>
-</span></span><span class="line"><span class="cl">            <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="p">],</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div><p>Now every JavaScript file gets the banner comment!</p>
-<h3 id="building-a-css-loader-from-scratch">Building a CSS Loader from Scratch</h3>
-<p>To truly understand CSS loaders, I built <code>simple-css-loader</code> that combines what <code>css-loader</code> and <code>style-loader</code> do:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// loaders/simple-css-loader.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">simpleCssLoader</span><span class="p">(</span><span class="nx">cssContent</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Escape the CSS for use in a JavaScript template string
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">escaped</span> <span class="o">=</span> <span class="nx">cssContent</span>
-</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\\/g</span><span class="p">,</span> <span class="s1">&#39;\\\\&#39;</span><span class="p">)</span>   <span class="c1">// Escape backslashes
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/`/g</span><span class="p">,</span> <span class="s1">&#39;\\`&#39;</span><span class="p">)</span>     <span class="c1">// Escape backticks
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\$/g</span><span class="p">,</span> <span class="s1">&#39;\\$&#39;</span><span class="p">);</span>   <span class="c1">// Escape dollar signs
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Return JavaScript code that injects CSS into the DOM
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="sb">`
-</span></span></span><span class="line"><span class="cl"><span class="sb">// ===== Generated by simple-css-loader =====
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">// Step 1: The CSS content (as a JavaScript string)
-</span></span></span><span class="line"><span class="cl"><span class="sb">const css = \`</span><span class="si">${</span><span class="nx">escaped</span><span class="si">}</span><span class="sb">\`;
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">// Step 2: Create a &lt;style&gt; element
-</span></span></span><span class="line"><span class="cl"><span class="sb">const style = document.createElement(&#39;style&#39;);
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">// Step 3: Put the CSS text inside the &lt;style&gt; element
-</span></span></span><span class="line"><span class="cl"><span class="sb">style.textContent = css;
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">// Step 4: Append the &lt;style&gt; element to &lt;head&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">document.head.appendChild(style);
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">// Step 5: Log to console so we can see it working
-</span></span></span><span class="line"><span class="cl"><span class="sb">console.log(&#39;[simple-css-loader] Injected styles&#39;);
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">// ===== End of generated code =====
-</span></span></span><span class="line"><span class="cl"><span class="sb">    `</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">simpleCssLoader</span><span class="p">;</span>
-</span></span></code></pre></div><p><strong>Key insight:</strong> CSS doesn&rsquo;t remain as CSS in your bundle. It becomes JavaScript code that creates a <code>&lt;style&gt;</code> tag at runtime!</p>
-<p>When you import CSS:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="s1">&#39;./styles.css&#39;</span><span class="p">;</span>
-</span></span></code></pre></div><p>The loader transforms it to JavaScript:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">css</span> <span class="o">=</span> <span class="sb">`body { background: blue; }`</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">style</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;style&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">style</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">css</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">style</span><span class="p">);</span>
-</span></span></code></pre></div><p>No separate CSS file exists - it&rsquo;s all JavaScript in the bundle!</p>
-<h2 id="systemjs-and-the-systemregister-format">SystemJS and the System.register Format</h2>
-<p>SystemJS was created in 2014 before browsers supported ES6 modules. It uses its own format called <code>System.register</code>.</p>
-<p>Here&rsquo;s the transformation:</p>
-<p><strong>ES6 (what you write):</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// utils.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kd">function</span> <span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// main.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">greet</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./utils.js&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">greet</span><span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">);</span>
-</span></span></code></pre></div><p><strong>System.register (what SystemJS needs):</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// utils.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">System</span><span class="p">.</span><span class="nx">register</span><span class="p">([],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">exports</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">execute</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">exports</span><span class="p">(</span><span class="s1">&#39;greet&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">});</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// main.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">System</span><span class="p">.</span><span class="nx">register</span><span class="p">([</span><span class="s1">&#39;./utils.js&#39;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">exports</span><span class="p">,</span> <span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">greet</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">setters</span><span class="o">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">            <span class="kd">function</span> <span class="p">(</span><span class="nx">utils</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">greet</span> <span class="o">=</span> <span class="nx">utils</span><span class="p">.</span><span class="nx">greet</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">],</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">execute</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">greet</span><span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span></code></pre></div><p>Nobody writes this by hand! Use Babel with <code>@babel/plugin-transform-modules-systemjs</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;plugins&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;@babel/plugin-transform-modules-systemjs&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Then run: <code>babel src --out-dir dist</code></p>
-<h2 id="the-power-move-combining-webpack--systemjs">The Power Move: Combining Webpack + SystemJS</h2>
-<p>Here&rsquo;s where it gets powerful. Use <strong>both</strong> tools together!</p>
-<h3 id="lazy-loading-pattern">Lazy Loading Pattern</h3>
-<p>Webpack creates multiple bundles in <code>System.register</code> format, SystemJS loads them on-demand.</p>
-<p><strong>Webpack config:</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// MULTIPLE ENTRY POINTS = MULTIPLE BUNDLES
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">entry</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;main-bundle&#39;</span><span class="o">:</span> <span class="s1">&#39;./src/main.js&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;dashboard-bundle&#39;</span><span class="o">:</span> <span class="s1">&#39;./src/dashboard.js&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;settings-bundle&#39;</span><span class="o">:</span> <span class="s1">&#39;./src/settings.js&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;[name].js&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">path</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;dist&#39;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1">// THE MAGIC: Output in System.register format
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">libraryTarget</span><span class="o">:</span> <span class="s1">&#39;system&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">optimization</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">splitChunks</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>  <span class="c1">// Keep bundles separate
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">},</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div><p><strong>Main app shell (loads immediately):</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// main.js - App Shell (small, loads fast)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">renderShell</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">app</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`
-</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;h1&gt;Lazy Loading Demo&lt;/h1&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;nav&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">            &lt;button id=&#34;btn-dashboard&#34;&gt;Load Dashboard&lt;/button&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">            &lt;button id=&#34;btn-settings&#34;&gt;Load Settings&lt;/button&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;/nav&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;div id=&#34;content&#34;&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">            &lt;p&gt;Click a button to lazy-load a module&lt;/p&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;/div&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">    `</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">contentDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Dashboard button - lazy loads dashboard bundle
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;btn-dashboard&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">contentDiv</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;&lt;p&gt;Loading dashboard...&lt;/p&gt;&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Fetching dashboard-bundle.js...&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1">// SystemJS loads the bundle ON DEMAND
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">System</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./dist/dashboard-bundle.js&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">module</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Dashboard loaded!&#39;</span><span class="p">,</span> <span class="nx">module</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">module</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">contentDiv</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="p">})</span>
-</span></span><span class="line"><span class="cl">            <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">contentDiv</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`&lt;p&gt;Error: </span><span class="si">${</span><span class="nx">err</span><span class="si">}</span><span class="sb">&lt;/p&gt;`</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">});</span>
-</span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Settings button - lazy loads settings bundle
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;btn-settings&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">contentDiv</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;&lt;p&gt;Loading settings...&lt;/p&gt;&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="nx">System</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./dist/settings-bundle.js&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">module</span> <span class="p">=&gt;</span> <span class="nx">module</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">contentDiv</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">renderShell</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;App shell loaded. Features load on-demand.&#39;</span><span class="p">);</span>
-</span></span></code></pre></div><p><strong>The result:</strong></p>
-<ul>
-<li>Initial load: 5 KB (main bundle only)</li>
-<li>Dashboard: 7 KB (loads only if clicked)</li>
-<li>Settings: 9 KB (loads only if clicked)</li>
-<li><strong>76% smaller initial download!</strong></li>
-</ul>
-<p>Watch the Network tab in DevTools - you&rsquo;ll see bundles load on-demand.</p>
-<h2 id="micro-frontends-different-teams-different-tools">Micro-Frontends: Different Teams, Different Tools</h2>
-<p>One of my most fascinating projects demonstrated micro-frontends where different teams use different build tools.</p>
-<h3 id="the-architecture">The Architecture</h3>
-<pre tabindex="0"><code>Team A (Header)     Team B (Widget)      Team C (Footer)
+<strong>Cons:</strong> Many HTTP requests, no build-time optimization</p><h2 id=building-custom-webpack-loaders>Building Custom Webpack Loaders</h2><p>My biggest &ldquo;aha!&rdquo; moment: <strong>loaders are just functions</strong>.</p><p>Webpack only understands JavaScript. Try to import CSS:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>import</span> <span class=s1>&#39;./styles.css&#39;</span><span class=p>;</span>
+</span></span></code></pre></div><p>Webpack says: &ldquo;I don&rsquo;t understand <code>.css</code>!&rdquo;</p><p>That&rsquo;s where loaders come in.</p><h3 id=anatomy-of-a-loader>Anatomy of a Loader</h3><p>A loader is a function that:</p><ol><li>Receives file content as a string</li><li>Transforms it</li><li>Returns JavaScript</li></ol><p>Here&rsquo;s the complete custom banner loader I built:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// loaders/banner-loader.js
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm> * A loader is just a function that:
+</span></span></span><span class=line><span class=cl><span class=cm> * 1. Receives file content (as a string)
+</span></span></span><span class=line><span class=cl><span class=cm> * 2. Transforms it
+</span></span></span><span class=line><span class=cl><span class=cm> * 3. Returns the transformed content
+</span></span></span><span class=line><span class=cl><span class=cm> */</span>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>bannerLoader</span><span class=p>(</span><span class=nx>content</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// Get today&#39;s date
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kr>const</span> <span class=nx>today</span> <span class=o>=</span> <span class=k>new</span> <span class=nb>Date</span><span class=p>().</span><span class=nx>toISOString</span><span class=p>().</span><span class=nx>split</span><span class=p>(</span><span class=s1>&#39;T&#39;</span><span class=p>)[</span><span class=mi>0</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Create a banner comment
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kr>const</span> <span class=nx>banner</span> <span class=o>=</span> <span class=sb>`// Built with Webpack - </span><span class=si>${</span><span class=nx>today</span><span class=si>}</span><span class=sb>\n`</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Prepend banner to the original content
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>return</span> <span class=nx>banner</span> <span class=o>+</span> <span class=nx>content</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Export the loader function (CommonJS style - required by webpack)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=nx>bannerLoader</span><span class=p>;</span>
+</span></span></code></pre></div><p>That&rsquo;s it! The fancy loaders like <code>babel-loader</code> and <code>css-loader</code> follow the same pattern - they just do more complex transformations.</p><h3 id=using-the-custom-loader>Using the Custom Loader</h3><p>Configure it in <code>webpack.config.js</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>path</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;path&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>entry</span><span class=o>:</span> <span class=s1>&#39;./src/index.js&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>output</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>filename</span><span class=o>:</span> <span class=s1>&#39;bundle.js&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nx>path</span><span class=o>:</span> <span class=nx>path</span><span class=p>.</span><span class=nx>resolve</span><span class=p>(</span><span class=nx>__dirname</span><span class=p>,</span> <span class=s1>&#39;dist&#39;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>mode</span><span class=o>:</span> <span class=s1>&#39;development&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>module</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>rules</span><span class=o>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>            <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=nx>test</span><span class=o>:</span> <span class=sr>/\.js$/</span><span class=p>,</span>            <span class=c1>// Match .js files
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=nx>exclude</span><span class=o>:</span> <span class=sr>/node_modules/</span><span class=p>,</span>  <span class=c1>// Don&#39;t process node_modules
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=nx>use</span><span class=o>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>                    <span class=nx>path</span><span class=p>.</span><span class=nx>resolve</span><span class=p>(</span><span class=nx>__dirname</span><span class=p>,</span> <span class=s1>&#39;loaders/banner-loader.js&#39;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>                <span class=p>],</span>
+</span></span><span class=line><span class=cl>            <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=p>],</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span></code></pre></div><p>Now every JavaScript file gets the banner comment!</p><h3 id=building-a-css-loader-from-scratch>Building a CSS Loader from Scratch</h3><p>To truly understand CSS loaders, I built <code>simple-css-loader</code> that combines what <code>css-loader</code> and <code>style-loader</code> do:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// loaders/simple-css-loader.js
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>simpleCssLoader</span><span class=p>(</span><span class=nx>cssContent</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// Escape the CSS for use in a JavaScript template string
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kr>const</span> <span class=nx>escaped</span> <span class=o>=</span> <span class=nx>cssContent</span>
+</span></span><span class=line><span class=cl>        <span class=p>.</span><span class=nx>replace</span><span class=p>(</span><span class=sr>/\\/g</span><span class=p>,</span> <span class=s1>&#39;\\\\&#39;</span><span class=p>)</span>   <span class=c1>// Escape backslashes
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=p>.</span><span class=nx>replace</span><span class=p>(</span><span class=sr>/`/g</span><span class=p>,</span> <span class=s1>&#39;\\`&#39;</span><span class=p>)</span>     <span class=c1>// Escape backticks
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=p>.</span><span class=nx>replace</span><span class=p>(</span><span class=sr>/\$/g</span><span class=p>,</span> <span class=s1>&#39;\\$&#39;</span><span class=p>);</span>   <span class=c1>// Escape dollar signs
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>    <span class=c1>// Return JavaScript code that injects CSS into the DOM
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>return</span> <span class=sb>`
+</span></span></span><span class=line><span class=cl><span class=sb>// ===== Generated by simple-css-loader =====
+</span></span></span><span class=line><span class=cl><span class=sb>
+</span></span></span><span class=line><span class=cl><span class=sb>// Step 1: The CSS content (as a JavaScript string)
+</span></span></span><span class=line><span class=cl><span class=sb>const css = \`</span><span class=si>${</span><span class=nx>escaped</span><span class=si>}</span><span class=sb>\`;
+</span></span></span><span class=line><span class=cl><span class=sb>
+</span></span></span><span class=line><span class=cl><span class=sb>// Step 2: Create a &lt;style&gt; element
+</span></span></span><span class=line><span class=cl><span class=sb>const style = document.createElement(&#39;style&#39;);
+</span></span></span><span class=line><span class=cl><span class=sb>
+</span></span></span><span class=line><span class=cl><span class=sb>// Step 3: Put the CSS text inside the &lt;style&gt; element
+</span></span></span><span class=line><span class=cl><span class=sb>style.textContent = css;
+</span></span></span><span class=line><span class=cl><span class=sb>
+</span></span></span><span class=line><span class=cl><span class=sb>// Step 4: Append the &lt;style&gt; element to &lt;head&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>document.head.appendChild(style);
+</span></span></span><span class=line><span class=cl><span class=sb>
+</span></span></span><span class=line><span class=cl><span class=sb>// Step 5: Log to console so we can see it working
+</span></span></span><span class=line><span class=cl><span class=sb>console.log(&#39;[simple-css-loader] Injected styles&#39;);
+</span></span></span><span class=line><span class=cl><span class=sb>
+</span></span></span><span class=line><span class=cl><span class=sb>// ===== End of generated code =====
+</span></span></span><span class=line><span class=cl><span class=sb>    `</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=nx>simpleCssLoader</span><span class=p>;</span>
+</span></span></code></pre></div><p><strong>Key insight:</strong> CSS doesn&rsquo;t remain as CSS in your bundle. It becomes JavaScript code that creates a <code>&lt;style></code> tag at runtime!</p><p>When you import CSS:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>import</span> <span class=s1>&#39;./styles.css&#39;</span><span class=p>;</span>
+</span></span></code></pre></div><p>The loader transforms it to JavaScript:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>css</span> <span class=o>=</span> <span class=sb>`body { background: blue; }`</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>style</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>createElement</span><span class=p>(</span><span class=s1>&#39;style&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>style</span><span class=p>.</span><span class=nx>textContent</span> <span class=o>=</span> <span class=nx>css</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>head</span><span class=p>.</span><span class=nx>appendChild</span><span class=p>(</span><span class=nx>style</span><span class=p>);</span>
+</span></span></code></pre></div><p>No separate CSS file exists - it&rsquo;s all JavaScript in the bundle!</p><h2 id=systemjs-and-the-systemregister-format>SystemJS and the System.register Format</h2><p>SystemJS was created in 2014 before browsers supported ES6 modules. It uses its own format called <code>System.register</code>.</p><p>Here&rsquo;s the transformation:</p><p><strong>ES6 (what you write):</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// utils.js
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>export</span> <span class=kd>function</span> <span class=nx>greet</span><span class=p>(</span><span class=nx>name</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=sb>`Hello, </span><span class=si>${</span><span class=nx>name</span><span class=si>}</span><span class=sb>!`</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// main.js
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>import</span> <span class=p>{</span> <span class=nx>greet</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;./utils.js&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>message</span> <span class=o>=</span> <span class=nx>greet</span><span class=p>(</span><span class=s1>&#39;World&#39;</span><span class=p>);</span>
+</span></span></code></pre></div><p><strong>System.register (what SystemJS needs):</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// utils.js
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>System</span><span class=p>.</span><span class=nx>register</span><span class=p>([],</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>exports</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;use strict&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>execute</span><span class=o>:</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>exports</span><span class=p>(</span><span class=s1>&#39;greet&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=nx>greet</span><span class=p>(</span><span class=nx>name</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=sb>`Hello, </span><span class=si>${</span><span class=nx>name</span><span class=si>}</span><span class=sb>!`</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=p>});</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// main.js
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>System</span><span class=p>.</span><span class=nx>register</span><span class=p>([</span><span class=s1>&#39;./utils.js&#39;</span><span class=p>],</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>exports</span><span class=p>,</span> <span class=nx>context</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;use strict&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=kd>var</span> <span class=nx>greet</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>setters</span><span class=o>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>            <span class=kd>function</span> <span class=p>(</span><span class=nx>utils</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=nx>greet</span> <span class=o>=</span> <span class=nx>utils</span><span class=p>.</span><span class=nx>greet</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>],</span>
+</span></span><span class=line><span class=cl>        <span class=nx>execute</span><span class=o>:</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=kd>var</span> <span class=nx>message</span> <span class=o>=</span> <span class=nx>greet</span><span class=p>(</span><span class=s1>&#39;World&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></div><p>Nobody writes this by hand! Use Babel with <code>@babel/plugin-transform-modules-systemjs</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;plugins&#34;</span><span class=p>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;@babel/plugin-transform-modules-systemjs&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>Then run: <code>babel src --out-dir dist</code></p><h2 id=the-power-move-combining-webpack--systemjs>The Power Move: Combining Webpack + SystemJS</h2><p>Here&rsquo;s where it gets powerful. Use <strong>both</strong> tools together!</p><h3 id=lazy-loading-pattern>Lazy Loading Pattern</h3><p>Webpack creates multiple bundles in <code>System.register</code> format, SystemJS loads them on-demand.</p><p><strong>Webpack config:</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>path</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;path&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// MULTIPLE ENTRY POINTS = MULTIPLE BUNDLES
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>entry</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;main-bundle&#39;</span><span class=o>:</span> <span class=s1>&#39;./src/main.js&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;dashboard-bundle&#39;</span><span class=o>:</span> <span class=s1>&#39;./src/dashboard.js&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;settings-bundle&#39;</span><span class=o>:</span> <span class=s1>&#39;./src/settings.js&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>output</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>filename</span><span class=o>:</span> <span class=s1>&#39;[name].js&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nx>path</span><span class=o>:</span> <span class=nx>path</span><span class=p>.</span><span class=nx>resolve</span><span class=p>(</span><span class=nx>__dirname</span><span class=p>,</span> <span class=s1>&#39;dist&#39;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c1>// THE MAGIC: Output in System.register format
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>libraryTarget</span><span class=o>:</span> <span class=s1>&#39;system&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>optimization</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>splitChunks</span><span class=o>:</span> <span class=kc>false</span><span class=p>,</span>  <span class=c1>// Keep bundles separate
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=p>},</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span></code></pre></div><p><strong>Main app shell (loads immediately):</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// main.js - App Shell (small, loads fast)
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>renderShell</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>app</span><span class=p>.</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=sb>`
+</span></span></span><span class=line><span class=cl><span class=sb>        &lt;h1&gt;Lazy Loading Demo&lt;/h1&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>        &lt;nav&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>            &lt;button id=&#34;btn-dashboard&#34;&gt;Load Dashboard&lt;/button&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>            &lt;button id=&#34;btn-settings&#34;&gt;Load Settings&lt;/button&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>        &lt;/nav&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>        &lt;div id=&#34;content&#34;&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>            &lt;p&gt;Click a button to lazy-load a module&lt;/p&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>        &lt;/div&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>    `</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>contentDiv</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;content&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Dashboard button - lazy loads dashboard bundle
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;btn-dashboard&#39;</span><span class=p>).</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s1>&#39;click&#39;</span><span class=p>,</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>contentDiv</span><span class=p>.</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=s1>&#39;&lt;p&gt;Loading dashboard...&lt;/p&gt;&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;Fetching dashboard-bundle.js...&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c1>// SystemJS loads the bundle ON DEMAND
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>System</span><span class=p>.</span><span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./dist/dashboard-bundle.js&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=p>.</span><span class=nx>then</span><span class=p>(</span><span class=nx>module</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;Dashboard loaded!&#39;</span><span class=p>,</span> <span class=nx>module</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>                <span class=nx>module</span><span class=p>.</span><span class=nx>render</span><span class=p>(</span><span class=nx>contentDiv</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=p>})</span>
+</span></span><span class=line><span class=cl>            <span class=p>.</span><span class=k>catch</span><span class=p>(</span><span class=nx>err</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=nx>contentDiv</span><span class=p>.</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=sb>`&lt;p&gt;Error: </span><span class=si>${</span><span class=nx>err</span><span class=si>}</span><span class=sb>&lt;/p&gt;`</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=p>});</span>
+</span></span><span class=line><span class=cl>    <span class=p>});</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Settings button - lazy loads settings bundle
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;btn-settings&#39;</span><span class=p>).</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s1>&#39;click&#39;</span><span class=p>,</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>contentDiv</span><span class=p>.</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=s1>&#39;&lt;p&gt;Loading settings...&lt;/p&gt;&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=nx>System</span><span class=p>.</span><span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./dist/settings-bundle.js&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=p>.</span><span class=nx>then</span><span class=p>(</span><span class=nx>module</span> <span class=p>=&gt;</span> <span class=nx>module</span><span class=p>.</span><span class=nx>render</span><span class=p>(</span><span class=nx>contentDiv</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>renderShell</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;App shell loaded. Features load on-demand.&#39;</span><span class=p>);</span>
+</span></span></code></pre></div><p><strong>The result:</strong></p><ul><li>Initial load: 5 KB (main bundle only)</li><li>Dashboard: 7 KB (loads only if clicked)</li><li>Settings: 9 KB (loads only if clicked)</li><li><strong>76% smaller initial download!</strong></li></ul><p>Watch the Network tab in DevTools - you&rsquo;ll see bundles load on-demand.</p><h2 id=micro-frontends-different-teams-different-tools>Micro-Frontends: Different Teams, Different Tools</h2><p>One of my most fascinating projects demonstrated micro-frontends where different teams use different build tools.</p><h3 id=the-architecture>The Architecture</h3><pre tabindex=0><code>Team A (Header)     Team B (Widget)      Team C (Footer)
 Uses Webpack        Uses Babel           Uses Webpack
 Bundles files       Transform only       Bundles files
 1 HTTP request      2 HTTP requests      1 HTTP request
 
          All combined by Shell at runtime via SystemJS
-</code></pre><h3 id="team-b-babel-no-bundling">Team B: Babel (No Bundling!)</h3>
-<p>This was the key learning: <strong>Babel transforms, Webpack bundles</strong>. They solve different problems!</p>
-<p><strong>Webpack:</strong></p>
-<pre tabindex="0"><code>widget.js + widget-data.js → [Webpack] → widget.bundle.js (ONE file)
-</code></pre><p><strong>Babel:</strong></p>
-<pre tabindex="0"><code>widget.js → [Babel] → widget.js (transformed, SEPARATE)
+</code></pre><h3 id=team-b-babel-no-bundling>Team B: Babel (No Bundling!)</h3><p>This was the key learning: <strong>Babel transforms, Webpack bundles</strong>. They solve different problems!</p><p><strong>Webpack:</strong></p><pre tabindex=0><code>widget.js + widget-data.js → [Webpack] → widget.bundle.js (ONE file)
+</code></pre><p><strong>Babel:</strong></p><pre tabindex=0><code>widget.js → [Babel] → widget.js (transformed, SEPARATE)
 widget-data.js → [Babel] → widget-data.js (transformed, SEPARATE)
-</code></pre><p>Team B&rsquo;s source code (ES6):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// mfe-widget/src/widget.js - Written in clean ES6
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">getWidgetData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./widget-data.js&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">render</span><span class="p">(</span><span class="nx">container</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">getWidgetData</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">cardsHtml</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">cards</span>
-</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">card</span> <span class="p">=&gt;</span> <span class="sb">`
-</span></span></span><span class="line"><span class="cl"><span class="sb">            &lt;div class=&#34;widget-card&#34;&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">                &lt;span class=&#34;icon&#34;&gt;</span><span class="si">${</span><span class="nx">card</span><span class="p">.</span><span class="nx">icon</span><span class="si">}</span><span class="sb">&lt;/span&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">                &lt;span class=&#34;value&#34;&gt;</span><span class="si">${</span><span class="nx">card</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb">&lt;/span&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">                &lt;span class=&#34;label&#34;&gt;</span><span class="si">${</span><span class="nx">card</span><span class="p">.</span><span class="nx">label</span><span class="si">}</span><span class="sb">&lt;/span&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">            &lt;/div&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">        `</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">container</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`
-</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;div class=&#34;mfe-widget&#34;&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">            &lt;h2&gt;</span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb">&lt;/h2&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">            &lt;div class=&#34;widget-cards&#34;&gt;</span><span class="si">${</span><span class="nx">cardsHtml</span><span class="si">}</span><span class="sb">&lt;/div&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">            &lt;p&gt;This MFE uses Babel - files stay separate!&lt;/p&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;/div&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">    `</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;[MFE-Widget] Rendered! (Babel, no bundling)&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Widget Micro-frontend&#39;</span><span class="p">;</span>
-</span></span></code></pre></div><p>Their Babel config:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;plugins&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;@babel/plugin-transform-modules-systemjs&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Build: <code>babel src --out-dir dist</code></p>
-<p>After Babel runs, <code>widget.js</code> and <code>widget-data.js</code> stay as <strong>separate files</strong> but in <code>System.register</code> format.</p>
-<h3 id="why-choose-babel-over-webpack">Why Choose Babel Over Webpack?</h3>
-<p>Team B chose Babel because:</p>
-<ul>
-<li><strong>Simpler config</strong> (one plugin vs full webpack setup)</li>
-<li><strong>Files stay separate</strong> (easier debugging)</li>
-<li><strong>Faster builds</strong> (no bundling overhead)</li>
-<li><strong>Granular updates</strong> (change one file without rebuilding everything)</li>
-</ul>
-<h3 id="the-shell-combines-everything">The Shell Combines Everything</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// shell/index.html
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">async</span> <span class="kd">function</span> <span class="nx">loadMFE</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">container</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">module</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">System</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">module</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">container</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`✓ </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"> loaded`</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// MFE 1: Header (Webpack bundle - 1 HTTP request)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">await</span> <span class="nx">loadMFE</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;Header&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;../mfe-header/dist/header.bundle.js&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;header-container&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// MFE 2: Widget (Babel - 2 HTTP requests for 2 files)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">await</span> <span class="nx">loadMFE</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;Widget&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;../mfe-widget/dist/widget.js&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;widget-container&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// MFE 3: Footer (Webpack bundle - 1 HTTP request)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">await</span> <span class="nx">loadMFE</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;Footer&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;../mfe-footer/dist/footer.bundle.js&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;footer-container&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;All micro-frontends loaded!&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">init</span><span class="p">();</span>
-</span></span></code></pre></div><p><strong>Each team deploys independently, uses their tools, moves at their own pace!</strong></p>
-<h2 id="module-federation-runtime-code-sharing">Module Federation: Runtime Code Sharing</h2>
-<p>The final frontier: Webpack 5&rsquo;s Module Federation - sharing code between apps at runtime.</p>
-<h3 id="the-setup">The Setup</h3>
-<p><strong>App A (Provider) exposes a Button:</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// app-a/webpack.config.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">ModuleFederationPlugin</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;webpack&#39;</span><span class="p">).</span><span class="nx">container</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;development&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">entry</span><span class="o">:</span> <span class="s1">&#39;./src/index.js&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">publicPath</span><span class="o">:</span> <span class="s1">&#39;http://localhost:3001/&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">devServer</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">port</span><span class="o">:</span> <span class="mi">3001</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">        <span class="k">new</span> <span class="nx">ModuleFederationPlugin</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;appA&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;remoteEntry.js&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">exposes</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="s1">&#39;./Button&#39;</span><span class="o">:</span> <span class="s1">&#39;./src/Button.js&#39;</span><span class="p">,</span>  <span class="c1">// Share this!
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}),</span>
-</span></span><span class="line"><span class="cl">    <span class="p">],</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div><p><strong>App B (Consumer) uses App A&rsquo;s Button:</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// app-b/webpack.config.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">ModuleFederationPlugin</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;webpack&#39;</span><span class="p">).</span><span class="nx">container</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;development&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">entry</span><span class="o">:</span> <span class="s1">&#39;./src/index.js&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">publicPath</span><span class="o">:</span> <span class="s1">&#39;http://localhost:3002/&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">devServer</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">port</span><span class="o">:</span> <span class="mi">3002</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">        <span class="k">new</span> <span class="nx">ModuleFederationPlugin</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;appB&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">remotes</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="c1">// &#34;appA&#34; = import name
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="c1">// URL = where to fetch from
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="nx">appA</span><span class="o">:</span> <span class="s1">&#39;appA@http://localhost:3001/remoteEntry.js&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}),</span>
-</span></span><span class="line"><span class="cl">    <span class="p">],</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div><p><strong>In App B&rsquo;s code:</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// App B dynamically imports from App A at runtime!
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span><span class="p">(</span><span class="s1">&#39;appA/Button&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(({</span> <span class="nx">Button</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nx">Button</span><span class="p">(</span><span class="s1">&#39;Click me!&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">btn</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span></code></pre></div><h3 id="the-runtime-flow">The Runtime Flow</h3>
-<pre tabindex="0"><code>1. User opens http://localhost:3002 (App B)
+</code></pre><p>Team B&rsquo;s source code (ES6):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// mfe-widget/src/widget.js - Written in clean ES6
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>import</span> <span class=p>{</span> <span class=nx>getWidgetData</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;./widget-data.js&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=kd>function</span> <span class=nx>render</span><span class=p>(</span><span class=nx>container</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>data</span> <span class=o>=</span> <span class=nx>getWidgetData</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>cardsHtml</span> <span class=o>=</span> <span class=nx>data</span><span class=p>.</span><span class=nx>cards</span>
+</span></span><span class=line><span class=cl>        <span class=p>.</span><span class=nx>map</span><span class=p>(</span><span class=nx>card</span> <span class=p>=&gt;</span> <span class=sb>`
+</span></span></span><span class=line><span class=cl><span class=sb>            &lt;div class=&#34;widget-card&#34;&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>                &lt;span class=&#34;icon&#34;&gt;</span><span class=si>${</span><span class=nx>card</span><span class=p>.</span><span class=nx>icon</span><span class=si>}</span><span class=sb>&lt;/span&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>                &lt;span class=&#34;value&#34;&gt;</span><span class=si>${</span><span class=nx>card</span><span class=p>.</span><span class=nx>value</span><span class=si>}</span><span class=sb>&lt;/span&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>                &lt;span class=&#34;label&#34;&gt;</span><span class=si>${</span><span class=nx>card</span><span class=p>.</span><span class=nx>label</span><span class=si>}</span><span class=sb>&lt;/span&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>            &lt;/div&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>        `</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=p>.</span><span class=nx>join</span><span class=p>(</span><span class=s1>&#39;&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>container</span><span class=p>.</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=sb>`
+</span></span></span><span class=line><span class=cl><span class=sb>        &lt;div class=&#34;mfe-widget&#34;&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>            &lt;h2&gt;</span><span class=si>${</span><span class=nx>data</span><span class=p>.</span><span class=nx>title</span><span class=si>}</span><span class=sb>&lt;/h2&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>            &lt;div class=&#34;widget-cards&#34;&gt;</span><span class=si>${</span><span class=nx>cardsHtml</span><span class=si>}</span><span class=sb>&lt;/div&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>            &lt;p&gt;This MFE uses Babel - files stay separate!&lt;/p&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>        &lt;/div&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>    `</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;[MFE-Widget] Rendered! (Babel, no bundling)&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=kr>const</span> <span class=nx>name</span> <span class=o>=</span> <span class=s1>&#39;Widget Micro-frontend&#39;</span><span class=p>;</span>
+</span></span></code></pre></div><p>Their Babel config:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;plugins&#34;</span><span class=p>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;@babel/plugin-transform-modules-systemjs&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>Build: <code>babel src --out-dir dist</code></p><p>After Babel runs, <code>widget.js</code> and <code>widget-data.js</code> stay as <strong>separate files</strong> but in <code>System.register</code> format.</p><h3 id=why-choose-babel-over-webpack>Why Choose Babel Over Webpack?</h3><p>Team B chose Babel because:</p><ul><li><strong>Simpler config</strong> (one plugin vs full webpack setup)</li><li><strong>Files stay separate</strong> (easier debugging)</li><li><strong>Faster builds</strong> (no bundling overhead)</li><li><strong>Granular updates</strong> (change one file without rebuilding everything)</li></ul><h3 id=the-shell-combines-everything>The Shell Combines Everything</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// shell/index.html
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>async</span> <span class=kd>function</span> <span class=nx>loadMFE</span><span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>path</span><span class=p>,</span> <span class=nx>container</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>module</span> <span class=o>=</span> <span class=kr>await</span> <span class=nx>System</span><span class=p>.</span><span class=kr>import</span><span class=p>(</span><span class=nx>path</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nx>module</span><span class=p>.</span><span class=nx>render</span><span class=p>(</span><span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=nx>container</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`✓ </span><span class=si>${</span><span class=nx>name</span><span class=si>}</span><span class=sb> loaded`</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>async</span> <span class=kd>function</span> <span class=nx>init</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// MFE 1: Header (Webpack bundle - 1 HTTP request)
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kr>await</span> <span class=nx>loadMFE</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;Header&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;../mfe-header/dist/header.bundle.js&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;header-container&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// MFE 2: Widget (Babel - 2 HTTP requests for 2 files)
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kr>await</span> <span class=nx>loadMFE</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;Widget&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;../mfe-widget/dist/widget.js&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;widget-container&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// MFE 3: Footer (Webpack bundle - 1 HTTP request)
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kr>await</span> <span class=nx>loadMFE</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;Footer&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;../mfe-footer/dist/footer.bundle.js&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;footer-container&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;All micro-frontends loaded!&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>init</span><span class=p>();</span>
+</span></span></code></pre></div><p><strong>Each team deploys independently, uses their tools, moves at their own pace!</strong></p><h2 id=module-federation-runtime-code-sharing>Module Federation: Runtime Code Sharing</h2><p>The final frontier: Webpack 5&rsquo;s Module Federation - sharing code between apps at runtime.</p><h3 id=the-setup>The Setup</h3><p><strong>App A (Provider) exposes a Button:</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// app-a/webpack.config.js
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>const</span> <span class=p>{</span> <span class=nx>ModuleFederationPlugin</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;webpack&#39;</span><span class=p>).</span><span class=nx>container</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>mode</span><span class=o>:</span> <span class=s1>&#39;development&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>entry</span><span class=o>:</span> <span class=s1>&#39;./src/index.js&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>output</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>publicPath</span><span class=o>:</span> <span class=s1>&#39;http://localhost:3001/&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>devServer</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>port</span><span class=o>:</span> <span class=mi>3001</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>plugins</span><span class=o>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>        <span class=k>new</span> <span class=nx>ModuleFederationPlugin</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>            <span class=nx>name</span><span class=o>:</span> <span class=s1>&#39;appA&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nx>filename</span><span class=o>:</span> <span class=s1>&#39;remoteEntry.js&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nx>exposes</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=s1>&#39;./Button&#39;</span><span class=o>:</span> <span class=s1>&#39;./src/Button.js&#39;</span><span class=p>,</span>  <span class=c1>// Share this!
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=p>}),</span>
+</span></span><span class=line><span class=cl>    <span class=p>],</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span></code></pre></div><p><strong>App B (Consumer) uses App A&rsquo;s Button:</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// app-b/webpack.config.js
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>const</span> <span class=p>{</span> <span class=nx>ModuleFederationPlugin</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;webpack&#39;</span><span class=p>).</span><span class=nx>container</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>mode</span><span class=o>:</span> <span class=s1>&#39;development&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>entry</span><span class=o>:</span> <span class=s1>&#39;./src/index.js&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>output</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>publicPath</span><span class=o>:</span> <span class=s1>&#39;http://localhost:3002/&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>devServer</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>port</span><span class=o>:</span> <span class=mi>3002</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>plugins</span><span class=o>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>        <span class=k>new</span> <span class=nx>ModuleFederationPlugin</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>            <span class=nx>name</span><span class=o>:</span> <span class=s1>&#39;appB&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nx>remotes</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=c1>// &#34;appA&#34; = import name
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=c1>// URL = where to fetch from
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=nx>appA</span><span class=o>:</span> <span class=s1>&#39;appA@http://localhost:3001/remoteEntry.js&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=p>}),</span>
+</span></span><span class=line><span class=cl>    <span class=p>],</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span></code></pre></div><p><strong>In App B&rsquo;s code:</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// App B dynamically imports from App A at runtime!
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>import</span><span class=p>(</span><span class=s1>&#39;appA/Button&#39;</span><span class=p>).</span><span class=nx>then</span><span class=p>(({</span> <span class=nx>Button</span> <span class=p>})</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>btn</span> <span class=o>=</span> <span class=nx>Button</span><span class=p>(</span><span class=s1>&#39;Click me!&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nb>document</span><span class=p>.</span><span class=nx>body</span><span class=p>.</span><span class=nx>appendChild</span><span class=p>(</span><span class=nx>btn</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></div><h3 id=the-runtime-flow>The Runtime Flow</h3><pre tabindex=0><code>1. User opens http://localhost:3002 (App B)
 
 2. App B&#39;s code: import(&#39;appA/Button&#39;)
 
@@ -767,160 +384,32 @@ widget-data.js → [Babel] → widget-data.js (transformed, SEPARATE)
 5. Browser: GET http://localhost:3001/src_Button_js.chunk.js
 
 6. Button code now available in App B!
-</code></pre><p><strong>Both apps must be running</strong> - App B fetches from App A&rsquo;s server.</p>
-<h3 id="tradeoffs">Tradeoffs</h3>
-<table>
-  <thead>
-      <tr>
-          <th>Benefit</th>
-          <th>Drawback</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Always get latest code</td>
-          <td>Runtime dependency (if App A down, Button fails)</td>
-      </tr>
-      <tr>
-          <td>No npm publish cycle</td>
-          <td>Network latency</td>
-      </tr>
-      <tr>
-          <td>Independent deploys</td>
-          <td>Complex debugging</td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="key-learnings">Key Learnings</h2>
-<h3 id="1-loaders-are-just-functions">1. Loaders Are Just Functions</h3>
-<p>Every Webpack loader - <code>babel-loader</code>, <code>css-loader</code>, <code>ts-loader</code> - is just a function:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">myLoader</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Transform content
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="nx">transformedContent</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Understanding this demystifies the entire ecosystem.</p>
-<h3 id="2-css-becomes-javascript">2. CSS Becomes JavaScript</h3>
-<p>In Webpack bundles, CSS doesn&rsquo;t exist as CSS. It&rsquo;s JavaScript that injects <code>&lt;style&gt;</code> tags:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">css</span> <span class="o">=</span> <span class="s2">&#34;body { background: blue; }&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">style</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;style&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">style</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">css</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">style</span><span class="p">);</span>
-</span></span></code></pre></div><h3 id="3-build-time--runtime--best-of-both-worlds">3. Build-Time + Runtime = Best of Both Worlds</h3>
-<p>Don&rsquo;t choose between Webpack and SystemJS - use both!</p>
-<ul>
-<li>Webpack creates optimized bundles</li>
-<li>SystemJS loads them on-demand</li>
-<li>Result: Optimization + lazy loading</li>
-</ul>
-<h3 id="4-babel--webpack">4. Babel ≠ Webpack</h3>
-<p>They solve different problems:</p>
-<ul>
-<li><strong>Babel</strong>: Transforms syntax (ES6→ES5, JSX→JS, ESM→System.register)</li>
-<li><strong>Webpack</strong>: Bundles multiple files into fewer files</li>
-</ul>
-<p>Use Babel alone (transform only), Webpack alone (bundle), or both together.</p>
-<h3 id="5-librarytarget-system-is-the-bridge">5. libraryTarget: &lsquo;system&rsquo; is the Bridge</h3>
-<p>This webpack config option makes bundles loadable by SystemJS:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">libraryTarget</span><span class="o">:</span> <span class="s1">&#39;system&#39;</span>  <span class="c1">// Outputs System.register format
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></div><h3 id="6-micro-frontends-are-practical">6. Micro-Frontends Are Practical</h3>
-<p>Module Federation and SystemJS make micro-frontend architecture practical for large teams. Different teams can:</p>
-<ul>
-<li>Use different tools (Webpack, Babel, Rollup)</li>
-<li>Deploy independently</li>
-<li>Share code at runtime</li>
-<li>Move at their own pace</li>
-</ul>
-<h2 id="practical-recommendations">Practical Recommendations</h2>
-<p>Based on building these projects, here&rsquo;s what I&rsquo;d recommend:</p>
-<p><strong>Small apps (&lt;10 routes):</strong>
-Just use Webpack. Bundle everything. Simple.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">entry</span><span class="o">:</span> <span class="s1">&#39;./src/index.js&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span> <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;bundle.js&#39;</span> <span class="p">},</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</code></pre><p><strong>Both apps must be running</strong> - App B fetches from App A&rsquo;s server.</p><h3 id=tradeoffs>Tradeoffs</h3><table><thead><tr><th>Benefit</th><th>Drawback</th></tr></thead><tbody><tr><td>Always get latest code</td><td>Runtime dependency (if App A down, Button fails)</td></tr><tr><td>No npm publish cycle</td><td>Network latency</td></tr><tr><td>Independent deploys</td><td>Complex debugging</td></tr></tbody></table><h2 id=key-learnings>Key Learnings</h2><h3 id=1-loaders-are-just-functions>1. Loaders Are Just Functions</h3><p>Every Webpack loader - <code>babel-loader</code>, <code>css-loader</code>, <code>ts-loader</code> - is just a function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>myLoader</span><span class=p>(</span><span class=nx>content</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// Transform content
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>return</span> <span class=nx>transformedContent</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>Understanding this demystifies the entire ecosystem.</p><h3 id=2-css-becomes-javascript>2. CSS Becomes JavaScript</h3><p>In Webpack bundles, CSS doesn&rsquo;t exist as CSS. It&rsquo;s JavaScript that injects <code>&lt;style></code> tags:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>css</span> <span class=o>=</span> <span class=s2>&#34;body { background: blue; }&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>style</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>createElement</span><span class=p>(</span><span class=s1>&#39;style&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>style</span><span class=p>.</span><span class=nx>textContent</span> <span class=o>=</span> <span class=nx>css</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>head</span><span class=p>.</span><span class=nx>appendChild</span><span class=p>(</span><span class=nx>style</span><span class=p>);</span>
+</span></span></code></pre></div><h3 id=3-build-time--runtime--best-of-both-worlds>3. Build-Time + Runtime = Best of Both Worlds</h3><p>Don&rsquo;t choose between Webpack and SystemJS - use both!</p><ul><li>Webpack creates optimized bundles</li><li>SystemJS loads them on-demand</li><li>Result: Optimization + lazy loading</li></ul><h3 id=4-babel--webpack>4. Babel ≠ Webpack</h3><p>They solve different problems:</p><ul><li><strong>Babel</strong>: Transforms syntax (ES6→ES5, JSX→JS, ESM→System.register)</li><li><strong>Webpack</strong>: Bundles multiple files into fewer files</li></ul><p>Use Babel alone (transform only), Webpack alone (bundle), or both together.</p><h3 id=5-librarytarget-system-is-the-bridge>5. libraryTarget: &lsquo;system&rsquo; is the Bridge</h3><p>This webpack config option makes bundles loadable by SystemJS:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>output</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>libraryTarget</span><span class=o>:</span> <span class=s1>&#39;system&#39;</span>  <span class=c1>// Outputs System.register format
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
+</span></span></code></pre></div><h3 id=6-micro-frontends-are-practical>6. Micro-Frontends Are Practical</h3><p>Module Federation and SystemJS make micro-frontend architecture practical for large teams. Different teams can:</p><ul><li>Use different tools (Webpack, Babel, Rollup)</li><li>Deploy independently</li><li>Share code at runtime</li><li>Move at their own pace</li></ul><h2 id=practical-recommendations>Practical Recommendations</h2><p>Based on building these projects, here&rsquo;s what I&rsquo;d recommend:</p><p><strong>Small apps (&lt;10 routes):</strong>
+Just use Webpack. Bundle everything. Simple.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>entry</span><span class=o>:</span> <span class=s1>&#39;./src/index.js&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>output</span><span class=o>:</span> <span class=p>{</span> <span class=nx>filename</span><span class=o>:</span> <span class=s1>&#39;bundle.js&#39;</span> <span class=p>},</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
 </span></span></code></pre></div><p><strong>Medium apps (10-50 routes):</strong>
-Webpack with code splitting for lazy loading:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// Dynamic imports for heavy features
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">Dashboard</span> <span class="o">=</span> <span class="nx">lazy</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./Dashboard&#39;</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Settings</span> <span class="o">=</span> <span class="nx">lazy</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./Settings&#39;</span><span class="p">));</span>
+Webpack with code splitting for lazy loading:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// Dynamic imports for heavy features
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>const</span> <span class=nx>Dashboard</span> <span class=o>=</span> <span class=nx>lazy</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./Dashboard&#39;</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>Settings</span> <span class=o>=</span> <span class=nx>lazy</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./Settings&#39;</span><span class=p>));</span>
 </span></span></code></pre></div><p><strong>Large apps (multiple teams):</strong>
-Micro-frontends with SystemJS or Module Federation:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// Each team builds their bundle
-</span></span></span><span class="line"><span class="cl"><span class="c1">// Shell loads them at runtime via SystemJS
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">System</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./team-a/bundle.js&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">System</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./team-b/bundle.js&#39;</span><span class="p">);</span>
+Micro-frontends with SystemJS or Module Federation:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// Each team builds their bundle
+</span></span></span><span class=line><span class=cl><span class=c1>// Shell loads them at runtime via SystemJS
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>System</span><span class=p>.</span><span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./team-a/bundle.js&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>System</span><span class=p>.</span><span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./team-b/bundle.js&#39;</span><span class=p>);</span>
 </span></span></code></pre></div><p><strong>Libraries:</strong>
-Provide multiple formats (ESM, CommonJS, UMD) and let consumers choose their bundler.</p>
-<h2 id="the-foundation-matters">The Foundation Matters</h2>
-<p>Before diving into module loaders, I spent time understanding the web development lifecycle:</p>
-<ul>
-<li><strong>Web servers</strong> (NGINX) deliver static files</li>
-<li><strong>Reverse proxies</strong> route traffic between static files and APIs</li>
-<li><strong>React apps</strong> are static files - JavaScript does everything in browser</li>
-<li><strong>Docker</strong> ensures consistent runtime environments</li>
-<li><strong>Build tools</strong> transform source into deployable assets</li>
-</ul>
-<p>Module loaders exist within this broader context. Understanding the full picture helps make better architectural decisions.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>Module loaders bridge the gap between how we want to write code (modular, clean) and how browsers consume it (optimized, efficient). Understanding the difference between build-time bundling (Webpack) and runtime loading (SystemJS), knowing when to use each, and grasping how loaders transform files has fundamentally changed how I think about JavaScript architecture.</p>
-<p>The web platform evolves constantly. Native ES modules in browsers are now standard, but build tools still solve real problems: optimization, tree-shaking, lazy loading, code splitting, and enabling large teams to work independently.</p>
-<p>Whether you&rsquo;re building a simple site or a complex micro-frontend architecture, understanding these fundamentals empowers better decisions.</p>
-<p>The complete lab with all projects is available in my learning repository - feel free to clone it and experiment!</p>
-<p>Happy bundling!</p>
-
-            </div>
-        </article></main>
-</div>
-<footer class="footer">
-    <span class="footer_item"> </span>
-    &nbsp;
-
-    <div class="footer_social-icons">
-<a href="https://github.com/gitjit" target="_blank" rel="noopener noreferrer me"
-    title="Github">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
-</a>
-<a href="https://twitter.com/jitbytes" target="_blank" rel="noopener noreferrer me"
-    title="Twitter">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-    </path>
-</svg>
-</a>
-<a href="https://www.linkedin.com/in/jitheshc" target="_blank" rel="noopener noreferrer me"
-    title="Linkedin">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
-</svg>
-</a>
-</div>
-    <small class="footer_copyright">
-        © 2025 Jithesh Chandrasekharan.
-    </small>
-</footer>
-
-
-
-
-
-
-
-    
-    <script async src="http://localhost:1313/js/main.js" ></script>
-
-    
-
-</body>
-</html>
+Provide multiple formats (ESM, CommonJS, UMD) and let consumers choose their bundler.</p><h2 id=the-foundation-matters>The Foundation Matters</h2><p>Before diving into module loaders, I spent time understanding the web development lifecycle:</p><ul><li><strong>Web servers</strong> (NGINX) deliver static files</li><li><strong>Reverse proxies</strong> route traffic between static files and APIs</li><li><strong>React apps</strong> are static files - JavaScript does everything in browser</li><li><strong>Docker</strong> ensures consistent runtime environments</li><li><strong>Build tools</strong> transform source into deployable assets</li></ul><p>Module loaders exist within this broader context. Understanding the full picture helps make better architectural decisions.</p><h2 id=conclusion>Conclusion</h2><p>Module loaders bridge the gap between how we want to write code (modular, clean) and how browsers consume it (optimized, efficient). Understanding the difference between build-time bundling (Webpack) and runtime loading (SystemJS), knowing when to use each, and grasping how loaders transform files has fundamentally changed how I think about JavaScript architecture.</p><p>The web platform evolves constantly. Native ES modules in browsers are now standard, but build tools still solve real problems: optimization, tree-shaking, lazy loading, code splitting, and enabling large teams to work independently.</p><p>Whether you&rsquo;re building a simple site or a complex micro-frontend architecture, understanding these fundamentals empowers better decisions.</p><p>The complete lab with all projects is available in my learning repository - feel free to clone it and experiment!</p><p>Happy bundling!</p></div></article></main></div><footer class=footer><span class=footer_item></span>&nbsp;<div class=footer_social-icons><a href=https://github.com/gitjit target=_blank rel="noopener noreferrer me" title=Github><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
+</a><a href=https://twitter.com/jitbytes target=_blank rel="noopener noreferrer me" title=Twitter><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg>
+</a><a href=https://www.linkedin.com/in/jitheshc target=_blank rel="noopener noreferrer me" title=Linkedin><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><small class=footer_copyright>© 2025 Jithesh Chandrasekharan.</small></footer><script src=https://jithesh.org/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script></body></html>
